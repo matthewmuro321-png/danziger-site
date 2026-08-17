@@ -2233,3 +2233,6 @@ strong { font-weight: 600; }
   font-size: 1.15rem;
   color: var(--ink-muted);
 }
+
+/* ── Awards page sections (top padding consistent with other interior sections) ── */
+.awards-section { padding-top: 3.5rem; }
