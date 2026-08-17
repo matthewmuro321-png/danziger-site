@@ -1,0 +1,338 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <title>Opening a Restaurant in New York: A Legal Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,420;9..144,540&family=Newsreader:opsz,ital,wght@6..72,0,380;6..72,0,440;6..72,1,400&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8;
+    --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif;
+    --serif:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+
+  .g-root{
+    background:var(--paper); color:var(--ink);
+    font-family:var(--serif); -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,72px) clamp(16px,5vw,40px);
+    display:flex; justify-content:center;
+  }
+  .g-shell{width:100%; max-width:720px}
+
+  .eyebrow{
+    font-family:var(--sans); font-weight:620; font-size:11.5px;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--claret);
+    margin:0 0 24px; display:flex; align-items:center; gap:12px;
+  }
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  h1.title{
+    font-family:var(--display); font-weight:340; font-optical-sizing:auto;
+    font-size:clamp(36px,7vw,62px); line-height:1.0; letter-spacing:-.015em;
+    margin:0 0 26px;
+  }
+  .standfirst{
+    font-family:var(--serif); font-size:clamp(17px,2.4vw,20px);
+    line-height:1.55; color:var(--ink-soft); max-width:56ch; margin:0 0 30px;
+  }
+  .meta{
+    font-family:var(--sans); font-weight:520; font-size:11.5px;
+    letter-spacing:.06em; color:var(--ink-faint);
+    border-top:1px solid var(--line); padding-top:16px; margin:0 0 44px;
+  }
+
+  /* contents */
+  .contents{
+    background:var(--paper-2); border:1px solid var(--line);
+    padding:26px 28px; margin:0 0 52px;
+  }
+  .contents h2{
+    font-family:var(--sans); font-weight:620; font-size:11px;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--ink-faint);
+    margin:0 0 16px;
+  }
+  .contents ol{margin:0; padding:0; list-style:none; counter-reset:c}
+  .contents li{counter-increment:c; border-top:1px solid var(--line-soft)}
+  .contents li:first-child{border-top:none}
+  .contents a{
+    display:flex; gap:16px; align-items:baseline;
+    text-decoration:none; color:var(--ink); padding:11px 0;
+    font-size:16.5px; transition:color .18s;
+  }
+  .contents a:hover{color:var(--claret)}
+  .contents a:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+  .contents a::before{
+    content:counter(c,decimal-leading-zero);
+    font-family:var(--sans); font-weight:620; font-size:12px;
+    color:var(--claret); letter-spacing:.04em; min-width:22px;
+  }
+
+  /* sections */
+  section{margin:0 0 52px; scroll-margin-top:24px}
+  .sec-num{
+    font-family:var(--sans); font-weight:620; font-size:12px;
+    letter-spacing:.16em; color:var(--claret); display:block; margin:0 0 10px;
+  }
+  h2.sec-h{
+    font-family:var(--display); font-weight:420;
+    font-size:clamp(25px,4vw,34px); line-height:1.1; letter-spacing:-.01em;
+    margin:0 0 18px;
+  }
+  .g-root p.body{
+    font-size:17.5px; line-height:1.62; color:var(--ink-soft);
+    margin:0 0 16px; max-width:60ch;
+  }
+  .body strong{color:var(--ink); font-weight:440}
+  em{font-style:italic}
+
+  /* practice note */
+  .note{
+    border-left:2px solid var(--claret);
+    background:var(--paper-2);
+    padding:18px 22px; margin:22px 0; max-width:60ch;
+  }
+  .note .lbl{
+    font-family:var(--sans); font-weight:620; font-size:10.5px;
+    letter-spacing:.15em; text-transform:uppercase; color:var(--claret);
+    display:block; margin:0 0 8px;
+  }
+  .note p{font-size:16px; line-height:1.58; color:var(--ink-soft); margin:0}
+
+  /* timeline graphic */
+  .tl{margin:26px 0 6px; border:1px solid var(--line); background:var(--paper-2); padding:24px 22px 18px}
+  .tl-scale{
+    display:flex; justify-content:space-between;
+    font-family:var(--sans); font-weight:520; font-size:10px; letter-spacing:.08em;
+    color:var(--ink-faint); margin:0 0 14px 132px; text-transform:uppercase;
+  }
+  .tl-row{display:flex; align-items:center; margin:0 0 10px}
+  .tl-name{
+    font-family:var(--sans); font-weight:520; font-size:12px;
+    color:var(--ink); width:132px; flex:0 0 132px; padding-right:14px; line-height:1.25;
+  }
+  .tl-track{position:relative; flex:1; height:14px; background:var(--paper-3)}
+  .tl-bar{position:absolute; top:0; bottom:0; background:var(--claret)}
+  .tl-bar.soft{background:var(--claret-soft); opacity:.55}
+  .tl-cap{
+    font-family:var(--sans); font-size:11px; color:var(--ink-faint);
+    margin:14px 0 0 132px; line-height:1.5;
+  }
+
+  /* closing */
+  .close{
+    border-top:1px solid var(--line); margin:56px 0 0; padding:36px 0 0;
+  }
+  .close h2{
+    font-family:var(--display); font-weight:420; font-size:clamp(24px,4vw,32px);
+    line-height:1.12; margin:0 0 16px; letter-spacing:-.01em;
+  }
+  .close p{font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{
+    display:inline-block; font-family:var(--sans); font-weight:520;
+    text-decoration:none; border:1px solid var(--ink); background:var(--ink);
+    color:var(--paper); padding:14px 28px; font-size:14px;
+    transition:background .2s,border-color .2s;
+  }
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+
+  .disclaimer{
+    font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6;
+    color:var(--ink-faint); border-top:1px solid var(--line-soft);
+    margin:44px 0 0; padding:20px 0 0; max-width:64ch;
+  }
+
+  @media (max-width:560px){
+    .tl-scale{margin-left:96px}
+    .tl-name{width:96px; flex-basis:96px}
+    .tl-cap{margin-left:96px}
+  }
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="practice-hospitality.html">&larr; Hospitality</a>
+</div>
+
+
+<div class="g-root">
+<article class="g-shell">
+
+  <p class="eyebrow">Hospitality &middot; Guide</p>
+  <h1 class="title">Opening a restaurant in New&nbsp;York</h1>
+  <p class="standfirst">Few cities reward a great restaurant the way New York does, and few make it as demanding to open one. Behind the concept and the kitchen lies a sequence of legal and regulatory steps that decide whether a venue opens on time, on budget, and on solid ground. This guide maps that path.</p>
+  <p class="meta">A practical legal roadmap for operators &middot; Approx. 12 minute read</p>
+
+  <nav class="contents" aria-label="Contents">
+    <h2>What this guide covers</h2>
+    <ol>
+      <li><a href="#s1">The business and how it is owned</a></li>
+      <li><a href="#s2">Location, lease, and the space</a></li>
+      <li><a href="#s3">The liquor license</a></li>
+      <li><a href="#s4">City permits and the Department of Health</a></li>
+      <li><a href="#s5">Outdoor dining</a></li>
+      <li><a href="#s6">Tax, employer, and insurance registrations</a></li>
+      <li><a href="#s7">Employees and the hospitality wage rules</a></li>
+      <li><a href="#s8">Protecting the name and brand</a></li>
+      <li><a href="#s9">Sequencing and timeline</a></li>
+    </ol>
+  </nav>
+
+  <section id="s1">
+    <span class="sec-num">01</span>
+    <h2 class="sec-h">The business and how it is owned</h2>
+    <p class="body">Before a lease is signed or a dollar is spent, the venture needs a legal form. Most restaurants are organized as limited liability companies, which separate the owners from the obligations of the business and offer flexible economics, though a corporation is sometimes the right choice depending on the investors and the plan. The entity is the party that signs the lease, holds the licenses, employs the staff, and shields the founders from personal liability, so getting it in place first matters.</p>
+    <p class="body">Where there is more than one owner, the most important document is the one too many restaurants skip. An <strong>operating agreement</strong>, or its equivalent, sets out who contributed what, how profits and losses are shared, who controls day-to-day decisions and who controls major ones, what happens when an owner wants out, and how disputes are resolved. These are the questions that turn friends into adversaries when they are left unanswered, and they are far cheaper to settle on paper at the start than in a courtroom later. If the venture raises money from outside investors, securities law enters the picture, and how the raise is structured and documented becomes a matter of compliance as well as economics.</p>
+    <div class="note">
+      <span class="lbl">Practice note</span>
+      <p>Paper the ownership before money or real estate is committed. The leverage to negotiate fair terms among partners is highest before anyone has signed a lease or written a check.</p>
+    </div>
+  </section>
+
+  <section id="s2">
+    <span class="sec-num">02</span>
+    <h2 class="sec-h">Location, lease, and the space</h2>
+    <p class="body">The lease is the single largest and longest commitment most restaurants make, and its terms govern the economics of the business for as long as the doors are open. Beyond rent and escalations, the terms that decide whether a deal is sound include the length of the term and any renewal options, the permitted use and any exclusive-use protection, the rules on assignment and subletting that determine whether the business can later be sold, the tenant improvement allowance and the condition in which the space is delivered, and the restoration obligations that can prove costly at the end. In New York, landlords commonly require a <em>good guy guaranty</em>, a limited personal guaranty that holds the principal responsible for rent only until the space is surrendered in good order, and its precise terms deserve close attention.</p>
+    <p class="body">Just as important as the lease is whether the space can lawfully become a restaurant at all. The certificate of occupancy and the zoning for the location determine whether food service and assembly are permitted, whether the build-out is feasible, and what the venue can ultimately do. Gas service, ventilation and exhaust, grease management, and accessibility under the Americans with Disabilities Act all bear on cost and timing, and a space that looks perfect can carry hidden obstacles that surface only after the lease is signed.</p>
+    <div class="note">
+      <span class="lbl">Practice note</span>
+      <p>Because licensing and build-out take months, structure the lease to absorb that time. A free-rent build-out period, and a contingency tied to obtaining the liquor license and required permits, protect against paying rent on a space that cannot yet open.</p>
+    </div>
+  </section>
+
+  <section id="s3">
+    <span class="sec-num">03</span>
+    <h2 class="sec-h">The liquor license</h2>
+    <p class="body">For most full-service concepts, alcohol is essential to the economics, and the license to serve it is issued by the New York State Liquor Authority. The right license depends on the concept, ranging from a full on-premises liquor license to more limited beer and wine licenses. The process is more involved, and slower, than first-time operators expect, and it is frequently the longest pole in the entire opening.</p>
+    <p class="body">In New York City, an applicant must notify the local <strong>community board</strong> at least thirty days before filing the application with the Authority. The board's licensing committee will typically review the application and may invite the applicant to present, and while its recommendation is advisory rather than binding, the Authority gives it real weight, and some boards in saturated neighborhoods scrutinize hours, noise, and density closely. The applicant must also post notice at the premises, and the Authority conducts its own review of the principals, the financing, and the proposed method of operation. Review commonly runs several months, often in the range of five to six, and many operators apply for a temporary permit that allows service while the full application is pending.</p>
+    <p class="body">Two location rules can decide a deal before it begins. The <strong>200-foot rule</strong> bars an on-premises liquor license where the premises is on the same street and within 200 feet of a building used exclusively as a school or place of worship. The <strong>500-foot rule</strong> applies where three or more on-premises licenses already operate within 500 feet, which in much of Manhattan and Brooklyn is nearly every block; it does not prohibit the license, but it requires the Authority to find that issuing it serves the public interest, usually after a hearing. Either rule can make a location unworkable, and both should be checked before a lease is signed.</p>
+    <div class="note">
+      <span class="lbl">Practice note</span>
+      <p>Screen the address for 200 and 500 foot exposure before committing, and begin the licensing process as early as the lease allows. The liquor license, more than any other step, sets the date the restaurant can open.</p>
+    </div>
+  </section>
+
+  <section id="s4">
+    <span class="sec-num">04</span>
+    <h2 class="sec-h">City permits and the Department of Health</h2>
+    <p class="body">A restaurant cannot operate without a food service establishment permit from the New York City Department of Health and Mental Hygiene, and at least one supervisor on staff must hold a Food Protection Certificate. The Department inspects the premises before issuing the permit and continues to inspect after opening, assigning the letter grade that every operator knows must read A in the window.</p>
+    <p class="body">The build-out itself is regulated by the Department of Buildings, which issues the construction and alteration permits and confirms that the certificate of occupancy reflects the intended use, and a place of assembly permit is required where the occupancy reaches the regulatory threshold. The Fire Department issues its own permits for cooking equipment and fire-suppression systems, and signage carries its own approvals. Because these agencies impose overlapping and sometimes conflicting requirements, most operators work through a licensed architect and an expediter who coordinate the construction with both the Buildings and Health requirements so that the work passes inspection the first time.</p>
+  </section>
+
+  <section id="s5">
+    <span class="sec-num">05</span>
+    <h2 class="sec-h">Outdoor dining</h2>
+    <p class="body">Outdoor seating is now governed by <strong>Dining Out NYC</strong>, the city's permanent outdoor dining program administered by the Department of Transportation, which replaced the emergency pandemic-era program. Sidewalk cafes may operate year-round, while roadway cafes are seasonal, permitted from the start of April through the end of November. Eligibility generally requires a ground-floor location accessible from the street and a valid Department of Health food service permit, and the application moves through several layers of review, including the Department of Transportation and the local community board, a process that itself can take months. Approved setups must conform to the program's design rules.</p>
+    <div class="note">
+      <span class="lbl">Practice note</span>
+      <p>Serving alcohol outdoors is not automatic. The outdoor area must be included in the licensed premises on file with the State Liquor Authority, so coordinate the outdoor dining permit and the liquor license together rather than in isolation.</p>
+    </div>
+  </section>
+
+  <section id="s6">
+    <span class="sec-num">06</span>
+    <h2 class="sec-h">Tax, employer, and insurance registrations</h2>
+    <p class="body">A set of registrations turns the entity into a functioning business. The restaurant needs a federal employer identification number and a New York State Certificate of Authority to collect and remit sales tax, and it must register as an employer for state and federal withholding and for unemployment insurance. New York requires employers to carry workers' compensation and disability and paid family leave coverage for their employees, and operating without it carries serious penalties.</p>
+    <p class="body">Insurance is both a legal requirement and a practical necessity. Beyond workers' compensation, a sound program includes general liability, property coverage, and, for any venue serving alcohol, liquor liability coverage, which responds to the dram shop exposure that comes with serving patrons. The cost of being underinsured in this industry is rarely apparent until something goes wrong, at which point it is too late to fix.</p>
+  </section>
+
+  <section id="s7">
+    <span class="sec-num">07</span>
+    <h2 class="sec-h">Employees and the hospitality wage rules</h2>
+    <p class="body">Restaurants are workforce businesses, and the rules that govern that workforce are unusually detailed and unusually litigated. New York's Hospitality Industry Wage Order layers specific requirements on top of the minimum wage, including the conditions under which a tip credit may be taken, the rules that govern how tips may be pooled and shared, spread-of-hours pay when an employee's workday runs longer than ten hours, call-in pay, and uniform maintenance pay. The Wage Theft Prevention Act requires written wage notices and compliant pay statements, federal law requires verification of work eligibility, and New York requires every employer to maintain a sexual harassment prevention policy and to provide annual training.</p>
+    <div class="note">
+      <span class="lbl">Practice note</span>
+      <p>Wage and hour error is the most common and most expensive source of restaurant litigation. Getting tip handling, classification, spread-of-hours pay, and wage notices right from the first paycheck prevents claims that can otherwise reach well into six figures.</p>
+    </div>
+  </section>
+
+  <section id="s8">
+    <span class="sec-num">08</span>
+    <h2 class="sec-h">Protecting the name and brand</h2>
+    <p class="body">A restaurant's name is an asset, and protecting it early avoids painful and costly conflicts later. Before the name is committed to signage, menus, and marketing, it should be cleared against existing marks and, where eligible, registered as a trademark, with the matching domain and social handles secured at the same time. Where a chef's name or persona is part of the concept, the arrangements that license that name to the business deserve particular care, so that the talent retains control of the asset and the business secures the rights it needs. This work connects naturally to our brand, licensing, and publicity rights practice.</p>
+  </section>
+
+  <section id="s9">
+    <span class="sec-num">09</span>
+    <h2 class="sec-h">Sequencing and timeline</h2>
+    <p class="body">The most valuable insight in this guide is about order. These steps do not run one after another; the operators who open on time run them in parallel, and they treat the liquor license as the constraint around which everything else is planned. Once a location is identified, it should be screened for use, occupancy, and the 200 and 500 foot rules before the lease is signed. The lease should be structured to absorb the build-out and licensing period. The liquor license application should begin as early as the lease permits, while construction and Health Department permitting proceed at the same time, and the tax, employer, and insurance registrations are completed before the first hire. A realistic path from signed lease to opening night often runs several months to a year, driven largely by construction and by the license to serve.</p>
+
+    <div class="tl" role="img" aria-label="Schematic showing the lease and build-out, liquor license, construction and health permitting, and hiring workstreams running in parallel over roughly nine to twelve months, with the liquor license as the longest track.">
+      <div class="tl-scale"><span>Month 0</span><span>6</span><span>9&ndash;12</span></div>
+      <div class="tl-row"><span class="tl-name">Lease &amp; build-out</span><span class="tl-track"><span class="tl-bar" style="left:0%;right:25%"></span></span></div>
+      <div class="tl-row"><span class="tl-name">Liquor license</span><span class="tl-track"><span class="tl-bar" style="left:8%;right:8%"></span></span></div>
+      <div class="tl-row"><span class="tl-name">DOB &amp; Health permits</span><span class="tl-track"><span class="tl-bar soft" style="left:10%;right:30%"></span></span></div>
+      <div class="tl-row"><span class="tl-name">Hiring &amp; training</span><span class="tl-track"><span class="tl-bar soft" style="left:62%;right:0%"></span></span></div>
+      <p class="tl-cap">Illustrative only. The tracks overlap by design, and the liquor license usually runs longest. Actual timing varies with the space, the neighborhood, and the concept.</p>
+    </div>
+  </section>
+
+  <div class="close">
+    <h2>How we help</h2>
+    <p>We guide operators through every step on this map, from the entity and the lease through the liquor license, the city permits, the employment framework, and the brand. Our aim is to remove obstacles rather than create them, so that you open on time and on solid ground. To discuss a space, a lease, or a license, speak with our hospitality practice.</p>
+    <a class="btn" href="#contact">Speak with our hospitality team</a>
+
+    <p class="disclaimer">
+      This guide is a general educational resource and does not constitute legal advice. It is not a
+      substitute for the advice of counsel, and reading it does not create an attorney-client
+      relationship. Laws, programs, and agency requirements change, and the rules summarized here are
+      current as of June 2026; confirm the requirements that apply to your circumstances with a
+      qualified attorney before acting.
+    </p>
+  </div>
+
+</article>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This material is provided as a general educational resource and does not constitute legal advice, and using it does not create an attorney-client relationship. &copy; 2026 Danziger, Danziger &amp; Muro, LLP &middot; 445 Park Avenue, New York.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

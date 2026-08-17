@@ -1,0 +1,165 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<title>Estate and Gift Tax in 2026, and Choosing a Giving Structure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,340;9..144,0,420;9..144,0,540;9..144,1,360&family=Newsreader:opsz,wght@6..72,380;6..72,440&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8; --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif; --serif:"Newsreader",Georgia,serif; --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  .a-root{background:var(--paper); color:var(--ink); font-family:var(--serif); -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,76px) clamp(16px,5vw,40px); display:flex; justify-content:center}
+  .a-shell{width:100%; max-width:680px}
+  .eyebrow{font-family:var(--sans); font-weight:620; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--claret); margin:0 0 26px; display:flex; align-items:center; gap:12px}
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+  h1.title{font-family:var(--display); font-weight:340; font-optical-sizing:auto; font-size:clamp(33px,6vw,54px);
+    line-height:1.02; letter-spacing:-.016em; margin:0 0 28px}
+  .deck{font-family:var(--display); font-weight:360; font-style:italic; font-size:clamp(19px,2.8vw,23px);
+    line-height:1.4; color:var(--ink-soft); max-width:55ch; margin:0 0 30px}
+  .meta{font-family:var(--sans); font-weight:520; font-size:11.5px; letter-spacing:.06em; color:var(--ink-faint);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:15px 0; margin:0 0 44px}
+  .a-root p.body{font-size:18px; line-height:1.66; color:var(--ink-soft); margin:0 0 20px; max-width:62ch}
+  .body strong{color:var(--ink); font-weight:440}
+  em{font-style:italic}
+  .lead-cap::first-letter{font-family:var(--display); font-weight:420; float:left; font-size:3.6em; line-height:.82; padding:6px 10px 0 0; color:var(--claret)}
+  h2.sec-h{font-family:var(--display); font-weight:420; font-size:clamp(24px,3.6vw,31px); line-height:1.12; letter-spacing:-.01em; margin:42px 0 16px; max-width:44ch}
+  .tbl-wrap{margin:24px 0 8px; overflow-x:auto; border:1px solid var(--line)}
+  table{border-collapse:collapse; width:100%; min-width:560px; background:var(--paper-2)}
+  thead th{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); text-align:left; padding:13px 16px; border-bottom:1px solid var(--line); vertical-align:bottom}
+  thead th:first-child{color:var(--claret)}
+  tbody td{font-family:var(--serif); font-size:14.5px; line-height:1.45; color:var(--ink-soft); padding:13px 16px; border-bottom:1px solid var(--line-soft); vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody td:first-child{font-family:var(--sans); font-weight:520; font-size:12px; color:var(--ink)}
+  .tbl-cap{font-family:var(--sans); font-size:11px; color:var(--ink-faint); margin:12px 2px 0; line-height:1.5; max-width:62ch}
+  .pull{border-left:2px solid var(--claret); background:var(--paper-2); padding:18px 22px; margin:26px 0; max-width:60ch}
+  .pull .lbl{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--claret); display:block; margin:0 0 8px}
+  .pull p{font-size:16px; line-height:1.58; color:var(--ink-soft); margin:0}
+  .close{border-top:1px solid var(--line); margin:54px 0 0; padding:36px 0 0}
+  .close h2{font-family:var(--display); font-weight:420; font-size:clamp(23px,4vw,30px); line-height:1.14; margin:0 0 16px; letter-spacing:-.01em}
+  .close p{font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); padding:14px 28px; font-size:14px; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:44px 0 0; padding:20px 0 0; max-width:64ch}
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="articles.html">&larr; Articles</a>
+</div>
+
+
+<div class="a-root">
+<article class="a-shell">
+  <p class="eyebrow">Insights &middot; Family Office and Private Wealth</p>
+  <h1 class="title">Estate and gift tax in 2026, and how families give</h1>
+  <p class="deck">The federal exemption is now permanently at a historic high. New York's far lower tax, and its cliff, still catch families off guard. And once the tax is handled, the question becomes how to give.</p>
+  <p class="meta">Family Office and Private Wealth &middot; 2026</p>
+
+  <p class="body lead-cap">For a family of substantial means, the transfer tax system is the quiet backdrop to nearly every planning decision, and for 2026 the picture has changed in a way worth understanding. The federal exemption, long expected to be cut roughly in half at the end of 2025, was instead made permanent at a historic high. That removes a deadline that had driven a great deal of urgent planning, and it shifts the focus to questions that were always there underneath: state estate tax, income tax basis, and the non-tax goals of governance and legacy. For New York families in particular, the federal good news does not tell the whole story, because New York imposes its own, much harsher tax with a trap built into it.</p>
+
+  <h2 class="sec-h">The federal system, in brief</h2>
+  <p class="body">The federal government taxes the transfer of wealth in three linked ways: an <strong>estate tax</strong> on what passes at death, a <strong>gift tax</strong> on lifetime gifts, and a <strong>generation-skipping transfer tax</strong> on transfers that skip a generation. These share a single lifetime exemption and a top rate of 40 percent. Layered on top is the <strong>annual exclusion</strong>, which lets a person give a set amount to any number of recipients each year without using any exemption, alongside unlimited direct payments of tuition and medical expenses, an unlimited marital deduction for transfers to a citizen spouse, and an unlimited charitable deduction. Portability allows a surviving spouse to use a deceased spouse's unused exemption, if the election is made.</p>
+  <p class="body">For 2026, the numbers are these. The unified exemption is <strong>$15 million per person</strong>, or $30 million for a married couple, made permanent by the One Big Beautiful Bill Act and indexed for inflation going forward. The annual exclusion is <strong>$19,000 per recipient</strong>. The practical effect is that the large majority of families now fall comfortably below the federal threshold, and the planning question is no longer how to beat a sunset but how to use a durable, generous exemption well, with more attention than before to preserving the income tax basis step-up at death and to goals that have nothing to do with tax.</p>
+
+  <h2 class="sec-h">New York's separate, and harsher, tax</h2>
+  <p class="body">New York imposes its own estate tax, entirely separate from the federal one and far less forgiving. For 2026 the New York exemption is <strong>$7,350,000 per person</strong>, less than half the federal figure, with a top rate of 16 percent. New York offers <em>no portability</em> between spouses, so a couple must plan deliberately to use both exemptions rather than relying on the survivor to inherit the first spouse's unused amount.</p>
+  <p class="body">Then there is the cliff, which is unlike anything in the federal system. Most taxes apply only to the amount above an exemption. New York instead phases the exemption out as the estate approaches 105 percent of it, and at that point the exemption vanishes <strong>entirely</strong>, so the whole estate is taxed from the first dollar. In 2026 the edge of the cliff is $7,717,500. The consequence is jarring: an estate of $7.35 million may owe no New York tax at all, while an estate only modestly larger, above the cliff, can owe tax on its entire value, a difference that can cost a family hundreds of thousands of dollars over a small change in size.</p>
+
+  <div class="pull">
+    <span class="lbl">The New York trap, and a lever</span>
+    <p>A family relying on the $15 million federal exemption can overlook New York entirely and walk straight off the cliff. Because New York has no gift tax, lifetime gifting can bring an estate under the threshold, but a three-year clawback pulls gifts made within three years of death back into the estate, so the gifting must be done well in advance. A charitable bequest sized to drop the estate just under the cliff is another common fix.</p>
+  </div>
+
+  <h2 class="sec-h">The levers, in short</h2>
+  <p class="body">The tools for managing transfer tax are familiar, and with a permanent high exemption they are deployed with a longer horizon and less urgency than during the sunset years. Lifetime <strong>gifting</strong>, using both the annual exclusion and the lifetime exemption, removes assets and their future appreciation from the estate. <strong>Trusts</strong> of various kinds, including grantor retained annuity trusts, dynasty and generation-skipping trusts, and spousal lifetime access trusts, move wealth efficiently while retaining structure and control. <strong>Valuation</strong> planning, <strong>charitable</strong> giving, and, for those willing, a change of <strong>domicile</strong> away from New York all have their place. With the federal exemption no longer the binding constraint for most families, state estate tax, basis planning, and governance often drive the plan.</p>
+
+  <h2 class="sec-h">How families give: foundation or donor-advised fund</h2>
+  <p class="body">For families who give at scale, two structures dominate, and choosing between them is one of the more consequential decisions a philanthropic family makes. Both deliver an income tax deduction and a vehicle for organized giving. They differ fundamentally on a single axis: control versus simplicity.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>&nbsp;</th><th>Private foundation</th><th>Donor-advised fund</th></tr></thead>
+      <tbody>
+        <tr><td>What it is</td><td>A separate legal entity the family controls</td><td>An account at a sponsoring public charity</td></tr>
+        <tr><td>Control</td><td>Full legal control of grants and investments</td><td>Advisory; the donor recommends, the sponsor approves</td></tr>
+        <tr><td>Setup and admin</td><td>Significant cost and ongoing compliance</td><td>Minimal; no separate entity</td></tr>
+        <tr><td>Deduction, cash gifts</td><td>Up to 30% of income</td><td>Up to 60% of income</td></tr>
+        <tr><td>Deduction, appreciated assets</td><td>Up to 20% of income</td><td>Up to 30% of income</td></tr>
+        <tr><td>Annual payout</td><td>Roughly 5% of assets required</td><td>None required</td></tr>
+        <tr><td>Excise tax</td><td>1.39% on net investment income</td><td>None</td></tr>
+        <tr><td>Privacy</td><td>Public; annual return is disclosed</td><td>Can be anonymous</td></tr>
+        <tr><td>Grant flexibility</td><td>Broad, including scholarships, within strict rules</td><td>Grants to public charities only</td></tr>
+        <tr><td>Compensate family</td><td>Permitted, within self-dealing limits</td><td>Not permitted</td></tr>
+      </tbody>
+    </table>
+    <p class="tbl-cap">Figures reflect current federal limits. The right choice, or the right combination, depends on the family's goals for control, cost, privacy, and legacy.</p>
+  </div>
+
+  <p class="body">The <strong>private foundation</strong> is the vehicle of control and legacy. The family owns and directs a separate entity, decides its grants and its investments, can give in ways a donor-advised fund cannot, including scholarships and grants beyond ordinary public charities, and can carry the family's name across generations. That control comes at a price: meaningful setup and administrative cost, a requirement to distribute roughly five percent of assets each year, a modest excise tax on investment income, a strict regime of rules against self-dealing and other prohibited acts, lower charitable deduction limits, and public disclosure of the foundation's activities. A foundation is for families who want to build an institution and will accept the obligations that come with one.</p>
+  <p class="body">The <strong>donor-advised fund</strong> is the vehicle of simplicity and efficiency. It is an account at a sponsoring charity that the donor funds, takes an immediate deduction for, and then recommends grants from over time. It is inexpensive and easy to establish, carries higher deduction limits, readily accepts appreciated assets, and can be operated anonymously, with no foundation-style payout requirement. The trade is control: the donor recommends rather than directs, grants are limited to public charities, and the family cannot be compensated or make the kinds of grants a foundation can. For many families, the donor-advised fund delivers most of what they want with a fraction of the burden.</p>
+  <p class="body">The two are not mutually exclusive, and sophisticated families often use both, a foundation for the control, the legacy, and the giving a foundation uniquely allows, and a donor-advised fund alongside it for flexibility, efficiency, and the occasional anonymous gift. The right structure, or the right pairing, follows from what the family is actually trying to accomplish.</p>
+
+  <div class="close">
+    <h2>How we help</h2>
+    <p>We advise families and their offices on the full architecture of wealth transfer, from the federal and New York estate tax exposure and the planning that manages it to the philanthropic structures through which a family gives. Our aim is a plan that is tax-aware, durable, and aligned with what the family values. To discuss your estate plan or a giving structure, speak with our family office and private wealth practice.</p>
+    <a class="btn" href="#contact">Speak with our private wealth team</a>
+    <p class="disclaimer">This article is a general educational resource and does not constitute legal or tax advice. It is not a substitute for the advice of counsel, and reading it does not create an attorney-client relationship. Exemption amounts, rates, and rules change, often annually, and the figures here are current as of June 2026; confirm the amounts and rules that apply to your situation with qualified advisors before acting.</p>
+  </div>
+</article>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This article is provided for general informational purposes only and does not constitute legal advice, and reading it does not create an attorney-client relationship. Prior results do not guarantee a similar outcome. &copy; 2026 Danziger, Danziger &amp; Muro, LLP.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <title>Subordination, Non-Disturbance, and Estoppel: What Every Commercial Tenant Should Know</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,340;9..144,0,420;9..144,0,540;9..144,1,360&family=Newsreader:opsz,ital,wght@6..72,0,380;6..72,0,440;6..72,1,400&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8;
+    --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif;
+    --serif:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+
+  .a-root{background:var(--paper); color:var(--ink); font-family:var(--serif); -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,76px) clamp(16px,5vw,40px); display:flex; justify-content:center}
+  .a-shell{width:100%; max-width:680px}
+
+  .eyebrow{font-family:var(--sans); font-weight:620; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--claret); margin:0 0 26px; display:flex; align-items:center; gap:12px}
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  h1.title{font-family:var(--display); font-weight:340; font-optical-sizing:auto; font-size:clamp(33px,6vw,54px);
+    line-height:1.02; letter-spacing:-.016em; margin:0 0 28px}
+  .deck{font-family:var(--display); font-weight:360; font-style:italic; font-size:clamp(19px,2.8vw,23px);
+    line-height:1.4; color:var(--ink-soft); max-width:55ch; margin:0 0 30px}
+  .meta{font-family:var(--sans); font-weight:520; font-size:11.5px; letter-spacing:.06em; color:var(--ink-faint);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:15px 0; margin:0 0 44px}
+
+  .a-root p.body{font-size:18px; line-height:1.66; color:var(--ink-soft); margin:0 0 20px; max-width:62ch}
+  .body strong{color:var(--ink); font-weight:440}
+  em{font-style:italic}
+  .lead-cap::first-letter{font-family:var(--display); font-weight:420; float:left; font-size:3.6em; line-height:.82;
+    padding:6px 10px 0 0; color:var(--claret)}
+
+  h2.sec-h{font-family:var(--display); font-weight:420; font-size:clamp(24px,3.6vw,31px); line-height:1.12;
+    letter-spacing:-.01em; margin:42px 0 16px; max-width:42ch}
+
+  /* trio panel */
+  .trio{border:1px solid var(--line); background:var(--paper-2); padding:8px 26px; margin:26px 0}
+  .trio-item{padding:20px 0; border-bottom:1px solid var(--line-soft)}
+  .trio-item:last-child{border-bottom:none}
+  .trio-term{font-family:var(--display); font-weight:420; font-size:19px; color:var(--ink); margin:0 0 6px; letter-spacing:-.005em}
+  .trio-term span{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--claret); display:block; margin:0 0 4px}
+  .trio-item p{font-size:15.5px; line-height:1.55; color:var(--ink-soft); margin:0; max-width:58ch}
+
+  .pull{border-left:2px solid var(--claret); background:var(--paper-2); padding:18px 22px; margin:26px 0; max-width:60ch}
+  .pull .lbl{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase;
+    color:var(--claret); display:block; margin:0 0 8px}
+  .pull p{font-size:16px; line-height:1.58; color:var(--ink-soft); margin:0}
+
+  .close{border-top:1px solid var(--line); margin:54px 0 0; padding:36px 0 0}
+  .close h2{font-family:var(--display); font-weight:420; font-size:clamp(23px,4vw,30px); line-height:1.14; margin:0 0 16px; letter-spacing:-.01em}
+  .close p{font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); padding:14px 28px; font-size:14px; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:44px 0 0; padding:20px 0 0; max-width:64ch}
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="articles.html">&larr; Articles</a>
+</div>
+
+
+<div class="a-root">
+<article class="a-shell">
+
+  <p class="eyebrow">Insights &middot; Real Estate</p>
+  <h1 class="title">Subordination, non-disturbance, and estoppel</h1>
+  <p class="deck">Two documents that read like boilerplate decide whether a tenant keeps its space after a foreclosure, and what it is forever bound to have certified about its own lease.</p>
+  <p class="meta">Commercial Leasing &middot; 2019</p>
+
+  <p class="body lead-cap">In every commercial lease negotiation there comes a point, usually near the end, when two documents with forbidding names appear and are treated as afterthoughts: the subordination, non-disturbance, and attornment agreement, and the estoppel certificate. They look like formalities. They are not. The first determines whether a tenant who has poured money into a space and built a business there gets to stay if the landlord's lender forecloses. The second binds the tenant to a snapshot of its own lease that a buyer or lender will rely on and that the tenant may not later contradict. Both are quietly consequential, and both are too often signed without a second look.</p>
+
+  <h2 class="sec-h">The relationship beneath the lease</h2>
+  <p class="body">To understand either document, start with a fact most tenants never think about: the building they lease is almost certainly mortgaged. There are three parties with an interest in the property, not two. There is the landlord, there is the tenant, and there is the landlord's lender, whose mortgage encumbers the same building the lease occupies. So long as everyone performs, the lender is invisible. But if the landlord defaults on its mortgage and the lender forecloses, the question of whose interest comes first, the lease or the mortgage, suddenly governs everything, and that is the question these documents answer in advance.</p>
+
+  <h2 class="sec-h">The three promises in an SNDA</h2>
+  <p class="body">The agreement bundles three distinct promises, and seeing them separately is the key to the whole instrument. Each is a leg the others depend on.</p>
+
+  <div class="trio">
+    <div class="trio-item">
+      <p class="trio-term"><span>Subordination</span>The tenant agrees its lease is junior to the mortgage</p>
+      <p>The lender wants its mortgage to have priority over the lease. Subordination gives it that. But subordination carries a sting: if a junior lease is subordinate to the mortgage, a foreclosure can extinguish the lease entirely, which means the tenant could lose its space and its lease terms. Subordination alone is a trap for a tenant.</p>
+    </div>
+    <div class="trio-item">
+      <p class="trio-term"><span>Non-disturbance</span>The lender promises not to disturb a paying tenant</p>
+      <p>This is the tenant's protection and the reason subordination becomes acceptable. The lender agrees that so long as the tenant is not in default, the tenant's lease and its possession will survive a foreclosure on the lease's own terms. For a tenant that has invested in build-out and built a business at the location, this commitment is the entire point of the exercise.</p>
+    </div>
+    <div class="trio-item">
+      <p class="trio-term"><span>Attornment</span>The tenant agrees to recognize the new owner</p>
+      <p>In return, the tenant agrees to attorn to whoever takes the property through foreclosure, meaning it will accept that party as its new landlord and pay rent accordingly. The lease continues, with a new landlord on the other side of it.</p>
+    </div>
+  </div>
+
+  <p class="body">Put together, the bargain is balanced: the tenant subordinates its lease, the lender agrees not to disturb the tenant, and the tenant agrees to recognize the lender or successor as landlord. Remove the middle promise and the balance collapses, which is why a tenant should never accept a bare subordination clause without the non-disturbance agreement that makes it safe.</p>
+
+  <h2 class="sec-h">What a tenant should negotiate</h2>
+  <p class="body">The protection an SNDA appears to offer can be hollowed out by the carve-outs lenders routinely insert, and reading those carve-outs is where the real work lies. Lenders commonly provide that a successor landlord will not be bound by prepaid rent beyond a month, will not be liable for the prior landlord's defaults, will not be bound by lease amendments made without the lender's consent, and will not be obligated to complete the landlord's construction work or to fund an unpaid tenant improvement allowance. Each of these can gut a protection the tenant believed it had. A tenant that is owed a build-out allowance, or that has prepaid rent, or that relies on an offset right, needs those protections to survive a foreclosure, and that means negotiating the carve-outs rather than accepting the lender's form.</p>
+  <p class="body">Timing matters as much as content. The best moment to secure non-disturbance is at lease signing, when the tenant has leverage and the landlord wants the deal. Where the building's current lender will not deliver an SNDA at signing, the tenant should at least obtain the landlord's covenant to use efforts to deliver one, and a commitment that any future mortgage will be conditioned on the lender providing non-disturbance. For an anchor tenant or one making a significant investment in the space, this is not a detail. It is a condition of doing the deal at all.</p>
+
+  <h2 class="sec-h">The estoppel certificate</h2>
+  <p class="body">The estoppel certificate serves a different purpose and arises at a different moment. It is a signed statement, usually by the tenant, confirming the basic facts of the lease: that the lease is in effect and has not been modified except as stated, the rent and the term, the amount of any security deposit or prepaid rent, and, critically, that neither party is in default and that the tenant has no outstanding claims or offsets. It is requested when the landlord is selling or refinancing the building, because the buyer or the new lender needs to verify the lease before committing, and they will rely on the tenant's word for it.</p>
+  <p class="body">The word estoppel is the point. Once the tenant signs, it is <em>estopped</em>, meaning prevented, from later asserting facts that contradict what it certified. That makes the certificate far more than a formality. If a tenant signs an estoppel stating there are no landlord defaults at a time when the landlord in fact owes it a tenant improvement allowance or has breached the lease, the tenant may have just waived that claim against the new owner, who paid for the building in reliance on the certificate.</p>
+
+  <div class="pull">
+    <span class="lbl">Practice note</span>
+    <p>Treat every estoppel request as a moment to confirm and preserve your rights, not as a form to rubber-stamp. Read the lease, verify each statement, and expressly note any outstanding landlord obligations, defaults, or claims. What you fail to disclose, you may lose.</p>
+  </div>
+
+  <p class="body">There are terms to negotiate on the front end as well. The lease will usually obligate the tenant to deliver an estoppel within a set number of days of a request, and a tenant should negotiate a reasonable period and confine the certificate to factual confirmations rather than allowing it to become a vehicle for new covenants or lease amendments. Landlords, for their part, depend on prompt and accurate estoppels to close financings and sales, so a tenant's delay or refusal can derail a transaction, which is why the obligation to deliver one is itself a negotiated lease term.</p>
+
+  <h2 class="sec-h">How they fit together</h2>
+  <p class="body">The two instruments are mirror images in time. The SNDA looks forward, protecting the tenant's occupancy against a future foreclosure by the landlord's lender. The estoppel certificate looks at a single moment, confirming the state of the lease for a buyer or lender who is relying on it now. Both are driven by the landlord's financing and transactions rather than by the tenant's own affairs, both are presented as routine, and both can cost a tenant dearly if signed without attention. The tenant who understands them negotiates the SNDA at lease signing and approaches every estoppel as a careful accounting of its own rights. The one who does not learns their importance at the worst possible time, when the building has changed hands and the protections were never there.</p>
+
+  <div class="close">
+    <h2>How we help</h2>
+    <p>We negotiate and review the subordination, non-disturbance, and estoppel provisions that decide a tenant's security and a landlord's ability to finance and sell, on both sides of the lease. Our aim is protection that is real rather than nominal, with the carve-outs negotiated and the certifications accurate. To discuss a lease, an SNDA, or an estoppel request, speak with our real estate practice.</p>
+    <a class="btn" href="#contact">Speak with our real estate team</a>
+
+    <p class="disclaimer">
+      This article is a general educational resource and does not constitute legal advice. It is not a
+      substitute for the advice of counsel, and reading it does not create an attorney-client
+      relationship. Lease provisions interact in ways no general discussion can capture; consult a
+      qualified attorney before relying on or acting upon anything described here.
+    </p>
+  </div>
+
+</article>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This article is provided for general informational purposes only and does not constitute legal advice, and reading it does not create an attorney-client relationship. Prior results do not guarantee a similar outcome. &copy; 2026 Danziger, Danziger &amp; Muro, LLP.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

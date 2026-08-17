@@ -1,0 +1,371 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <title>Commercial Lease Negotiation Checklist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,420;9..144,540&family=Newsreader:opsz,wght@6..72,380;6..72,440&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8;
+    --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif;
+    --serif:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+
+  .l-root{
+    background:var(--paper); color:var(--ink); font-family:var(--serif);
+    -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,64px) clamp(16px,5vw,40px);
+    display:flex; justify-content:center;
+  }
+  .l-shell{width:100%; max-width:720px}
+
+  .eyebrow{
+    font-family:var(--sans); font-weight:620; font-size:11.5px;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--claret);
+    margin:0 0 22px; display:flex; align-items:center; gap:12px;
+  }
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  h1.title{
+    font-family:var(--display); font-weight:340; font-optical-sizing:auto;
+    font-size:clamp(33px,6vw,54px); line-height:1.02; letter-spacing:-.014em; margin:0 0 22px;
+  }
+  .standfirst{
+    font-size:clamp(16px,2.3vw,19px); line-height:1.55; color:var(--ink-soft);
+    max-width:56ch; margin:0 0 32px;
+  }
+
+  /* perspective toggle (signature) */
+  .persp-label{
+    font-family:var(--sans); font-weight:520; font-size:10.5px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--ink-faint); margin:0 0 10px;
+  }
+  .seg{
+    display:inline-flex; border:1px solid var(--ink); margin:0 0 8px; width:100%; max-width:420px;
+  }
+  .seg button{
+    flex:1; font-family:var(--sans); font-weight:520; font-size:14px;
+    background:var(--paper); color:var(--ink); border:none; cursor:pointer;
+    padding:13px 16px; transition:background .2s,color .2s;
+  }
+  .seg button + button{border-left:1px solid var(--ink)}
+  .seg button[aria-pressed="true"]{background:var(--ink); color:var(--paper)}
+  .seg button:focus-visible{outline:2px solid var(--claret); outline-offset:2px}
+
+  /* progress */
+  .prog-wrap{margin:24px 0 40px}
+  .prog-top{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:var(--sans); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-faint); margin:0 0 9px;
+  }
+  .prog-top b{color:var(--claret); font-weight:620}
+  .prog{height:6px; background:var(--paper-2); border:1px solid var(--line); position:relative}
+  .prog-fill{position:absolute; top:-1px; bottom:-1px; left:-1px; width:0%; background:var(--claret);
+    transition:width .4s cubic-bezier(.22,.61,.36,1)}
+
+  /* categories */
+  .cat{margin:0 0 14px}
+  .cat-h{
+    font-family:var(--sans); font-weight:620; font-size:11px; letter-spacing:.15em;
+    text-transform:uppercase; color:var(--ink-faint);
+    border-bottom:1px solid var(--line); padding:0 0 9px; margin:34px 0 4px;
+  }
+  .cat:first-of-type .cat-h{margin-top:0}
+
+  .item{
+    display:flex; gap:15px; align-items:flex-start;
+    padding:18px 0; border-bottom:1px solid var(--line-soft);
+  }
+  .chk{
+    appearance:none; -webkit-appearance:none; margin:3px 0 0; flex:0 0 auto;
+    width:19px; height:19px; border:1.5px solid var(--ink-faint); background:var(--paper);
+    cursor:pointer; border-radius:0; position:relative; transition:border-color .15s,background .15s;
+  }
+  .chk:hover{border-color:var(--claret)}
+  .chk:checked{background:var(--claret); border-color:var(--claret)}
+  .chk:checked::after{
+    content:""; position:absolute; left:5px; top:1px; width:5px; height:10px;
+    border:solid var(--paper); border-width:0 1.5px 1.5px 0; transform:rotate(42deg);
+  }
+  .chk:focus-visible{outline:2px solid var(--claret); outline-offset:2px}
+
+  .item-body{flex:1; min-width:0}
+  .term{font-family:var(--display); font-weight:420; font-size:19px; line-height:1.2; margin:0 0 5px; letter-spacing:-.005em}
+  .item.done .term{color:var(--ink-faint)}
+  .issue{font-size:15px; line-height:1.5; color:var(--ink-faint); margin:0 0 11px; max-width:60ch}
+  .aim{
+    border-left:2px solid var(--claret); padding:3px 0 3px 14px; max-width:60ch;
+  }
+  .aim-lbl{
+    font-family:var(--sans); font-weight:620; font-size:10px; letter-spacing:.13em;
+    text-transform:uppercase; color:var(--claret); display:block; margin:0 0 5px;
+  }
+  .aim-text{font-size:15.5px; line-height:1.55; color:var(--ink-soft)}
+
+  .foot{display:flex; align-items:center; gap:20px; margin:34px 0 0}
+  .ghost{
+    font-family:var(--sans); font-weight:520; font-size:13px; background:none; border:none;
+    color:var(--ink-faint); cursor:pointer; padding:8px 2px; border-bottom:1px solid transparent;
+    transition:color .2s,border-color .2s;
+  }
+  .ghost:hover{color:var(--claret); border-color:var(--claret)}
+  .ghost:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+
+  .disclaimer{
+    font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:40px 0 0; padding:20px 0 0; max-width:64ch;
+  }
+  @media (prefers-reduced-motion:reduce){ .prog-fill{transition:none} }
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="practice-real-estate.html">&larr; Real Estate</a>
+</div>
+
+
+<div class="l-root">
+<div class="l-shell">
+
+  <p class="eyebrow">Real Estate &middot; Lease Negotiation Checklist</p>
+  <h1 class="title">The commercial lease, from both sides of the table</h1>
+  <p class="standfirst">Every term in a commercial lease is a negotiated allocation of risk, and each one reads differently depending on whom you represent. Choose your side, and this checklist shows what to push for on each point. Use the boxes to track what you have settled.</p>
+
+  <p class="persp-label">I am negotiating as the</p>
+  <div class="seg" role="group" aria-label="Choose perspective">
+    <button id="bTenant" aria-pressed="true">Tenant</button>
+    <button id="bLandlord" aria-pressed="false">Landlord</button>
+  </div>
+
+  <div class="prog-wrap">
+    <div class="prog-top"><span>Points addressed</span><span><b id="pCount">0</b> of <span id="pTotal">0</span></span></div>
+    <div class="prog"><div class="prog-fill" id="pFill"></div></div>
+  </div>
+
+  <div id="list"></div>
+
+  <div class="foot">
+    <button class="ghost" id="reset">Clear all checkmarks</button>
+  </div>
+
+  <p class="disclaimer">
+    This checklist is a general educational resource and does not constitute legal advice. It is not a
+    substitute for the advice of counsel, and using it does not create an attorney-client relationship.
+    Lease terms interact in ways no checklist can capture; consult a qualified attorney before relying on
+    or acting upon any point here.
+  </p>
+
+</div>
+</div>
+
+<script>
+(function(){
+  var DATA = [
+    { cat:"Economics", items:[
+      { term:"Base rent and escalations", issue:"How much rent is paid, and how it grows over the term.",
+        tenant:"Push for modest, fixed annual escalations rather than open market resets, and model the full cost across the term and every renewal.",
+        landlord:"Tie escalations to a set percentage or index to protect against inflation, and resist long flat periods that erode value." },
+      { term:"Free rent and build-out abatement", issue:"Rent-free time to construct and open before payments begin.",
+        tenant:"Secure enough free rent to complete build-out and open, since paying rent on a space you cannot yet operate is pure loss.",
+        landlord:"Limit abatement to a defined build-out window, with the right to recapture it if the tenant defaults early." },
+      { term:"Additional rent: taxes, operating expenses, CAM", issue:"The pass-through costs charged on top of base rent.",
+        tenant:"Negotiate a base year, caps on controllable expenses, clear exclusions, and audit rights so additional rent is not an open checkbook.",
+        landlord:"Keep pass-throughs broad and current, with limited caps, so rising tax and operating costs are borne by the tenant." },
+      { term:"Security deposit", issue:"Cash or a letter of credit securing the tenant's obligations.",
+        tenant:"Minimize the deposit, prefer a letter of credit, and seek a burn-down that reduces it over time with a clean payment record.",
+        landlord:"Hold a deposit sized to the build-out and the risk, with the right to draw on default and to require replenishment." },
+      { term:"Percentage rent (retail)", issue:"Additional rent calculated as a share of the tenant's sales.",
+        tenant:"Resist percentage rent, or set a high breakpoint with a tight definition of gross sales and meaningful exclusions.",
+        landlord:"Capture upside above a natural breakpoint, with a broad sales definition and full reporting and audit rights." }
+    ]},
+    { cat:"Term and flexibility", items:[
+      { term:"Term and renewal options", issue:"How long the lease runs and the right to extend it.",
+        tenant:"Secure renewal options at defined or capped rents so a thriving business can stay without a punitive reset.",
+        landlord:"Grant renewals at fair market rent, conditioned on the tenant not being in default at exercise." },
+      { term:"Early termination rights", issue:"The ability to exit the lease before the term ends.",
+        tenant:"Negotiate a break right, for instance tied to co-tenancy or performance, to limit downside if the location disappoints.",
+        landlord:"Resist break rights, or price them with a termination fee that recovers unamortized costs and concessions." },
+      { term:"Holdover", issue:"The consequences of remaining in the space past the term.",
+        tenant:"Cap holdover rent at a modest premium and require notice before penalties apply.",
+        landlord:"Set holdover rent at a substantial multiple to deter overstaying and protect the next tenancy." }
+    ]},
+    { cat:"Use and space", items:[
+      { term:"Permitted use", issue:"What the tenant is allowed to do in the premises.",
+        tenant:"Draft the use clause broadly enough to let the concept evolve and the space to be sublet or assigned.",
+        landlord:"Define use narrowly to control tenant mix and protect the rights of other tenants." },
+      { term:"Exclusive use and use restrictions", issue:"Protection from competing uses, and the limits the landlord imposes.",
+        tenant:"Obtain an exclusive so the landlord cannot lease nearby space to a direct competitor.",
+        landlord:"Limit any exclusive in scope and duration to preserve flexibility to lease the rest of the property." },
+      { term:"Delivery condition and landlord's work", issue:"The state of the space at handover and what the landlord builds.",
+        tenant:"Specify the delivery condition and landlord's work in detail, with remedies if delivery is late or non-compliant.",
+        landlord:"Deliver as-is where possible, and define any landlord's work narrowly with no open-ended obligations." },
+      { term:"Tenant improvement allowance", issue:"The landlord's contribution toward build-out.",
+        tenant:"Maximize the allowance and set clear, prompt conditions for payment, avoiding offsets that let it be withheld.",
+        landlord:"Disburse only against completed, lien-free work and only while the tenant is not in default." },
+      { term:"Certificate of occupancy and legal use", issue:"Whether the space can lawfully be used as intended.",
+        tenant:"Confirm the certificate of occupancy and zoning permit the intended use before signing, and make the lease contingent on it.",
+        landlord:"Represent the legal use accurately and place responsibility for use-specific permits on the tenant." }
+    ]},
+    { cat:"Transfer and control", items:[
+      { term:"Assignment and subletting", issue:"The right to transfer the lease or sublet the space.",
+        tenant:"Preserve flexibility to assign or sublet, especially on a sale of the business, with consent not to be unreasonably withheld.",
+        landlord:"Retain consent rights, a share of any transfer profit, and a recapture right, with the original tenant remaining liable." },
+      { term:"Change of control", issue:"Whether a change in the tenant's ownership counts as an assignment.",
+        tenant:"Carve out transfers among existing owners, financings, and equity sales from the assignment restriction.",
+        landlord:"Treat a change of control as an assignment requiring consent, to keep control over who occupies." },
+      { term:"Good guy guaranty", issue:"Personal backing for the tenant's obligations.",
+        tenant:"Limit any guaranty to a good guy guaranty that ends on surrender in good condition with notice, capping personal exposure.",
+        landlord:"Obtain a guaranty broad enough to ensure rent is paid and the space returned, with clear surrender conditions." }
+    ]},
+    { cat:"Risk and operations", items:[
+      { term:"Repair and maintenance", issue:"Who is responsible for maintaining what.",
+        tenant:"Limit responsibility to the interior and the tenant's own systems, with structure, roof, and base building on the landlord.",
+        landlord:"Place broad maintenance and repair duties on the tenant, retaining only core structural items." },
+      { term:"Insurance and indemnity", issue:"Required coverage and who bears liability for what.",
+        tenant:"Match insurance to the actual risk, include mutual waivers of subrogation, and resist one-sided indemnities.",
+        landlord:"Require robust coverage naming the landlord as additional insured, with a broad tenant indemnity." },
+      { term:"Casualty and condemnation", issue:"What happens if the premises is damaged or taken.",
+        tenant:"Secure rent abatement during repair and a termination right if the space cannot be restored within a reasonable time.",
+        landlord:"Control the decision to rebuild, retain the condemnation award, and limit abatement." },
+      { term:"Default and cure periods", issue:"What triggers a default and how long there is to fix it.",
+        tenant:"Negotiate meaningful notice and cure periods for both monetary and non-monetary defaults before remedies apply.",
+        landlord:"Keep cure periods tight, with prompt remedies for non-payment to protect cash flow." },
+      { term:"Surrender and restoration", issue:"The condition in which the space must be returned.",
+        tenant:"Limit restoration and removal obligations, ideally identifying at signing exactly what must be removed at the end.",
+        landlord:"Preserve the right to require removal of specialized installations and return to a leasable condition." },
+      { term:"SNDA: subordination and non-disturbance", issue:"The relationship between the lease and the landlord's lender.",
+        tenant:"Obtain a non-disturbance agreement so the lease survives a foreclosure and the tenancy is protected.",
+        landlord:"Provide the subordination the lender requires, while facilitating a reasonable SNDA to close the deal." },
+      { term:"Estoppel certificates", issue:"Tenant statements confirming lease facts for lenders and buyers.",
+        tenant:"Agree to deliver estoppels within a reasonable time, limited to confirming factual matters.",
+        landlord:"Require prompt estoppels to support financing and any sale of the property." }
+    ]}
+  ];
+
+  var perspective = "tenant";
+  var list = document.getElementById('list');
+  var total = 0;
+  DATA.forEach(function(c){ total += c.items.length; });
+  document.getElementById('pTotal').textContent = total;
+
+  // build DOM once
+  DATA.forEach(function(c, ci){
+    var cat = document.createElement('div'); cat.className='cat';
+    var h = document.createElement('div'); h.className='cat-h'; h.textContent=c.cat; cat.appendChild(h);
+    c.items.forEach(function(it, ii){
+      var id = 'i'+ci+'_'+ii;
+      var item = document.createElement('div'); item.className='item';
+      var cb = document.createElement('input');
+      cb.type='checkbox'; cb.className='chk'; cb.id=id;
+      cb.setAttribute('aria-label','Mark "'+it.term+'" as addressed');
+      var body = document.createElement('div'); body.className='item-body';
+      var term = document.createElement('label'); term.className='term'; term.setAttribute('for',id); term.textContent=it.term;
+      var issue = document.createElement('p'); issue.className='issue'; issue.textContent=it.issue;
+      var aim = document.createElement('div'); aim.className='aim';
+      var lbl = document.createElement('span'); lbl.className='aim-lbl';
+      var txt = document.createElement('span'); txt.className='aim-text';
+      txt.setAttribute('data-tenant', it.tenant);
+      txt.setAttribute('data-landlord', it.landlord);
+      aim.appendChild(lbl); aim.appendChild(txt);
+      body.appendChild(term); body.appendChild(issue); body.appendChild(aim);
+      item.appendChild(cb); item.appendChild(body);
+      cat.appendChild(item);
+
+      cb.addEventListener('change', function(){
+        item.classList.toggle('done', cb.checked);
+        updateProgress();
+      });
+    });
+    list.appendChild(cat);
+  });
+
+  function applyPerspective(){
+    var lblText = perspective==='tenant' ? 'Your aim as the tenant' : 'Your aim as the landlord';
+    Array.prototype.forEach.call(document.querySelectorAll('.aim-text'), function(t){
+      t.textContent = t.getAttribute('data-'+perspective);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.aim-lbl'), function(l){
+      l.textContent = lblText;
+    });
+  }
+
+  function updateProgress(){
+    var done = document.querySelectorAll('.chk:checked').length;
+    document.getElementById('pCount').textContent = done;
+    document.getElementById('pFill').style.width = Math.round(done/total*100)+'%';
+  }
+
+  var bT = document.getElementById('bTenant'), bL = document.getElementById('bLandlord');
+  function setPersp(p){
+    perspective = p;
+    bT.setAttribute('aria-pressed', p==='tenant');
+    bL.setAttribute('aria-pressed', p==='landlord');
+    applyPerspective();
+  }
+  bT.addEventListener('click', function(){ setPersp('tenant'); });
+  bL.addEventListener('click', function(){ setPersp('landlord'); });
+
+  document.getElementById('reset').addEventListener('click', function(){
+    Array.prototype.forEach.call(document.querySelectorAll('.chk'), function(cb){ cb.checked=false; });
+    Array.prototype.forEach.call(document.querySelectorAll('.item'), function(it){ it.classList.remove('done'); });
+    updateProgress();
+  });
+
+  applyPerspective();
+  updateProgress();
+})();
+</script>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This material is provided as a general educational resource and does not constitute legal advice, and using it does not create an attorney-client relationship. &copy; 2026 Danziger, Danziger &amp; Muro, LLP &middot; 445 Park Avenue, New York.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

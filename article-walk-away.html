@@ -1,0 +1,169 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<title>When to Walk Away: Reading an Unsolicited Approach and a Lowball Offer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,340;9..144,0,420;9..144,0,540;9..144,1,360&family=Newsreader:opsz,wght@6..72,380;6..72,440&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8; --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif; --serif:"Newsreader",Georgia,serif; --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  .a-root{background:var(--paper); color:var(--ink); font-family:var(--serif); -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,76px) clamp(16px,5vw,40px); display:flex; justify-content:center}
+  .a-shell{width:100%; max-width:680px}
+  .eyebrow{font-family:var(--sans); font-weight:620; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--claret); margin:0 0 26px; display:flex; align-items:center; gap:12px}
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+  h1.title{font-family:var(--display); font-weight:340; font-optical-sizing:auto; font-size:clamp(34px,6.4vw,56px);
+    line-height:1.01; letter-spacing:-.016em; margin:0 0 28px}
+  .deck{font-family:var(--display); font-weight:360; font-style:italic; font-size:clamp(19px,2.8vw,23px);
+    line-height:1.4; color:var(--ink-soft); max-width:55ch; margin:0 0 30px}
+  .meta{font-family:var(--sans); font-weight:520; font-size:11.5px; letter-spacing:.06em; color:var(--ink-faint);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:15px 0; margin:0 0 44px}
+  .a-root p.body{font-size:18px; line-height:1.66; color:var(--ink-soft); margin:0 0 20px; max-width:62ch}
+  .body strong{color:var(--ink); font-weight:440}
+  em{font-style:italic}
+  .lead-cap::first-letter{font-family:var(--display); font-weight:420; float:left; font-size:3.6em; line-height:.82; padding:6px 10px 0 0; color:var(--claret)}
+  h2.sec-h{font-family:var(--display); font-weight:420; font-size:clamp(24px,3.6vw,31px); line-height:1.12; letter-spacing:-.01em; margin:42px 0 16px; max-width:46ch}
+  .pull{border-left:2px solid var(--claret); background:var(--paper-2); padding:18px 22px; margin:26px 0; max-width:60ch}
+  .pull .lbl{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--claret); display:block; margin:0 0 8px}
+  .pull p{font-size:16px; line-height:1.58; color:var(--ink-soft); margin:0}
+  .ref{border:1px solid var(--line); background:var(--paper-2); padding:8px 26px; margin:30px 0}
+  .ref-h{font-family:var(--sans); font-weight:620; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); padding:18px 0 0}
+  .ref-item{padding:16px 0; border-bottom:1px solid var(--line-soft); display:flex; gap:15px; align-items:flex-start}
+  .ref-item:last-child{border-bottom:none}
+  .ref-item .n{font-family:var(--sans); font-weight:620; font-size:11px; color:var(--claret); min-width:20px; margin-top:3px}
+  .ref-item p{margin:0; font-size:15.5px; line-height:1.5; color:var(--ink-soft)}
+  .ref-item b{color:var(--ink); font-weight:440}
+  .close{border-top:1px solid var(--line); margin:54px 0 0; padding:36px 0 0}
+  .close h2{font-family:var(--display); font-weight:420; font-size:clamp(23px,4vw,30px); line-height:1.14; margin:0 0 16px; letter-spacing:-.01em}
+  .close p{font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); padding:14px 28px; font-size:14px; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:44px 0 0; padding:20px 0 0; max-width:64ch}
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="articles.html">&larr; Articles</a>
+</div>
+
+
+<div class="a-root">
+<article class="a-shell">
+  <p class="eyebrow">Insights &middot; Private M&amp;A</p>
+  <h1 class="title">When to walk away</h1>
+  <p class="deck">The most valuable discipline in selling a company is the willingness to leave the table. An unsolicited buyer arriving with a lowball offer is counting on you not having it.</p>
+  <p class="meta">Private M&amp;A &middot; 2023</p>
+
+  <p class="body lead-cap">A call comes in. A buyer you did not solicit admires the business, would love to talk, and floats a number. It is flattering, and it is meant to be. What it usually is not, at least not yet, is a good deal. The hardest and most valuable skill in selling a company is not the ability to close; it is the ability to walk, credibly and without flinching, because the party least afraid to end a negotiation controls it. A seller who cannot leave the table cannot truly negotiate at it. This is a guide to recognizing when to walk, and to being structurally able to do so when the moment comes.</p>
+
+  <h2 class="sec-h">The unsolicited approach is a negotiation, not a compliment</h2>
+  <p class="body">An inbound approach is engineered to feel like recognition, and that framing is itself the first move. The approaching buyer chose the timing, holds an information advantage about its own intentions and the market, and very often has a specific goal: to buy the business <em>before</em> the seller runs a competitive process, because competition is what raises the price. Getting the owner to engage quietly and exclusively, on the strength of flattery and a headline number, is not incidental to the buyer's strategy. It is the strategy.</p>
+  <p class="body">The seller's interest is the opposite. It is to preserve optionality, to avoid being maneuvered into a one-buyer negotiation, and to make sure that if the business is sold, it is sold into something resembling a market rather than to the first party clever enough to ask. Recognizing the approach as a negotiating opening, not a verdict on value, is the beginning of holding your ground.</p>
+
+  <h2 class="sec-h">Know your walk-away number before you discuss price</h2>
+  <p class="body">The defining concept is the <strong>reservation price</strong>: the lowest number at which it makes sense to sell rather than to keep the business or pursue a better alternative. It is not a feeling; it is set by your genuine alternative to this deal, which includes continuing to own a business that produces cash and compounds, and the realistic outcome of a proper sale process with multiple buyers. If you do not fix your reservation price in advance, grounded in a real valuation, you will end up negotiating against the buyer's number instead of your own. That is precisely how a lowball works: it drops an anchor, and every subsequent conversation is measured from it.</p>
+  <p class="body">A reservation price only protects you if your alternative is credible. A business that is performing, not distressed, and not under pressure to sell has a strong alternative, and therefore a strong floor. A seller who must sell has almost none. Much of the work of being able to walk happens long before the buyer calls, in keeping the business strong enough that staying is a real and attractive option.</p>
+
+  <div class="pull">
+    <span class="lbl">The principle beneath it all</span>
+    <p>Your leverage in a sale is your best alternative to making the deal. If that alternative is real and you know its value, a lowball is easy to decline. If it is weak or undefined, every offer looks like the only offer.</p>
+  </div>
+
+  <h2 class="sec-h">The lowball, decoded</h2>
+  <p class="body">Not every low offer means the same thing, and reading it correctly determines the response. A low number may be a buyer's honest view of value, in which case you part ways if it sits below your floor and the buyer will not move. It may be an <strong>anchor</strong>, a deliberately low opening meant to pull the whole negotiation down toward it, in which case the answer is a confident counter grounded in your own valuation rather than a reaction to theirs. Or it may be a <strong>foot in the door</strong>, an attractive enough number designed to win exclusivity, after which the real strategy begins.</p>
+  <p class="body">That last version is the dangerous one, and it deserves its own name: the lowball that is actually a retrade in waiting. A buyer offers a headline price strong enough to take the business off the market and into exclusivity, then uses the diligence period, the working capital adjustment, and a list of issues it has discovered to grind the price down once the seller has lost its alternatives. By the time the price drops, the seller has been exclusive for months, has incurred cost, has signaled to the market that it is for sale, and has nowhere else to go. The defense is to evaluate the headline number and the structure together, and never to surrender the alternatives that make a retrade survivable.</p>
+
+  <h2 class="sec-h">Do not give away your leverage early</h2>
+  <p class="body">A seller's leverage is highest before it signs a letter of intent and grants a <strong>no-shop</strong>, and the single most common unforced error is handing a long, broad exclusivity to an unsolicited bidder before testing the market or pinning down terms. Exclusivity is the buyer's most valuable ask precisely because it removes the seller's alternatives, and a seller who grants it cheaply has traded away the very thing that protects the price.</p>
+  <p class="body">The discipline is to refuse exclusivity until there is a price and a set of key terms you would actually accept, and then to grant only a short, fenced exclusivity with milestones, reserving the right to walk if the buyer retrades. Even a modest amount of price discovery beforehand, a single other conversation or a quiet, limited process run by an advisor, transforms the dynamic, because the buyer now knows it is not the only option. You do not always need a full auction. You need a credible alternative, and the buyer's awareness that it exists.</p>
+
+  <h2 class="sec-h">The signs it is time to walk</h2>
+  <p class="body">Walking away is a judgment, but it is not a mystery. A handful of signals, alone or together, mean the deal in front of you is worse than your alternative.</p>
+
+  <div class="ref">
+    <p class="ref-h">Signals to walk</p>
+    <div class="ref-item"><span class="n">01</span><p><b>The price sits below your floor and will not move.</b> If the gap to your reservation price is real and fixed, there is no deal to be had.</p></div>
+    <div class="ref-item"><span class="n">02</span><p><b>The terms drift against you after exclusivity.</b> A buyer that retrades the price, the escrow, or the indemnities once you are committed is showing you who it is.</p></div>
+    <div class="ref-item"><span class="n">03</span><p><b>The structure hides the real price.</b> A strong headline number loaded with a large earnout you will not control, a heavy escrow, or aggressive indemnities can be worth far less than a lower, cleaner offer.</p></div>
+    <div class="ref-item"><span class="n">04</span><p><b>The buyer behaves badly in diligence.</b> Manufactured issues, adversarial conduct, and moving goalposts predict the relationship and often signal a retrade strategy.</p></div>
+    <div class="ref-item"><span class="n">05</span><p><b>The buyer cannot actually close.</b> No committed financing, no proof of funds, and a financing condition mean you may be negotiating with someone who cannot pay.</p></div>
+    <div class="ref-item"><span class="n">06</span><p><b>The deal compromises what you are not selling.</b> If the price requires sacrificing your people, your legacy, or commitments you care about, that is a cost the number may not justify.</p></div>
+    <div class="ref-item"><span class="n">07</span><p><b>You are continuing only because you have come this far.</b> Time and money already spent are sunk. They are never a reason to accept a deal that is worse than walking.</p></div>
+  </div>
+
+  <div class="pull">
+    <span class="lbl">The sunk-cost trap</span>
+    <p>Deal fatigue is real, and it pushes sellers toward a bad close after months of work. The months are gone either way. The only question that matters at the end is whether this deal, on these terms, beats your alternative, not how much you have already spent reaching it.</p>
+  </div>
+
+  <h2 class="sec-h">Walking away is a position, not a failure</h2>
+  <p class="body">A credible willingness to walk is itself one of the most effective ways to improve a deal, because it forces a serious buyer to put its best terms forward rather than its first ones. Sometimes the walk produces a better offer. Sometimes the walk is simply the right answer, and keeping a strong business that continues to compound is the superior outcome, which is something an owner is entitled to choose. And a disciplined, respectful no preserves the relationship and the seller's reputation as a serious party, leaving the door open to a better deal later.</p>
+  <p class="body">For owners with fiduciary duties, including boards and directors, the point is sharper still. There is no obligation to sell at an inadequate price, and the duty to act in the company's and the shareholders' best interest can require rejecting a lowball outright. If the company does sell, that duty counsels running a process designed to test the market rather than accepting the first unsolicited number. Saying no to an inadequate offer is not a dereliction of the obligation to maximize value. It is often the discharge of it.</p>
+
+  <h2 class="sec-h">Being able to walk</h2>
+  <p class="body">The capacity to walk is built before it is needed. It comes from knowing the value of the business and your reservation price, from defining what you are optimizing for beyond the headline number, from keeping the business strong so that holding it is a genuine alternative, and from controlling the process and the flow of information so that no buyer ever senses you must sell. Advisors help here, both by creating distance between the owner and the buyer and by making a credible alternative real. The owner who has done this work can listen to an unsolicited lowball with equanimity, because the offer is being measured against a floor the owner set, not against the fear of letting the only buyer go.</p>
+
+  <div class="close">
+    <h2>How we help</h2>
+    <p>We advise owners approached by buyers, solicited or not, on how to respond, when to engage, what to protect, and when to walk. From holding leverage before exclusivity through reading a lowball and its structure, our aim is that any sale clears the bar your best alternative sets, and that no deal closes simply because it started. To discuss an approach you have received, speak with our private M&amp;A practice.</p>
+    <a class="btn" href="#contact">Speak with our M&amp;A team</a>
+    <p class="disclaimer">This article is a general educational resource and does not constitute legal, tax, or financial advice. It is not a substitute for the advice of counsel, and reading it does not create an attorney-client relationship. Every transaction and every fiduciary situation is different; consult qualified advisors before responding to an offer or entering a sale process.</p>
+  </div>
+</article>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This article is provided for general informational purposes only and does not constitute legal advice, and reading it does not create an attorney-client relationship. &copy; 2026 Danziger, Danziger &amp; Muro, LLP.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

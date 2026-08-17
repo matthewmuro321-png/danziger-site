@@ -1,0 +1,175 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <title>Selling a Boutique Hotel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,340;9..144,0,420;9..144,0,540;9..144,1,360&family=Newsreader:opsz,ital,wght@6..72,0,380;6..72,0,440;6..72,1,400&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8;
+    --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif;
+    --serif:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+
+  .a-root{background:var(--paper); color:var(--ink); font-family:var(--serif); -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,76px) clamp(16px,5vw,40px); display:flex; justify-content:center}
+  .a-shell{width:100%; max-width:680px}
+
+  .eyebrow{font-family:var(--sans); font-weight:620; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--claret); margin:0 0 26px; display:flex; align-items:center; gap:12px}
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  h1.title{font-family:var(--display); font-weight:340; font-optical-sizing:auto; font-size:clamp(36px,7vw,60px);
+    line-height:1.0; letter-spacing:-.016em; margin:0 0 28px}
+  .deck{font-family:var(--display); font-weight:360; font-style:italic; font-size:clamp(19px,2.8vw,23px);
+    line-height:1.4; color:var(--ink-soft); max-width:54ch; margin:0 0 30px}
+  .meta{font-family:var(--sans); font-weight:520; font-size:11.5px; letter-spacing:.06em; color:var(--ink-faint);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:15px 0; margin:0 0 44px}
+
+  .a-root p.body{font-size:18px; line-height:1.66; color:var(--ink-soft); margin:0 0 20px; max-width:62ch}
+  .body strong{color:var(--ink); font-weight:440}
+  em{font-style:italic}
+  .lead-cap::first-letter{
+    font-family:var(--display); font-weight:420; float:left; font-size:3.6em; line-height:.82;
+    padding:6px 10px 0 0; color:var(--claret);
+  }
+
+  h2.sec-h{font-family:var(--display); font-weight:420; font-size:clamp(24px,3.6vw,31px); line-height:1.12;
+    letter-spacing:-.01em; margin:42px 0 16px; max-width:40ch}
+
+  .pull{
+    border-left:2px solid var(--claret); background:var(--paper-2); padding:18px 22px; margin:26px 0; max-width:60ch;
+  }
+  .pull .lbl{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase;
+    color:var(--claret); display:block; margin:0 0 8px}
+  .pull p{font-size:16px; line-height:1.58; color:var(--ink-soft); margin:0}
+
+  .close{border-top:1px solid var(--line); margin:54px 0 0; padding:36px 0 0}
+  .close h2{font-family:var(--display); font-weight:420; font-size:clamp(23px,4vw,30px); line-height:1.14; margin:0 0 16px; letter-spacing:-.01em}
+  .close p{font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); padding:14px 28px; font-size:14px; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:44px 0 0; padding:20px 0 0; max-width:64ch}
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="articles.html">&larr; Articles</a>
+</div>
+
+
+<div class="a-root">
+<article class="a-shell">
+
+  <p class="eyebrow">Insights &middot; Hospitality and M&amp;A</p>
+  <h1 class="title">Selling a boutique hotel</h1>
+  <p class="deck">A boutique hotel is three businesses wearing one roof. The sale succeeds or stalls on whether all three can be valued, and transferred, together.</p>
+  <p class="meta">Hospitality and Private M&amp;A &middot; 2025</p>
+
+  <p class="body lead-cap">When an owner decides to sell a boutique hotel, the instinct is to think of it as selling a building, or perhaps a business. It is neither, exactly, and that is the source of most of the difficulty. A boutique hotel is simultaneously a piece of real estate, an operating business that throws off cash, and a brand built on design, service, and reputation. A buyer is paying for all three, and a sale has to value and convey all three at once. The owner who understands that going in keeps control of the price. The one who does not tends to learn it during diligence, when leverage has already shifted.</p>
+
+  <h2 class="sec-h">Three assets, one transaction</h2>
+  <p class="body">Start with how a buyer values what is in front of them. The <strong>real estate</strong> has a value of its own, as land and a building in a location. The <strong>operating business</strong> has a value driven by its cash flow, measured through the metrics hotel buyers live by, occupancy, average daily rate, and revenue per available room, and ultimately through normalized earnings. And the <strong>intangibles</strong>, the brand, the design, the reputation, the food and beverage program, and the team, carry value that is real but harder to pin down and easier to damage. A great boutique hotel often trades at a premium precisely because of that third category, which is also the category most likely to evaporate if the sale is handled carelessly.</p>
+  <p class="body">Those three values can be packaged in more than one way, and the structure matters. The deal may be a sale of the entity that owns everything, or a sale of assets, with very different tax and liability consequences. The real estate and the operating company are sometimes separated, so that a buyer takes the building while an operator runs the business, or the seller stays in the real estate through a sale-leaseback while the hotel business changes hands. Choosing among these is the first strategic decision of the sale, and it is driven as much by tax and by who the likely buyer is as by anything else.</p>
+
+  <h2 class="sec-h">What a buyer is really buying</h2>
+  <p class="body">The part of a boutique hotel that justifies its price is also the part that is fragile, and a buyer knows it. The <strong>brand and its identity</strong>, the name, the marks, the social presence, and the accumulated reviews, are assets that must be confirmed to exist and to be transferable. The <strong>design and the physical plant</strong> carry value, but they also carry the question of deferred capital, since a buyer will price the cost of bringing tired rooms or systems back to standard. The <strong>food and beverage program</strong>, often the soul of a boutique property, may depend on a chef or a concept that has its own contracts and its own risk of walking out the door. And the <strong>people</strong>, above all the general manager and the key staff who actually deliver the experience, are part of what is being bought, even though none of them can be made to stay.</p>
+  <p class="body">This is where a boutique sale diverges most sharply from selling an ordinary building. The value is bound up in things that can leave, and the buyer will want assurance that they will not. That assurance is built through the deal, with retention arrangements for the people who matter, clean transfer of the brand and the digital assets, and a transition that does not break the experience the hotel sells.</p>
+
+  <div class="pull">
+    <span class="lbl">The entanglement to resolve early</span>
+    <p>When the founder's own name is the hotel's brand, the two are entangled in a way that must be addressed before a sale, through a license or an assignment of the name and a clear understanding of the founder's role afterward. Left unresolved, it becomes the hardest term in the deal.</p>
+  </div>
+
+  <h2 class="sec-h">The agreements and approvals that travel with the hotel</h2>
+  <p class="body">A hotel comes wrapped in contracts and licenses, and each one has to be examined for what it does on a change of ownership. If the property operates under a <strong>management or franchise agreement</strong>, that agreement will have its own provisions on change of control, on termination, and often on a required property improvement plan that a new owner must fund. A <strong>ground lease</strong>, if the hotel sits on leased land, can dominate the entire transaction. And the food and beverage spaces may be governed by their own leases or concessions that survive the sale.</p>
+  <p class="body">The <strong>liquor license</strong> deserves singular attention, because it is the approval operators most often assume will simply come along and most often does not. A liquor license does not transfer with the hotel the way a piece of furniture does. The buyer generally must obtain its own license from the State Liquor Authority, a process that runs months, and will typically rely on a temporary permit to keep the bars and restaurants pouring while the new application is pending. If that timing is not planned for, a hotel can change hands and find its most profitable rooms unable to serve a drink.</p>
+
+  <div class="pull">
+    <span class="lbl">Practice note</span>
+    <p>Build the liquor licensing timeline into the deal from the start. The buyer's application and temporary permit should be in motion well before closing, so the hotel's food and beverage operations do not go dark on the day ownership changes.</p>
+  </div>
+
+  <p class="body">Beyond these, a buyer inherits the working contracts of a running hotel, including the online travel agency and booking agreements, the advance reservations and the deposits already taken against them, and the vendor relationships that keep the property operating. And where the hotel's workforce is unionized, the collective bargaining agreement and its successorship and job-security provisions can shape the deal as much as any commercial term, particularly in New York City, where hotel labor is heavily organized.</p>
+
+  <h2 class="sec-h">New York's overlay</h2>
+  <p class="body">A New York City hotel sale carries a layer of local rules a buyer must take on with the keys. Under the <strong>Safe Hotels Act</strong>, effective in May 2025, every hotel operating in the city must hold a license from the Department of Consumer and Worker Protection, and must meet the law's standards for safety, cleanliness, and staffing, including continuous front desk coverage and panic buttons. The most operationally significant requirement, the obligation to directly employ core housekeeping and front desk staff rather than using contractors, applies to larger hotels above one hundred rooms, which means a smaller boutique property is outside that particular mandate but still must hold and maintain the license. A buyer needs to confirm the hotel's licensing and compliance as part of diligence, because it is now a precondition to operating at all.</p>
+  <p class="body">The transaction also carries tax and regulatory friction that a seller should anticipate. The real estate transfer triggers New York State and New York City <strong>transfer taxes</strong>, the sale of the business assets calls for a <strong>bulk sale notification</strong> to the State so that the buyer is not saddled with the seller's unpaid sales tax, and the <strong>allocation of the purchase price</strong> among the real estate, the furniture and equipment, and goodwill has real tax consequences that both sides negotiate. Land use sits in the background as well, since New York City now governs new hotel development through a special permit, so a buyer counting on continuing an existing hotel use should confirm that the use is established and protected. And the workforce brings its own obligations, including notice requirements that can attach to a transition.</p>
+
+  <h2 class="sec-h">Preparing to sell, and protecting value through the process</h2>
+  <p class="body">The owners who sell well prepare as they would for any company sale, and a little more. That means clean, normalized financial statements and reliable operating data, an organized data room that mirrors what a hotel buyer will demand, and the early resolution of the issues that otherwise surface at the worst moment, the brand and name entanglement, the state of the management or franchise agreement, the liquor license, and any deferred capital. It also means securing the people the buyer is counting on before the buyer asks, because a general manager or a chef who leaves mid-process can take a piece of the value with them.</p>
+  <p class="body">Through it all, one discipline matters more than any clause. The hotel has to keep performing while it is being sold. Occupancy and rate must hold, forward bookings must be protected, and the team must stay intact and focused, even as confidentiality is managed so that staff, guests, and competitors are not destabilized by news of a sale. A boutique hotel that slips during its own sale process invites the buyer to reprice it, and the owners who close on their original terms are almost always the ones who never let the experience falter while their attention was on the deal.</p>
+
+  <div class="close">
+    <h2>How we help</h2>
+    <p>Selling a boutique hotel draws on the whole of a transaction practice and a real fluency in how hospitality works. We guide owners through structure, valuation support, the brand and the licenses, the management and labor agreements, and the New York rules a buyer inherits, and we protect the value that makes a boutique property worth more than its walls. To discuss a sale, whether imminent or on the horizon, speak with our hospitality and M&amp;A teams.</p>
+    <a class="btn" href="#contact">Speak with our team</a>
+
+    <p class="disclaimer">
+      This article is a general educational resource and does not constitute legal, tax, or financial
+      advice. It is not a substitute for the advice of counsel, and reading it does not create an
+      attorney-client relationship. Laws and programs change, and the matters discussed here, including
+      the Safe Hotels Act and applicable taxes, are current as of September 2025; confirm the rules that apply
+      to your transaction with qualified advisors before acting.
+    </p>
+  </div>
+
+</article>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This article is provided for general informational purposes only and does not constitute legal advice, and reading it does not create an attorney-client relationship. Prior results do not guarantee a similar outcome. &copy; 2026 Danziger, Danziger &amp; Muro, LLP.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <title>Fundraising Readiness Checklist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,420;9..144,540&family=Newsreader:opsz,wght@6..72,380;6..72,440&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8;
+    --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif;
+    --serif:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+
+  .f-root{
+    background:var(--paper); color:var(--ink); font-family:var(--serif);
+    -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,64px) clamp(16px,5vw,40px);
+    display:flex; justify-content:center;
+  }
+  .f-shell{width:100%; max-width:720px}
+
+  .eyebrow{
+    font-family:var(--sans); font-weight:620; font-size:11.5px;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--claret);
+    margin:0 0 22px; display:flex; align-items:center; gap:12px;
+  }
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  h1.title{
+    font-family:var(--display); font-weight:340; font-optical-sizing:auto;
+    font-size:clamp(33px,6vw,54px); line-height:1.02; letter-spacing:-.014em; margin:0 0 22px;
+  }
+  .standfirst{font-size:clamp(16px,2.3vw,19px); line-height:1.55; color:var(--ink-soft); max-width:56ch; margin:0 0 34px}
+
+  /* readiness panel (signature) */
+  .ready{position:sticky; top:0; background:var(--paper); padding:14px 0 18px; z-index:5; border-bottom:1px solid var(--line-soft); margin:0 0 30px}
+  .ready-top{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:var(--sans); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-faint); margin:0 0 9px;
+  }
+  .ready-top b{color:var(--claret); font-weight:620}
+  .meter{height:7px; background:var(--paper-2); border:1px solid var(--line); position:relative}
+  .meter-fill{position:absolute; top:-1px; bottom:-1px; left:-1px; width:0%; background:var(--claret);
+    transition:width .45s cubic-bezier(.22,.61,.36,1)}
+  .verdict{
+    font-family:var(--display); font-weight:420; font-size:clamp(18px,3vw,22px);
+    line-height:1.2; margin:14px 0 4px; letter-spacing:-.005em;
+  }
+  .verdict-sub{font-size:14.5px; line-height:1.5; color:var(--ink-soft); margin:0; max-width:58ch}
+
+  .cat-h{
+    font-family:var(--sans); font-weight:620; font-size:11px; letter-spacing:.15em;
+    text-transform:uppercase; color:var(--ink-faint);
+    border-bottom:1px solid var(--line); padding:0 0 9px; margin:34px 0 4px;
+  }
+  .cat:first-of-type .cat-h{margin-top:0}
+
+  .item{display:flex; gap:15px; align-items:flex-start; padding:17px 0; border-bottom:1px solid var(--line-soft)}
+  .chk{
+    appearance:none; -webkit-appearance:none; margin:3px 0 0; flex:0 0 auto;
+    width:19px; height:19px; border:1.5px solid var(--ink-faint); background:var(--paper);
+    cursor:pointer; border-radius:0; position:relative; transition:border-color .15s,background .15s;
+  }
+  .chk:hover{border-color:var(--claret)}
+  .chk:checked{background:var(--claret); border-color:var(--claret)}
+  .chk:checked::after{content:""; position:absolute; left:5px; top:1px; width:5px; height:10px;
+    border:solid var(--paper); border-width:0 1.5px 1.5px 0; transform:rotate(42deg)}
+  .chk:focus-visible{outline:2px solid var(--claret); outline-offset:2px}
+
+  .item-body{flex:1; min-width:0}
+  .term{font-family:var(--serif); font-weight:440; font-size:17.5px; line-height:1.32; margin:0 0 5px; color:var(--ink)}
+  .item.done .term{color:var(--ink-faint)}
+  .why{font-size:14.5px; line-height:1.5; color:var(--ink-faint); margin:0; max-width:60ch}
+  .why b{color:var(--claret); font-weight:620; font-family:var(--sans); font-size:10px; letter-spacing:.12em; text-transform:uppercase; display:block; margin:0 0 3px}
+
+  .foot{display:flex; align-items:center; gap:22px; margin:34px 0 0; flex-wrap:wrap}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none;
+    border:1px solid var(--ink); background:var(--ink); color:var(--paper); padding:13px 26px; font-size:14px;
+    cursor:pointer; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+  .ghost{font-family:var(--sans); font-weight:520; font-size:13px; background:none; border:none;
+    color:var(--ink-faint); cursor:pointer; padding:8px 2px; border-bottom:1px solid transparent;
+    transition:color .2s,border-color .2s}
+  .ghost:hover{color:var(--claret); border-color:var(--claret)}
+  .ghost:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6;
+    color:var(--ink-faint); border-top:1px solid var(--line-soft); margin:38px 0 0; padding:20px 0 0; max-width:64ch}
+
+  @media (prefers-reduced-motion:reduce){ .meter-fill{transition:none} }
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="practice-startups.html">&larr; Startups & Venture</a>
+</div>
+
+
+<div class="f-root">
+<div class="f-shell">
+
+  <p class="eyebrow">Startups &amp; Venture &middot; Readiness Checklist</p>
+  <h1 class="title">Are you ready to raise?</h1>
+  <p class="standfirst">Investors decide quickly, and much of that decision turns on whether a company looks well run before the first real conversation. Tick off what you have in place. The panel tracks how close you are to raise-ready, and each item notes why an investor cares.</p>
+
+  <div class="ready">
+    <div class="ready-top"><span>Readiness</span><span><b id="pCount">0</b> of <span id="pTotal">0</span> in place</span></div>
+    <div class="meter"><div class="meter-fill" id="mFill"></div></div>
+    <p class="verdict" id="verdict">Foundation stage</p>
+    <p class="verdict-sub" id="verdictSub">Start checking the items below to see how close you are.</p>
+  </div>
+
+  <div id="list"></div>
+
+  <div class="foot">
+    <a class="btn" href="#contact">Talk through your raise with us</a>
+    <button class="ghost" id="reset">Clear all</button>
+  </div>
+
+  <p class="disclaimer">
+    This checklist is a general educational resource and does not constitute legal, tax, or financial
+    advice. It is not a substitute for the advice of counsel, and using it does not create an
+    attorney-client relationship. Every company and every round is different; consult a qualified
+    attorney before relying on or acting upon anything here.
+  </p>
+
+</div>
+</div>
+
+<script>
+(function(){
+  var DATA = [
+    { cat:"Your story and numbers", items:[
+      { t:"A pitch deck that tells a clear story: problem, solution, market, traction, team, and the ask.",
+        w:"It is the first thing an investor reads. A muddled deck ends the conversation before a meeting." },
+      { t:"A financial model with stated assumptions and a clear use of funds.",
+        w:"Investors test whether you understand your own economics and what the money actually buys." },
+      { t:"A clean, current, fully diluted capitalization table.",
+        w:"A confusing cap table casts doubt on everything else and slows diligence to a crawl." },
+      { t:"Command of your key metrics: revenue, growth, burn, runway, and unit economics.",
+        w:"These are the numbers a term sheet is built on. Not knowing them ends most conversations." }
+    ]},
+    { cat:"Corporate foundation", items:[
+      { t:"The company is formed in a structure investors can fund.",
+        w:"Most institutional investors expect a structure built for venture investment, commonly a Delaware C corporation." },
+      { t:"Founder equity is documented, with vesting in place.",
+        w:"Undocumented splits and unvested founders are a red flag and a future dispute waiting to surface." },
+      { t:"Section 83(b) elections were filed where they applied.",
+        w:"A missed election creates a tax problem investors would rather not inherit." },
+      { t:"Every founder, employee, and contractor has assigned their IP to the company.",
+        w:"If the company does not clearly own its technology, there may be nothing to invest in." },
+      { t:"Corporate records are clean: board and stockholder consents, an up-to-date minute book.",
+        w:"Gaps get cleaned up under deal pressure, which is slow, costly, and avoidable." },
+      { t:"Prior SAFEs and notes, and how they convert, are tracked and understood.",
+        w:"Founders are routinely surprised by how much these convert into. Investors are not." },
+      { t:"An equity incentive plan and option pool are in place or planned.",
+        w:"Investors expect room to hire, and where the pool comes from affects your dilution." }
+    ]},
+    { cat:"Commercial and traction", items:[
+      { t:"Key customer and revenue contracts are documented and in order.",
+        w:"Contracts are the evidence behind your traction claims." },
+      { t:"Material agreements such as partnerships, licenses, and leases are organized and available.",
+        w:"Surprises in diligence cost time and hand leverage to the investor." },
+      { t:"You can show real traction or a credible pipeline.",
+        w:"Traction is what turns a story into a fundable one." }
+    ]},
+    { cat:"Team and people", items:[
+      { t:"Key employees are under offer letters with confidentiality and IP assignment terms.",
+        w:"The team is part of what is being funded, and loose arrangements undermine it." },
+      { t:"Roles, responsibilities, and a hiring plan are clear.",
+        w:"Investors fund a plan to build, not an idea alone." }
+    ]},
+    { cat:"The raise itself", items:[
+      { t:"You know how much you are raising and the runway it buys.",
+        w:"A number with no basis signals you have not thought the round through." },
+      { t:"You have chosen an instrument, a SAFE or note or a priced round, and understand its key terms.",
+        w:"Knowing the valuation, dilution, and control implications keeps you from terms you will regret." },
+      { t:"A data room is organized and ready to share.",
+        w:"A complete, well-ordered data room signals a well-run company and speeds the close." },
+      { t:"Counsel is engaged for the round.",
+        w:"The documents set the relationship with your investors for the life of the company." }
+    ]}
+  ];
+
+  var list = document.getElementById('list');
+  var total = 0; DATA.forEach(function(c){ total += c.items.length; });
+  document.getElementById('pTotal').textContent = total;
+
+  DATA.forEach(function(c){
+    var cat = document.createElement('div'); cat.className='cat';
+    var h = document.createElement('div'); h.className='cat-h'; h.textContent=c.cat; cat.appendChild(h);
+    c.items.forEach(function(it, i){
+      var id = 'i'+Math.random().toString(36).slice(2,8);
+      var item = document.createElement('div'); item.className='item';
+      var cb = document.createElement('input'); cb.type='checkbox'; cb.className='chk'; cb.id=id;
+      cb.setAttribute('aria-label','Mark in place: '+it.t);
+      var body = document.createElement('div'); body.className='item-body';
+      var term = document.createElement('label'); term.className='term'; term.setAttribute('for',id); term.textContent=it.t;
+      var why = document.createElement('p'); why.className='why';
+      var b = document.createElement('b'); b.textContent='Why it matters';
+      why.appendChild(b); why.appendChild(document.createTextNode(it.w));
+      body.appendChild(term); body.appendChild(why);
+      item.appendChild(cb); item.appendChild(body); cat.appendChild(item);
+      cb.addEventListener('change', function(){ item.classList.toggle('done', cb.checked); update(); });
+    });
+    list.appendChild(cat);
+  });
+
+  var BANDS = [
+    { min:1.00, t:"Raise-ready.", s:"The foundation is in place. The work now is running a sharp process and choosing the right partners." },
+    { min:0.75, t:"Nearly raise-ready.", s:"You are close. Tie off the last open items before you start taking meetings, so diligence finds nothing." },
+    { min:0.40, t:"Closing the gaps.", s:"The shape is there, but enough is unresolved that going out now would invite repricing. Close the gaps first." },
+    { min:0.01, t:"Foundation stage.", s:"Build the foundation before you pitch. Raising on top of unfinished corporate and financial groundwork is how rounds stall." },
+    { min:0.00, t:"Foundation stage.", s:"Start checking the items below to see how close you are." }
+  ];
+
+  function update(){
+    var done = document.querySelectorAll('.chk:checked').length;
+    var pct = done/total;
+    document.getElementById('pCount').textContent = done;
+    document.getElementById('mFill').style.width = Math.round(pct*100)+'%';
+    var band = BANDS.find(function(b){ return pct >= b.min; });
+    document.getElementById('verdict').textContent = band.t;
+    document.getElementById('verdictSub').textContent = band.s;
+  }
+
+  document.getElementById('reset').addEventListener('click', function(){
+    Array.prototype.forEach.call(document.querySelectorAll('.chk'), function(cb){ cb.checked=false; });
+    Array.prototype.forEach.call(document.querySelectorAll('.item'), function(it){ it.classList.remove('done'); });
+    update();
+  });
+
+  update();
+})();
+</script>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This material is provided as a general educational resource and does not constitute legal advice, and using it does not create an attorney-client relationship. &copy; 2026 Danziger, Danziger &amp; Muro, LLP &middot; 445 Park Avenue, New York.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

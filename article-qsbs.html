@@ -1,0 +1,166 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<title>QSBS and the Entity Question: Why an LLC Taxed as a C-Corp Is Not Enough</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,340;9..144,0,420;9..144,0,540;9..144,1,360&family=Newsreader:opsz,wght@6..72,380;6..72,440&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8; --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif; --serif:"Newsreader",Georgia,serif; --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  .a-root{background:var(--paper); color:var(--ink); font-family:var(--serif); -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,76px) clamp(16px,5vw,40px); display:flex; justify-content:center}
+  .a-shell{width:100%; max-width:680px}
+  .eyebrow{font-family:var(--sans); font-weight:620; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--claret); margin:0 0 26px; display:flex; align-items:center; gap:12px}
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+  h1.title{font-family:var(--display); font-weight:340; font-optical-sizing:auto; font-size:clamp(32px,5.6vw,52px);
+    line-height:1.03; letter-spacing:-.016em; margin:0 0 28px}
+  .deck{font-family:var(--display); font-weight:360; font-style:italic; font-size:clamp(19px,2.8vw,23px);
+    line-height:1.4; color:var(--ink-soft); max-width:55ch; margin:0 0 30px}
+  .meta{font-family:var(--sans); font-weight:520; font-size:11.5px; letter-spacing:.06em; color:var(--ink-faint);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:15px 0; margin:0 0 44px}
+  .a-root p.body{font-size:18px; line-height:1.66; color:var(--ink-soft); margin:0 0 20px; max-width:62ch}
+  .body strong{color:var(--ink); font-weight:440}
+  em{font-style:italic}
+  .lead-cap::first-letter{font-family:var(--display); font-weight:420; float:left; font-size:3.6em; line-height:.82; padding:6px 10px 0 0; color:var(--claret)}
+  h2.sec-h{font-family:var(--display); font-weight:420; font-size:clamp(24px,3.6vw,31px); line-height:1.12; letter-spacing:-.01em; margin:42px 0 16px; max-width:46ch}
+  .tbl-wrap{margin:24px 0 8px; overflow-x:auto; border:1px solid var(--line)}
+  table{border-collapse:collapse; width:100%; min-width:580px; background:var(--paper-2)}
+  thead th{font-family:var(--sans); font-weight:620; font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint); text-align:left; padding:13px 14px; border-bottom:1px solid var(--line); vertical-align:bottom}
+  thead th:first-child{color:var(--claret)}
+  tbody td{font-family:var(--serif); font-size:14px; line-height:1.4; color:var(--ink-soft); padding:13px 14px; border-bottom:1px solid var(--line-soft); vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody td:first-child{font-family:var(--sans); font-weight:520; font-size:11.5px; color:var(--ink)}
+  .yes{color:var(--ink); font-weight:440}
+  .no{color:var(--claret); font-weight:440}
+  .tbl-cap{font-family:var(--sans); font-size:11px; color:var(--ink-faint); margin:12px 2px 0; line-height:1.5; max-width:62ch}
+  .pull{border-left:2px solid var(--claret); background:var(--paper-2); padding:18px 22px; margin:26px 0; max-width:60ch}
+  .pull .lbl{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--claret); display:block; margin:0 0 8px}
+  .pull p{font-size:16px; line-height:1.58; color:var(--ink-soft); margin:0}
+  .close{border-top:1px solid var(--line); margin:54px 0 0; padding:36px 0 0}
+  .close h2{font-family:var(--display); font-weight:420; font-size:clamp(23px,4vw,30px); line-height:1.14; margin:0 0 16px; letter-spacing:-.01em}
+  .close p{font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); padding:14px 28px; font-size:14px; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:44px 0 0; padding:20px 0 0; max-width:64ch}
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="articles.html">&larr; Articles</a>
+</div>
+
+
+<div class="a-root">
+<article class="a-shell">
+  <p class="eyebrow">Insights &middot; Startups, Venture, and Tax</p>
+  <h1 class="title">QSBS and the entity question</h1>
+  <p class="deck">The exclusion can make millions of dollars of gain entirely tax-free. The most common structuring mistake, an LLC that elects to be taxed as a C-corp, forfeits all of it.</p>
+  <p class="meta">Startups and Venture Capital &middot; 2025</p>
+
+  <p class="body lead-cap">Few provisions in the tax code reward founders and early investors as richly as the qualified small business stock exclusion. Get the structure right, hold the stock long enough, and a large slice of the gain on a sale can escape federal tax entirely. Get the structure wrong, and the benefit simply is not there, no matter how successful the company becomes. The frustrating part is that one of the most common ways to get it wrong looks, to a founder, like getting it right. Setting up a Delaware limited liability company and electing to have it taxed as a C corporation feels like it should qualify. It does not. Understanding why is worth a great deal of money.</p>
+
+  <h2 class="sec-h">What the exclusion does, and the recent upgrade</h2>
+  <p class="body">Section 1202 of the tax code allows a taxpayer to exclude from federal income tax the gain on the sale of <strong>qualified small business stock</strong>, subject to limits. The benefit is capped at the greater of a dollar figure or ten times the taxpayer's basis in the stock, applied per company. For founders and early employees and investors who experience a large exit, the result can be millions of dollars of gain that are never taxed at the federal level.</p>
+  <p class="body">The regime was significantly expanded in 2025. For stock issued after July 4, 2025, the law introduced a <strong>tiered exclusion</strong>, allowing 50 percent of the gain to be excluded after a three-year hold, 75 percent after four years, and 100 percent after five years, where previously a full five-year hold was required for any exclusion at all. It raised the per-company cap from $10 million to <strong>$15 million</strong>, and it lifted the ceiling on a company's gross assets from $50 million to <strong>$75 million</strong>, both indexed for inflation going forward. Stock issued on or before that date remains under the older rules, with the five-year hold and the $10 million cap. The practical effect is that the exclusion is now larger, available sooner in partial form, and open to a wider set of companies.</p>
+
+  <h2 class="sec-h">The requirements, and who is left out</h2>
+  <p class="body">The exclusion comes with conditions, and they are exacting. The stock must be stock in a <strong>domestic C corporation</strong>. It must be acquired at <strong>original issuance</strong>, meaning from the company itself rather than bought from another holder. The company's <strong>aggregate gross assets</strong> must have been at or below the ceiling, now $75 million, at the time the stock was issued. The company must be engaged in an <strong>active qualified business</strong>, and here many businesses fall out, because the rules exclude a long list of activities, including most professional services, finance, farming, and the hospitality and restaurant trades. And the stock must be held for the required period.</p>
+  <p class="body">That exclusion list matters for how a firm advises across industries. The qualified small business stock benefit is built for product and technology companies, not for service or hospitality businesses, so a restaurant group or a hotel company is generally outside it regardless of structure. For the venture-backed company building a product, however, it is one of the most valuable tax attributes a founder can have, which is exactly why the entity decision deserves care.</p>
+
+  <h2 class="sec-h">Why an LLC taxed as a C-corp does not qualify</h2>
+  <p class="body">Here is the trap. A limited liability company can elect, by checking a box, to be taxed as a C corporation. Founders often hear that qualified small business stock requires a C corporation, make that election, and believe they have positioned the company for the exclusion. They have not. The election changes how the entity is <em>taxed</em>; it does not change what the entity <em>is</em>. For purposes of the exclusion, the law requires stock in a corporation, and an LLC is not a corporation under state law and does not issue stock. It issues membership interests. An LLC with a C corporation tax election is therefore the worst of both worlds for this purpose: it is taxed as a corporation, losing the pass-through treatment that is an LLC's main advantage, while still failing to qualify for the exclusion that a real corporation would provide.</p>
+
+  <div class="pull">
+    <span class="lbl">The misconception, stated plainly</span>
+    <p>Electing to have an LLC taxed as a C corporation does not make it qualified small business stock. The exclusion requires actual stock in an actual corporation. The tax election gives a founder corporate-style taxation and none of the qualified small business stock benefit.</p>
+  </div>
+
+  <h2 class="sec-h">The three paths, compared</h2>
+  <p class="body">The cleanest way to see the decision is to compare the entity choices a founder actually faces.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>&nbsp;</th><th>C corporation from the start</th><th>LLC electing C-corp tax</th><th>LLC, later converted to a C-corp</th></tr></thead>
+      <tbody>
+        <tr><td>Issues stock in a corporation?</td><td class="yes">Yes</td><td class="no">No</td><td class="yes">Yes, after conversion</td></tr>
+        <tr><td>Qualifies for the exclusion?</td><td class="yes">Yes, from issuance</td><td class="no">No</td><td class="yes">Yes, from conversion forward</td></tr>
+        <tr><td>When the holding clock starts</td><td>At incorporation</td><td class="no">Never</td><td>At conversion, not at LLC formation</td></tr>
+        <tr><td>Taxed as</td><td>C corporation</td><td>C corporation</td><td>Pass-through until conversion, then C corp</td></tr>
+        <tr><td>Early-stage losses pass through?</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes, while an LLC</td></tr>
+        <tr><td>Standard form at a venture financing?</td><td class="yes">Yes</td><td class="no">No</td><td>Upon conversion</td></tr>
+      </tbody>
+    </table>
+    <p class="tbl-cap">A default LLC taxed as a partnership passes losses through but does not qualify either; only an actual corporation issues qualifying stock. The middle column is the common, costly mistake.</p>
+  </div>
+
+  <h2 class="sec-h">Getting the benefit, and the timing that matters</h2>
+  <p class="body">There are two ways to actually capture the exclusion. The first is to <strong>incorporate as a C corporation</strong> from the outset, typically a Delaware C corporation, which starts the holding-period clock at the earliest possible moment and is also the form venture investors expect. The second is to begin as an LLC and later <strong>convert it into a C corporation</strong>, through a statutory conversion or by contributing the business to a new corporation.</p>
+  <p class="body">The conversion path preserves the early flexibility of an LLC, including the ability to pass losses through to the founders while the company is young, but it carries two timing consequences a founder must understand. The holding-period clock for the exclusion starts at the <strong>conversion</strong>, not when the LLC was formed, so the years spent as an LLC do not count toward the three, four, or five years required. And the gross-assets test is applied at conversion, which means a company that waits to convert until it has grown large can find it has crossed the $75 million ceiling and lost eligibility entirely. The lesson is that if the exclusion is part of the plan, converting earlier is almost always safer than converting later.</p>
+
+  <h2 class="sec-h">Choosing at formation</h2>
+  <p class="body">The decision comes down to a few honest questions. A company that will raise venture capital, that wants the exclusion clock running as early as possible, and that does not need to pass early losses to its owners is usually best served by incorporating as a Delaware C corporation at the start. A company that expects meaningful early losses its founders could use, or that genuinely benefits from pass-through flexibility in its first phase, may reasonably begin as an LLC and convert before it raises institutional money or grows past the asset ceiling. What almost no company should do, if the exclusion matters to it, is elect to have an LLC taxed as a C corporation and assume the benefit follows. It does not, and discovering that at the moment of a sale is an expensive way to learn it.</p>
+
+  <div class="close">
+    <h2>How we help</h2>
+    <p>We counsel founders and investors on the entity and tax structuring that determines whether the qualified small business stock exclusion is available, from incorporating correctly at the start to timing a conversion before the benefit is lost. To discuss how to structure a company for the exclusion, speak with our startups and venture capital practice.</p>
+    <a class="btn" href="#contact">Speak with our venture team</a>
+    <p class="disclaimer">This article is a general educational resource and does not constitute legal or tax advice. It is not a substitute for the advice of counsel, and reading it does not create an attorney-client relationship. The qualified small business stock rules are intricate and were recently amended, guidance continues to develop, and not all states conform to the federal exclusion; the information here is current as of October 2025. Confirm the rules and amounts that apply to your situation with qualified advisors before forming or converting an entity.</p>
+  </div>
+</article>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This article is provided for general informational purposes only and does not constitute legal advice, and reading it does not create an attorney-client relationship. Prior results do not guarantee a similar outcome. &copy; 2026 Danziger, Danziger &amp; Muro, LLP.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+# --- Internal notes & working docs: never publish ---
+*.md
+*.markdown
+*.txt
+*.doc
+*.docx
+*.rtf
+*.pages
+
+# Internal source/draft material
+NewStuff/
+/drafts/
+/notes/
+/internal/
+/scratch/
+
+# Tooling / editor config
+.claude/
+.vscode/
+.idea/
+
+# OS cruft
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+
+# Backups & temp
+*~
+*.bak
+*.tmp
+*.swp
+*.orig
+*.log

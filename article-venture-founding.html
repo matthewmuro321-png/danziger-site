@@ -1,0 +1,197 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <title>Founding Decisions, and the First Money In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,340;9..144,0,420;9..144,0,540;9..144,1,360&family=Newsreader:opsz,ital,wght@6..72,0,380;6..72,0,440;6..72,1,400&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8;
+    --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif;
+    --serif:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+
+  .a-root{background:var(--paper); color:var(--ink); font-family:var(--serif); -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,76px) clamp(16px,5vw,40px); display:flex; justify-content:center}
+  .a-shell{width:100%; max-width:680px}
+
+  .eyebrow{font-family:var(--sans); font-weight:620; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--claret); margin:0 0 26px; display:flex; align-items:center; gap:12px}
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  h1.title{font-family:var(--display); font-weight:340; font-optical-sizing:auto; font-size:clamp(34px,6.4vw,56px);
+    line-height:1.01; letter-spacing:-.016em; margin:0 0 28px}
+  .deck{font-family:var(--display); font-weight:360; font-style:italic; font-size:clamp(19px,2.8vw,23px);
+    line-height:1.4; color:var(--ink-soft); max-width:55ch; margin:0 0 30px}
+  .meta{font-family:var(--sans); font-weight:520; font-size:11.5px; letter-spacing:.06em; color:var(--ink-faint);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:15px 0; margin:0 0 44px}
+
+  .a-root p.body{font-size:18px; line-height:1.66; color:var(--ink-soft); margin:0 0 20px; max-width:62ch}
+  .body strong{color:var(--ink); font-weight:440}
+  em{font-style:italic}
+  .lead-cap::first-letter{font-family:var(--display); font-weight:420; float:left; font-size:3.6em; line-height:.82;
+    padding:6px 10px 0 0; color:var(--claret)}
+
+  h2.sec-h{font-family:var(--display); font-weight:420; font-size:clamp(24px,3.6vw,31px); line-height:1.12;
+    letter-spacing:-.01em; margin:42px 0 16px; max-width:44ch}
+  h3.sub{font-family:var(--sans); font-weight:620; font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--claret); margin:30px 0 10px}
+
+  .tbl-wrap{margin:24px 0 8px; overflow-x:auto; border:1px solid var(--line)}
+  table{border-collapse:collapse; width:100%; min-width:560px; background:var(--paper-2)}
+  thead th{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink-faint); text-align:left; padding:13px 16px; border-bottom:1px solid var(--line); vertical-align:bottom}
+  thead th:first-child{color:var(--claret)}
+  tbody td{font-family:var(--serif); font-size:14.5px; line-height:1.45; color:var(--ink-soft); padding:13px 16px; border-bottom:1px solid var(--line-soft); vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody td:first-child{font-family:var(--sans); font-weight:520; font-size:12px; color:var(--ink); white-space:nowrap}
+  .tbl-cap{font-family:var(--sans); font-size:11px; color:var(--ink-faint); margin:12px 2px 0; line-height:1.5; max-width:62ch}
+
+  .pull{border-left:2px solid var(--claret); background:var(--paper-2); padding:18px 22px; margin:26px 0; max-width:60ch}
+  .pull .lbl{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--claret); display:block; margin:0 0 8px}
+  .pull p{font-size:16px; line-height:1.58; color:var(--ink-soft); margin:0}
+
+  .close{border-top:1px solid var(--line); margin:54px 0 0; padding:36px 0 0}
+  .close h2{font-family:var(--display); font-weight:420; font-size:clamp(23px,4vw,30px); line-height:1.14; margin:0 0 16px; letter-spacing:-.01em}
+  .close p{font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); padding:14px 28px; font-size:14px; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:44px 0 0; padding:20px 0 0; max-width:64ch}
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="articles.html">&larr; Articles</a>
+</div>
+
+
+<div class="a-root">
+<article class="a-shell">
+
+  <p class="eyebrow">Insights &middot; Startups and Venture</p>
+  <h1 class="title">Founding decisions, and the first money in</h1>
+  <p class="deck">The choices a founder makes at the start, and the instruments through which the first money arrives, shape the company long after they are made. Most are hard to undo.</p>
+  <p class="meta">Startups and Venture Capital &middot; 2019</p>
+
+  <p class="body lead-cap">Building a company is a sequence of decisions made quickly, with incomplete information, and under pressure to keep moving. A handful of those early decisions are unlike the rest, because their effects compound and because they are genuinely difficult to reverse once the company has grown. How the founders divide equity, how the company secures ownership of what it builds, and how the first outside money comes in will still be shaping the business years later, often at the worst possible moment, which is during a financing or a sale when everyone is paying attention. The good news is that none of these is hard to get right at the outset. They are only hard to fix afterward.</p>
+
+  <h2 class="sec-h">The decisions you cannot easily undo</h2>
+  <p class="body">Begin with the <strong>entity</strong>. A company that intends to raise venture capital is usually formed as a Delaware C corporation, because that is the structure institutional investors expect and are set up to fund. A limited liability company can be the right choice for some businesses, but converting one into a corporation later, under the pressure of an imminent financing, is costly and disruptive. The structure decision is worth making deliberately at the start, with the likely path of the company in view.</p>
+  <p class="body">Then the <strong>equity split</strong> among founders, which is at once the most emotional and the most permanent of the early decisions. Dividing ownership equally because it feels fair, without a real conversation about roles, contribution, and the years ahead, is how co-founder disputes are born. The split should reflect a considered judgment, and it should be documented, because nothing poisons a young company faster than an unresolved disagreement about who owns what.</p>
+  <p class="body">Founder equity should also <strong>vest</strong>, typically over four years with a one-year cliff, and founders often resist this until they understand its purpose. Vesting protects the company and the remaining founders if one of them leaves early, ensuring that a departing founder does not walk away with a large block of stock for a few months of work. Investors will expect to see it, and putting it in place at formation is far easier than imposing it later. Closely related is the <strong>83(b) election</strong>: when a founder receives restricted stock subject to vesting, filing this election with the tax authorities within thirty days allows the founder to be taxed on the stock's low value at grant rather than on its rising value as it vests. The window is short and the consequence of missing it is a serious and irreversible tax problem, so it is one of the few deadlines in a company's life that truly cannot be extended.</p>
+  <p class="body">Finally, <strong>ownership of the work</strong>. Every founder, employee, and contractor who contributes to the product must assign their intellectual property to the company, through confidentiality and invention-assignment agreements signed at the outset. Without those assignments, the company may not actually own the technology it is built on, which is precisely the gap a serious investor or acquirer will find. A company that cannot prove it owns its core asset is a company that is hard to fund and hard to sell.</p>
+
+  <div class="pull">
+    <span class="lbl">Why these come first</span>
+    <p>These decisions are not urgent in the way a product deadline is urgent, which is exactly why founders defer them. But each one is far cheaper to settle at formation than to unwind during a financing, and investors will diligence every one of them before they wire a dollar.</p>
+  </div>
+
+  <h2 class="sec-h">How the first money comes in</h2>
+  <p class="body">When a company raises its first outside capital, it faces a problem: pricing a very young business is hard and often arbitrary. To avoid setting a valuation before there is enough information to set one well, founders frequently raise on instruments that defer the valuation to a later, larger round. There are three common ways the first money comes in, and they differ in ways that matter a great deal to how much of the company a founder keeps.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>&nbsp;</th><th>SAFE</th><th>Convertible note</th><th>Priced round</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Is it debt?</td><td>No</td><td>Yes, it is a loan</td><td>No, it sells equity now</td></tr>
+        <tr><td>Sets a valuation now?</td><td>No, defers it</td><td>No, defers it</td><td>Yes</td></tr>
+        <tr><td>Maturity and interest?</td><td>Neither</td><td>Both</td><td>Not applicable</td></tr>
+        <tr><td>Key economic terms</td><td>Valuation cap, discount, and whether it is pre or post-money</td><td>Cap, discount, interest rate, maturity date</td><td>Valuation, liquidation preference, board seats, protective provisions</td></tr>
+        <tr><td>Converts when</td><td>At a future priced round</td><td>At a future round, or comes due at maturity</td><td>It is the priced round</td></tr>
+        <tr><td>Typical use</td><td>Fast, low-cost early raises</td><td>Early raises and bridges</td><td>Seed, Series A, and beyond</td></tr>
+      </tbody>
+    </table>
+    <p class="tbl-cap">All three are common and legitimate. The right one depends on the stage, the investors, and how much certainty the founder wants now versus later.</p>
+  </div>
+
+  <h3 class="sub">The convertible note</h3>
+  <p class="body">A convertible note is a loan that converts into equity when the company later raises a priced round. It carries the terms of debt, an interest rate and a maturity date, alongside the conversion terms that matter most, a <strong>valuation cap</strong> that limits the price at which the note converts and a <strong>discount</strong> that rewards the early investor with a lower price than the new round. Because it is debt, the maturity date is a real risk: if the priced round has not happened by then, the note can in principle come due, which is a pressure founders should not ignore.</p>
+
+  <h3 class="sub">The SAFE</h3>
+  <p class="body">A SAFE, the simple agreement for future equity, was designed to strip away the debt features. It has no interest and no maturity; it is simply a right to equity in a future round, governed by a valuation cap and sometimes a discount. Its simplicity made it the default for early raises, but it carries a trap that surprises founders repeatedly. The now-standard <strong>post-money</strong> SAFE fixes the investor's ownership percentage in a way that is more dilutive to founders than the older pre-money version, and because each SAFE is measured after the prior ones, stacking several of them compounds the dilution. Founders who raise on a series of post-money SAFEs without modeling the result are often startled, at the priced round, by how much of the company they have already given away.</p>
+
+  <h3 class="sub">The priced round</h3>
+  <p class="body">A priced round sets a valuation now and sells preferred stock at a defined price per share. It is more work and more cost, with real legal documentation, but it brings clarity, because everyone knows exactly what was bought and at what price. Its terms reach beyond valuation to the <strong>liquidation preference</strong> that determines who is paid first in an exit, the <strong>board seats</strong> and <strong>protective provisions</strong> that allocate control, and the pro rata rights that let investors maintain their stake. One feature deserves a founder's attention: the option pool a new round requires is often carved out of the pre-money valuation, which means the dilution of creating it falls on the founders rather than the new investors.</p>
+
+  <div class="pull">
+    <span class="lbl">Practice note</span>
+    <p>Before signing any instrument, model the fully diluted capitalization table through the next priced round. The valuation cap, the discount, and especially the post-money SAFE mechanics determine how much of your company you are actually giving up, and that number is rarely the one a founder assumes.</p>
+  </div>
+
+  <h2 class="sec-h">Getting the foundation right</h2>
+  <p class="body">The two halves of this story are connected. The founding decisions build the cap table, and the financing instruments build on top of it, so a clean foundation makes every later round easier and a messy one compounds with each. The discipline is the same throughout: make the early choices deliberately rather than by default, document them, and understand the consequences of the instruments you sign before you sign them. Founders who do this raise more smoothly, dilute more predictably, and reach an exit with a cap table that holds together. Those who do not spend the company's most valuable moments cleaning up decisions that were never quite made.</p>
+
+  <div class="close">
+    <h2>How we help</h2>
+    <p>We counsel founders through the decisions that are hardest to unwind, from entity and equity to vesting, IP assignment, and the option pool, and through every financing, whether a SAFE, a note, or a priced round. Our aim is a foundation that is built to scale and a cap table that survives each round intact. To discuss forming a company or raising your first capital, speak with our startups and venture capital practice.</p>
+    <a class="btn" href="#contact">Speak with our venture team</a>
+
+    <p class="disclaimer">
+      This article is a general educational resource and does not constitute legal, tax, or financial
+      advice. It is not a substitute for the advice of counsel, and reading it does not create an
+      attorney-client relationship. Financing terms and market practice evolve, and every company is
+      different; consult qualified advisors before forming an entity, granting equity, or raising capital.
+    </p>
+  </div>
+
+</article>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This article is provided for general informational purposes only and does not constitute legal advice, and reading it does not create an attorney-client relationship. Prior results do not guarantee a similar outcome. &copy; 2026 Danziger, Danziger &amp; Muro, LLP.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <title>Brand and Publicity Rights: Frequently Asked Questions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,420;9..144,540&family=Newsreader:opsz,wght@6..72,380;6..72,440&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8;
+    --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif;
+    --serif:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+
+  .q-root{
+    background:var(--paper); color:var(--ink); font-family:var(--serif);
+    -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,68px) clamp(16px,5vw,40px);
+    display:flex; justify-content:center;
+  }
+  .q-shell{width:100%; max-width:720px}
+
+  .eyebrow{
+    font-family:var(--sans); font-weight:620; font-size:11.5px;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--claret);
+    margin:0 0 24px; display:flex; align-items:center; gap:12px;
+  }
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  h1.title{
+    font-family:var(--display); font-weight:340; font-optical-sizing:auto;
+    font-size:clamp(33px,6vw,54px); line-height:1.02; letter-spacing:-.014em; margin:0 0 22px;
+  }
+  .standfirst{font-size:clamp(16px,2.3vw,19px); line-height:1.55; color:var(--ink-soft); max-width:58ch; margin:0 0 30px}
+
+  /* jump nav */
+  .jump{display:flex; flex-wrap:wrap; gap:10px; margin:0 0 12px}
+  .jump a{
+    font-family:var(--sans); font-weight:520; font-size:12.5px; text-decoration:none;
+    color:var(--ink); border:1px solid var(--line); padding:8px 15px; transition:border-color .18s,color .18s,background .18s;
+  }
+  .jump a:hover{border-color:var(--claret); color:var(--claret)}
+  .jump a:focus-visible{outline:2px solid var(--claret); outline-offset:2px}
+
+  .cat-h{
+    font-family:var(--sans); font-weight:620; font-size:11.5px; letter-spacing:.15em;
+    text-transform:uppercase; color:var(--ink-faint);
+    border-bottom:1px solid var(--line); padding:0 0 10px; margin:48px 0 6px;
+  }
+
+  details{border-bottom:1px solid var(--line-soft)}
+  summary{
+    list-style:none; cursor:pointer; display:flex; gap:16px; align-items:flex-start;
+    padding:20px 0; font-family:var(--display); font-weight:420; font-size:clamp(18px,2.6vw,21px);
+    line-height:1.28; letter-spacing:-.005em; color:var(--ink); transition:color .18s;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary:hover{color:var(--claret)}
+  summary:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+  .mk{
+    flex:0 0 auto; width:16px; height:16px; position:relative; margin-top:6px;
+  }
+  .mk::before,.mk::after{
+    content:""; position:absolute; background:var(--claret); transition:transform .25s, opacity .2s;
+  }
+  .mk::before{left:0; right:0; top:7px; height:1.5px}
+  .mk::after{top:0; bottom:0; left:7px; width:1.5px}
+  details[open] .mk::after{transform:scaleY(0); opacity:0}
+  .ans{padding:0 0 24px 32px; max-width:62ch}
+  .ans p{font-size:16.5px; line-height:1.62; color:var(--ink-soft); margin:0 0 14px}
+  .ans p:last-child{margin-bottom:0}
+  .ans strong{color:var(--ink); font-weight:440}
+
+  .close{border-top:1px solid var(--line); margin:54px 0 0; padding:36px 0 0}
+  .close h2{font-family:var(--display); font-weight:420; font-size:clamp(23px,4vw,30px); line-height:1.14; margin:0 0 15px; letter-spacing:-.01em}
+  .close p{font-size:16.5px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); padding:14px 28px; font-size:14px; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:42px 0 0; padding:20px 0 0; max-width:64ch}
+
+  @media (prefers-reduced-motion:reduce){ .mk::before,.mk::after{transition:none} }
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="practice-brand.html">&larr; Brand, Licensing & Publicity</a>
+</div>
+
+
+<div class="q-root">
+<div class="q-shell">
+
+  <p class="eyebrow">Brand, Licensing &amp; Publicity Rights &middot; FAQ</p>
+  <h1 class="title">Questions we are asked about brand and identity</h1>
+  <p class="standfirst">A name, a face, and a mark are among the most valuable assets a person or company owns, and the law that protects them is layered and, in places, fast-moving. These are the questions clients bring us most often, answered in depth.</p>
+
+  <nav class="jump" aria-label="Jump to a topic">
+    <a href="#tm">Trademarks &amp; licensing</a>
+    <a href="#rp">Right of publicity</a>
+    <a href="#ei">Endorsements, influencers &amp; NIL</a>
+  </nav>
+
+  <!-- TRADEMARKS -->
+  <h2 class="cat-h" id="tm">Trademarks and licensing</h2>
+
+  <details open>
+    <summary><span class="mk"></span><span>What is a trademark, and how is it different from a copyright or a patent?</span></summary>
+    <div class="ans">
+      <p>A <strong>trademark</strong> is any word, name, logo, slogan, sound, or other indicator that identifies the source of goods or services and distinguishes them from everyone else's. It protects the identity of a brand, so a restaurant's name, a product line, and a logo all live in trademark territory.</p>
+      <p>The other forms of intellectual property protect different things. <strong>Copyright</strong> protects original creative works such as writing, music, photography, art, and software code. <strong>Patents</strong> protect inventions and the way things work. A single business often holds all three: a trademark in its name and logo, copyright in its content, and perhaps a patent in a product.</p>
+      <p>One practical difference matters for planning. A trademark can last indefinitely, for as long as the mark is used and properly maintained, while copyrights and patents expire after fixed terms. A brand, in other words, is the one form of this property you can hold forever if you tend to it.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="mk"></span><span>Do I have to register a trademark to have any rights in it?</span></summary>
+    <div class="ans">
+      <p>No. In the United States, trademark rights arise from <strong>use</strong> of the mark in commerce, and a business that uses a name acquires common-law rights in the geographic area where it operates. You can use the <strong>TM</strong> symbol without any registration at all.</p>
+      <p>Registration, however, changes the picture significantly. A federal registration with the United States Patent and Trademark Office gives you nationwide priority and constructive notice, a legal presumption that you own the mark and that it is valid, the right to use the <strong>&reg;</strong> symbol, the ability to record the mark with Customs to intercept counterfeit imports, and access to federal court. After five years of continuous use, a registration can become difficult to challenge. State registrations exist but offer narrower benefits.</p>
+      <p>Common-law rights are real but limited and harder and costlier to enforce, because you must prove where and since when you used the mark. For any business that intends to grow beyond a single location, federal registration is usually worth pursuing early.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="mk"></span><span>How does federal registration work, and how long does it take?</span></summary>
+    <div class="ans">
+      <p>You file an application with the Patent and Trademark Office based either on actual use of the mark or on a bona fide intent to use it. The application identifies the mark, the owner, and the precise goods or services, which are sorted into international classes, with a fee due for each class. An examining attorney then reviews the application for problems, most commonly a likelihood of confusion with an earlier mark, or a finding that the mark is merely descriptive.</p>
+      <p>If the application clears examination, the mark is published so that third parties have a window, ordinarily thirty days, to oppose it. For an intent-to-use application, you complete the process by filing proof that you have begun using the mark. The timeline commonly runs from several months to well over a year, and longer if the examiner raises refusals or an opposition is filed.</p>
+      <p>One point of housekeeping that surprises people: you may use TM at any time to signal a claim of rights, but the &reg; symbol may be used only once the mark is actually registered.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="mk"></span><span>Should I run a search before I commit to a name?</span></summary>
+    <div class="ans">
+      <p>Yes, and before you spend on signage, packaging, or marketing. A clearance search looks for existing registered and common-law marks that could either block your registration or expose you to an infringement claim. The risk of skipping it is concrete: adopting a name that conflicts with a senior user can force a rebrand after you have already built goodwill, which is far more expensive than choosing differently at the outset.</p>
+      <p>The usual approach is a quick knockout search to rule out obvious conflicts, followed where warranted by a fuller search and a legal opinion on availability. We recommend clearing a name before launch, and certainly before any financing, franchising, or significant brand investment.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="mk"></span><span>How do I protect and enforce my mark over time?</span></summary>
+    <div class="ans">
+      <p>Three habits keep a trademark strong. Use it consistently in the form you registered, police the market for infringing uses, and maintain the registration by filing the required declarations of continued use and renewals on schedule. Miss those filings and the registration lapses, regardless of how well known the brand is.</p>
+      <p>Enforcement runs along a spectrum. It often begins with a cease-and-desist letter, can move to oppositions or cancellations before the Trademark Office, and reaches federal litigation for infringement, dilution of a famous mark, or counterfeiting. Recording the mark with Customs and Border Protection helps stop counterfeit goods at the border.</p>
+      <p>There is also a quieter risk. A mark owner who does not police its mark can see it weaken, and in extreme cases a mark that becomes the generic name for the product can be lost entirely. Vigilance is part of ownership.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="mk"></span><span>Can I license my brand to others, and what must the license control?</span></summary>
+    <div class="ans">
+      <p>Yes. Licensing is how a brand extends into new products, categories, territories, or partners, and it can be a significant source of value. But trademark licensing carries one rule that overrides the rest: the owner must impose and actually exercise <strong>quality control</strong> over the licensee's goods or services. A license without genuine quality control is called a naked license, and it can result in the mark being deemed abandoned, which is to say lost.</p>
+      <p>Beyond quality control, a sound license defines the scope and exclusivity of the grant, the territory and term, the royalties and the audit rights that verify them, the owner's approval rights over use, and the termination and reversion terms that return the brand to the owner intact when the relationship ends. Drafted well, a license grows the brand. Drafted poorly, it erodes the very asset it was meant to exploit.</p>
+    </div>
+  </details>
+
+  <!-- RIGHT OF PUBLICITY -->
+  <h2 class="cat-h" id="rp">Right of publicity</h2>
+
+  <details>
+    <summary><span class="mk"></span><span>What is the right of publicity, and what does New York protect?</span></summary>
+    <div class="ans">
+      <p>The right of publicity is the right to control the commercial use of your identity, including your name, image, likeness, and voice. It is what allows a person to decide whether, and on what terms, their identity is used to sell something.</p>
+      <p>New York protects this right by statute, in Sections 50 and 51 of the Civil Rights Law, which prohibit using a living person's name, portrait, picture, or voice for purposes of advertising or trade without that person's written consent. A violation can support both an injunction and damages, including exemplary damages in appropriate cases. Notably, New York's protection is grounded in the statute rather than a broad judge-made right, so the statutory language and its limits matter a great deal.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="mk"></span><span>What counts as a violation, and what is protected expression?</span></summary>
+    <div class="ans">
+      <p>The core violation is using someone's identity for advertising or trade without written consent: placing a person's photograph on a product, featuring them in an advertisement, or implying an endorsement they never gave. Those are commercial uses, and they require permission.</p>
+      <p>On the other side sit uses the First Amendment protects, even when they are profitable. News reporting, editorial content, matters of public interest, and expressive works such as books, films, and art generally fall outside the statute. The hard cases live on the line between a commercial use and protected expression, and that line is fact-specific. When a use has both commercial and expressive dimensions, the analysis turns on the particular facts, which is exactly where careful counsel earns its keep.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="mk"></span><span>Does the right of publicity survive death in New York?</span></summary>
+    <div class="ans">
+      <p>It does now, within limits. Section 50-f of the Civil Rights Law, effective for individuals who die on or after May 29, 2021 while domiciled in New York, created a <strong>post-mortem right of publicity</strong>. It protects a deceased "personality," meaning someone whose identity had commercial value at death, against unauthorized commercial use, and it runs for forty years after death, enforceable by the person's successors in interest.</p>
+      <p>Two features deserve emphasis. The law is not retroactive, so it does not reach people who died before its effective date, which limits its application to historical figures. And it makes a deceased figure's identity a manageable asset, which means estates and rights-holders should treat it like one, by registering and administering those rights, and anyone wishing to use a deceased New York figure commercially within the window needs to clear them.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="mk"></span><span>What about AI, deepfakes, and digital replicas?</span></summary>
+    <div class="ans">
+      <p>This is the fastest-moving corner of the field. Section 50-f also protects a deceased <strong>performer</strong>, defined as a person who for a living regularly acted, sang, danced, or played an instrument, against unauthorized <strong>digital replicas</strong>. A digital replica is a realistic, computer-generated performance the person did not actually give, and the statute reaches its use in audiovisual works, sound recordings, and live musical performances where the use is likely to deceive the public into thinking it was authorized. A conspicuous disclaimer can provide a safe harbor, and parody, satire, and newsworthy uses are exempt.</p>
+      <p>For the living, New York has gone further. A 2025 law governing contracts for the creation and use of digital replicas imposes consent and disclosure requirements, with particular protections where a performer is involved, and unauthorized commercial use of a realistic AI likeness of a living person can also implicate the longstanding Sections 50 and 51.</p>
+      <p>The practical lesson for talent and brands alike is the same. Digital replica and AI rights should be addressed expressly in every agreement now, rather than left to be argued about later, because the technology and the law are both moving quickly.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="mk"></span><span>I want to use a real person, living or deceased, in my product or campaign. What do I need?</span></summary>
+    <div class="ans">
+      <p>For any commercial use, the answer is written permission tailored to what you are doing. That means a release or license that covers the specific uses, the media, the territory, and the term you need, and that expressly addresses digital replicas and AI uses if those are in contemplation. A vague or narrow release is a common source of later disputes.</p>
+      <p>If the person is a deceased New York figure within the post-mortem window, clear the rights with the successor or rights-holder. Editorial, news, and clearly expressive uses have more latitude, but the boundary between commercial and expressive use is nuanced, and for any advertising, merchandising, or endorsement use the safe course is a signed agreement obtained before the campaign runs.</p>
+    </div>
+  </details>
+
+  <!-- ENDORSEMENTS / NIL -->
+  <h2 class="cat-h" id="ei">Endorsements, influencers, and NIL</h2>
+
+  <details>
+    <summary><span class="mk"></span><span>What should an endorsement or brand-ambassador agreement cover?</span></summary>
+    <div class="ans">
+      <p>At its heart, the agreement defines the grant of rights, meaning exactly what the brand may use, which today should include not only name, image, likeness, and voice but also any digital replica or AI use. It then sets the scope, including the channels, territory, term, and any exclusivity, particularly category exclusivity that keeps the talent from endorsing a competitor.</p>
+      <p>Around that core sit the deliverables and the brand's approval rights, the compensation structure, which may be a flat fee, per-post payments, commission, equity, or a blend, and the morals clauses that let each side exit if the other causes reputational harm. The agreement should also assign ownership of the content created, and it must address the disclosure obligations discussed below.</p>
+      <p>The drafting priorities differ by side. Talent should grant only what is needed and retain control over the identity itself, while brands should secure the rights they actually require and build in the tools to manage reputational risk.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="mk"></span><span>What are the disclosure rules for influencers and sponsored content?</span></summary>
+    <div class="ans">
+      <p>The Federal Trade Commission requires that any <strong>material connection</strong> between an endorser and a brand, whether payment, free product, or another incentive, be disclosed clearly and conspicuously, so that the audience understands the content is sponsored. The disclosure has to be hard to miss and placed with the endorsement itself, not buried in a cluster of hashtags or hidden behind a "more" link, and the endorsement must reflect the endorser's honest experience.</p>
+      <p>Both the brand and the influencer can face liability for inadequate disclosure or for deceptive claims. For that reason, a well-drafted influencer agreement allocates responsibility for compliance, requires disclosures in a specified form, and gives the brand recourse if the rules are ignored.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="mk"></span><span>How has the NIL landscape for college athletes changed?</span></summary>
+    <div class="ans">
+      <p>Profoundly, and recently. Since 2021, college athletes have been able to earn from their name, image, and likeness through third-party deals such as endorsements, appearances, social content, and autograph sales. That alone transformed college sports into a marketplace for athlete identity.</p>
+      <p>The larger shift came with the <strong>House v. NCAA settlement</strong>, approved in June 2025 and effective July 1, 2025, which for the first time permits schools to pay athletes directly through revenue sharing, subject to an annual per-school cap of roughly $20.5 million for the 2025-26 year, rising over a ten-year term, alongside billions in back pay to former athletes. A new enforcement body, the College Sports Commission, oversees deals through a clearinghouse, and the rules continue to evolve, with federal legislation still unresolved and several lawsuits, including challenges to the cap, pending.</p>
+      <p>For athletes, this means third-party NIL deals and school revenue sharing now operate together and both require careful contracting. For brands and schools, it means a compliance-heavy environment in which current advice matters more than almost anywhere else in this field.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="mk"></span><span>I am an athlete, brand, or school doing an NIL deal. What should I watch for?</span></summary>
+    <div class="ans">
+      <p>Athletes should pay close attention to exclusivity and category restrictions, which can collide with school or conference arrangements, along with the scope of the rights granted, the payment terms and their tax treatment, the term and termination, and whether the deal complies with the evolving conference, school, and clearinghouse rules. They should also resist over-granting rights early, since a long-term brand is easy to compromise with a hasty signature.</p>
+      <p>Brands and schools should confirm that the athlete actually has the right to grant what is being licensed, build in disclosure and morals provisions, and account for the regulatory uncertainty that still surrounds the new model. Because the rules here are moving quickly, this is an area where acting on current, specific advice is essential rather than optional.</p>
+    </div>
+  </details>
+
+  <div class="close">
+    <h2>Still have a question?</h2>
+    <p>Brand and identity are unforgiving assets, created over years and easy to compromise in a single agreement. If you are protecting a mark, structuring a license or an endorsement, clearing a use, or facing a dispute over a name or likeness, we would be glad to help.</p>
+    <a class="btn" href="#contact">Speak with our brand and publicity team</a>
+
+    <p class="disclaimer">
+      This FAQ is a general educational resource and does not constitute legal advice. It is not a
+      substitute for the advice of counsel, and reading it does not create an attorney-client
+      relationship. The law in these areas, particularly the right of publicity, digital replicas, and
+      NIL, is evolving; the information here is current as of June 2026, and you should confirm the rules
+      that apply to your situation with a qualified attorney before acting.
+    </p>
+  </div>
+
+</div>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This material is provided as a general educational resource and does not constitute legal advice, and using it does not create an attorney-client relationship. &copy; 2026 Danziger, Danziger &amp; Muro, LLP &middot; 445 Park Avenue, New York.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

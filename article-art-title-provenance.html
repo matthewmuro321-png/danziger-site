@@ -1,0 +1,183 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<title>Title, Provenance, and the Consignment: The Two Questions That Decide Art Value</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,340;9..144,0,420;9..144,0,540;9..144,1,360&family=Newsreader:opsz,ital,wght@6..72,0,380;6..72,0,440;6..72,1,400&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8;
+    --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif;
+    --serif:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+
+  .a-root{background:var(--paper); color:var(--ink); font-family:var(--serif); -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,76px) clamp(16px,5vw,40px); display:flex; justify-content:center}
+  .a-shell{width:100%; max-width:680px}
+
+  .eyebrow{font-family:var(--sans); font-weight:620; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--claret); margin:0 0 26px; display:flex; align-items:center; gap:12px}
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  h1.title{font-family:var(--display); font-weight:340; font-optical-sizing:auto; font-size:clamp(33px,6vw,54px);
+    line-height:1.02; letter-spacing:-.016em; margin:0 0 28px}
+  .deck{font-family:var(--display); font-weight:360; font-style:italic; font-size:clamp(19px,2.8vw,23px);
+    line-height:1.4; color:var(--ink-soft); max-width:55ch; margin:0 0 30px}
+  .meta{font-family:var(--sans); font-weight:520; font-size:11.5px; letter-spacing:.06em; color:var(--ink-faint);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:15px 0; margin:0 0 44px}
+
+  .a-root p.body{font-size:18px; line-height:1.66; color:var(--ink-soft); margin:0 0 20px; max-width:62ch}
+  .body strong{color:var(--ink); font-weight:440}
+  em{font-style:italic}
+  .lead-cap::first-letter{font-family:var(--display); font-weight:420; float:left; font-size:3.6em; line-height:.82;
+    padding:6px 10px 0 0; color:var(--claret)}
+
+  h2.sec-h{font-family:var(--display); font-weight:420; font-size:clamp(24px,3.6vw,31px); line-height:1.12;
+    letter-spacing:-.01em; margin:42px 0 16px; max-width:44ch}
+
+  /* diligence panel */
+  .dil{border:1px solid var(--line); background:var(--paper-2); padding:8px 26px; margin:26px 0}
+  .dil-h{font-family:var(--sans); font-weight:620; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); padding:18px 0 0}
+  .dil-item{padding:16px 0; border-bottom:1px solid var(--line-soft); display:flex; gap:15px; align-items:flex-start}
+  .dil-item:last-child{border-bottom:none}
+  .dil-item .n{font-family:var(--sans); font-weight:620; font-size:11px; color:var(--claret); min-width:20px; margin-top:3px}
+  .dil-item p{margin:0; font-size:15.5px; line-height:1.5; color:var(--ink-soft)}
+  .dil-item b{color:var(--ink); font-weight:440}
+
+  .pull{border-left:2px solid var(--claret); background:var(--paper-2); padding:18px 22px; margin:26px 0; max-width:60ch}
+  .pull .lbl{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--claret); display:block; margin:0 0 8px}
+  .pull p{font-size:16px; line-height:1.58; color:var(--ink-soft); margin:0}
+
+  .close{border-top:1px solid var(--line); margin:54px 0 0; padding:36px 0 0}
+  .close h2{font-family:var(--display); font-weight:420; font-size:clamp(23px,4vw,30px); line-height:1.14; margin:0 0 16px; letter-spacing:-.01em}
+  .close p{font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); padding:14px 28px; font-size:14px; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:44px 0 0; padding:20px 0 0; max-width:64ch}
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="articles.html">&larr; Articles</a>
+</div>
+
+
+<div class="a-root">
+<article class="a-shell">
+
+  <p class="eyebrow">Insights &middot; Art Law</p>
+  <h1 class="title">Title, provenance, and the consignment</h1>
+  <p class="deck">Art trades on trust. But two questions decide whether the value is real: can good title actually pass, and what does the paper protect. Both are too often left to a handshake.</p>
+  <p class="meta">Art Law &middot; 2026</p>
+
+  <p class="body lead-cap">The art market runs on relationships and discretion, and that is part of its appeal. It is also the source of its risk, because objects of great value change hands on a level of informality that would be unthinkable in any other market of comparable stakes. Two questions, more than any others, determine whether a transaction is sound. For a buyer, the question is whether the seller can actually convey good title, which turns on the work's provenance. For an owner placing a work with a dealer to sell, the question is what the consignment paper protects when the dealer holds the work, and the money, on the owner's behalf. Neither question is answered by trust alone, and both reward the discipline that the market's informality discourages.</p>
+
+  <h2 class="sec-h">Why title is different for art</h2>
+  <p class="body">A buyer of art cannot rely on the comfortable assumptions that protect buyers of most things. Under longstanding American law, a thief cannot pass good title, and the United States, unlike a number of civil-law countries, generally does not protect even a good-faith purchaser who unknowingly buys stolen property. The practical consequence is stark: a collector can pay a fortune for a work, possess it for years, and still lose it to the rightful owner if it turns out to have been stolen somewhere up the chain. Possession is not ownership, and a clean appearance is not clean title.</p>
+  <p class="body">Time is no refuge either, particularly in New York. New York applies a demand-and-refusal rule, under which the limitations clock on a true owner's claim against a good-faith possessor does not begin to run until the owner demands the work's return and is refused. A claim that would be stale elsewhere can remain alive here for decades, which makes New York a jurisdiction where old title problems surface, and which is precisely why diligence matters more, not less, in this market.</p>
+  <p class="body">Two categories of claim deserve particular vigilance. Works looted during the Nazi era of 1933 to 1945 carry a distinct and now strengthened legal regime: the federal Holocaust Expropriated Art Recovery framework, reauthorized and made permanent in 2026, allows such claims to proceed within six years of a claimant's actual discovery of the work and limits the procedural defenses a possessor can raise. And antiquities and cultural property carry their own exposure under foreign patrimony laws and import and export rules, where an object removed from its country of origin in violation of those laws may never have been lawfully exportable at all. A gap in a work's history during a sensitive period is not a curiosity; it is a red flag.</p>
+
+  <h2 class="sec-h">Provenance and title diligence</h2>
+  <p class="body">Provenance is the documented history of a work's ownership from creation to the present, and reconstructing it is how a buyer confirms both authenticity and clean title. Good diligence traces that history and probes its gaps rather than accepting the seller's assurance that all is well.</p>
+
+  <div class="dil">
+    <p class="dil-h">What title diligence covers</p>
+    <div class="dil-item"><span class="n">01</span><p><b>The chain of ownership.</b> Trace the work from the artist forward through bills of sale, exhibition and auction records, catalogues raisonnes, and gallery, estate, and collection archives, and scrutinize any gap, especially across the 1933 to 1945 period.</p></div>
+    <div class="dil-item"><span class="n">02</span><p><b>Stolen-art records.</b> Search the recognized stolen and looted art databases and registries for the work, which is now a baseline expectation rather than an extra step.</p></div>
+    <div class="dil-item"><span class="n">03</span><p><b>Authenticity.</b> Confirm the attribution through the catalogue raisonne, any authentication body or recognized expert, and a condition review that addresses the risk of forgery or undisclosed restoration.</p></div>
+    <div class="dil-item"><span class="n">04</span><p><b>Cultural property.</b> For antiquities and archaeological material, confirm lawful excavation and export and compliance with the patrimony laws of the country of origin.</p></div>
+    <div class="dil-item"><span class="n">05</span><p><b>Liens and authority.</b> Confirm the seller actually owns the work and has authority to sell it, and check for security interests or liens that would travel with it.</p></div>
+    <div class="dil-item"><span class="n">06</span><p><b>Contractual protection.</b> Because diligence can never fully eliminate the risk, obtain warranties of title and authenticity from the seller, backed by a remedy if they prove untrue.</p></div>
+  </div>
+
+  <p class="body">No amount of diligence makes title certain, which is why the warranties matter. The combination of a thorough provenance investigation and strong contractual warranties is what allows a buyer to acquire with confidence in a market where the alternative is to acquire on faith.</p>
+
+  <h2 class="sec-h">Consignment: the lifeblood, and the risk</h2>
+  <p class="body">Consignment is how most art is sold. An owner, the consignor, delivers a work to a dealer or gallery, the consignee, to sell on the owner's behalf, with title remaining in the owner until a sale, and the dealer remitting the proceeds less an agreed commission. It is the ordinary machinery of the trade, and it carries an extraordinary risk that owners routinely overlook: the dealer is holding someone else's property, and after a sale, someone else's money. If the dealer fails, misbehaves, or goes bankrupt, an unprotected consignor can find the work, or the proceeds, exposed to the dealer's creditors.</p>
+  <p class="body">New York gives consignors a powerful defense against exactly this. Under New York's Arts and Cultural Affairs Law, a work delivered to a dealer on consignment, and the proceeds of its sale, are treated as <strong>trust property</strong> held for the consignor's benefit. The dealer is the consignor's fiduciary, the work and the money are not the dealer's to use, and they are shielded from the dealer's creditors. This protection is strongest of all for artists consigning their own work, and it is one of the genuine advantages of consigning in New York. Where additional protection is warranted, a consignor can also file under the Uniform Commercial Code to perfect and protect its interest against the dealer's creditors, complementing the statutory trust.</p>
+
+  <div class="pull">
+    <span class="lbl">The protection to claim</span>
+    <p>New York's statutory trust exists by operation of law, but the consignor who pairs it with a clear written consignment agreement, and where appropriate a UCC filing, is the one whose work and proceeds are genuinely secure if a dealer fails.</p>
+  </div>
+
+  <h2 class="sec-h">What the consignment agreement should say</h2>
+  <p class="body">A sound consignment agreement turns the trust the relationship requires into terms the parties can rely on. It should identify the work and confirm that title remains with the consignor, set the term of the consignment, and fix the economics, meaning the net or minimum price the consignor is to receive and the dealer's commission. It should define and limit the dealer's authority, including any discretion to discount and to whom the work may be sold, so the dealer cannot bind the consignor to a price or a buyer the consignor would not accept.</p>
+  <p class="body">It should also address the work's safety and the money's. While the work is in the dealer's hands, the agreement should require insurance and allocate the risk of loss or damage, and specify how the work is to be cared for and stored. After a sale, it should require the dealer to remit the proceeds promptly and to keep them segregated rather than commingled, and it should give the consignor rights to reporting, to inspect the work, and to recall it. Finally, it should allocate the expenses of shipping, framing, and marketing, provide warranties, and address what happens if the dealer becomes insolvent and the condition in which the work must be returned. None of this is exotic. It is simply the difference between a consignment that protects the owner and one that leaves the owner's property and money to the dealer's good fortune.</p>
+
+  <h2 class="sec-h">Getting it right</h2>
+  <p class="body">The two halves of this story share a lesson the market resists. A buyer should investigate title and provenance before acquiring and secure warranties against what diligence cannot resolve, rather than trusting that a beautiful object and a reputable seller mean clean title. A consignor should never place a valuable work on a handshake, but should rely on a clear agreement, the protection of New York's statutory trust, and where appropriate a UCC filing. Art is bought, sold, and placed on relationships, and that will not change. What the careful participant adds is the paper that makes the relationship safe.</p>
+
+  <div class="close">
+    <h2>How we help</h2>
+    <p>We advise collectors, dealers, galleries, artists, and estates on the transactions at the heart of the art market, from title and provenance diligence and the warranties that protect a purchase to the consignment agreements that protect an owner's work and proceeds. Our aim is to bring genuine rigor to a market that too often operates without it. To discuss an acquisition, a sale, or a consignment, speak with our art law practice.</p>
+    <a class="btn" href="#contact">Speak with our art law team</a>
+
+    <p class="disclaimer">
+      This article is a general educational resource and does not constitute legal advice. It is not a
+      substitute for the advice of counsel, and reading it does not create an attorney-client
+      relationship. The law in this area, including looted-art and cultural-property regimes, continues
+      to develop, and the matters discussed here are current as of June 2026; confirm the rules that
+      apply to your situation with a qualified attorney before acting.
+    </p>
+  </div>
+
+</article>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This article is provided for general informational purposes only and does not constitute legal advice, and reading it does not create an attorney-client relationship. Prior results do not guarantee a similar outcome. &copy; 2026 Danziger, Danziger &amp; Muro, LLP.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

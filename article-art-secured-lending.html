@@ -1,0 +1,157 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<title>Borrowing Against Art: How Loans Secured by Artwork Actually Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,340;9..144,0,420;9..144,0,540;9..144,1,360&family=Newsreader:opsz,wght@6..72,380;6..72,440&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8; --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif; --serif:"Newsreader",Georgia,serif; --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  .a-root{background:var(--paper); color:var(--ink); font-family:var(--serif); -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,76px) clamp(16px,5vw,40px); display:flex; justify-content:center}
+  .a-shell{width:100%; max-width:680px}
+  .eyebrow{font-family:var(--sans); font-weight:620; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--claret); margin:0 0 26px; display:flex; align-items:center; gap:12px}
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+  h1.title{font-family:var(--display); font-weight:340; font-optical-sizing:auto; font-size:clamp(33px,6vw,54px);
+    line-height:1.02; letter-spacing:-.016em; margin:0 0 28px}
+  .deck{font-family:var(--display); font-weight:360; font-style:italic; font-size:clamp(19px,2.8vw,23px);
+    line-height:1.4; color:var(--ink-soft); max-width:55ch; margin:0 0 30px}
+  .meta{font-family:var(--sans); font-weight:520; font-size:11.5px; letter-spacing:.06em; color:var(--ink-faint);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:15px 0; margin:0 0 44px}
+  .a-root p.body{font-size:18px; line-height:1.66; color:var(--ink-soft); margin:0 0 20px; max-width:62ch}
+  .body strong{color:var(--ink); font-weight:440}
+  em{font-style:italic}
+  .lead-cap::first-letter{font-family:var(--display); font-weight:420; float:left; font-size:3.6em; line-height:.82; padding:6px 10px 0 0; color:var(--claret)}
+  h2.sec-h{font-family:var(--display); font-weight:420; font-size:clamp(24px,3.6vw,31px); line-height:1.12; letter-spacing:-.01em; margin:42px 0 16px; max-width:44ch}
+  .tbl-wrap{margin:24px 0 8px; overflow-x:auto; border:1px solid var(--line)}
+  table{border-collapse:collapse; width:100%; min-width:520px; background:var(--paper-2)}
+  thead th{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); text-align:left; padding:13px 16px; border-bottom:1px solid var(--line); vertical-align:bottom}
+  thead th:first-child{color:var(--claret)}
+  tbody td{font-family:var(--serif); font-size:15px; line-height:1.45; color:var(--ink-soft); padding:14px 16px; border-bottom:1px solid var(--line-soft); vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody td:first-child{font-family:var(--sans); font-weight:520; font-size:12px; color:var(--ink)}
+  .tbl-cap{font-family:var(--sans); font-size:11px; color:var(--ink-faint); margin:12px 2px 0; line-height:1.5; max-width:62ch}
+  .pull{border-left:2px solid var(--claret); background:var(--paper-2); padding:18px 22px; margin:26px 0; max-width:60ch}
+  .pull .lbl{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--claret); display:block; margin:0 0 8px}
+  .pull p{font-size:16px; line-height:1.58; color:var(--ink-soft); margin:0}
+  .close{border-top:1px solid var(--line); margin:54px 0 0; padding:36px 0 0}
+  .close h2{font-family:var(--display); font-weight:420; font-size:clamp(23px,4vw,30px); line-height:1.14; margin:0 0 16px; letter-spacing:-.01em}
+  .close p{font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); padding:14px 28px; font-size:14px; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:44px 0 0; padding:20px 0 0; max-width:64ch}
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="articles.html">&larr; Articles</a>
+</div>
+
+
+<div class="a-root">
+<article class="a-shell">
+  <p class="eyebrow">Insights &middot; Art Law</p>
+  <h1 class="title">Borrowing against art</h1>
+  <p class="deck">Art is valuable, illiquid, mobile, and easy to sell out from under a lender. That combination is what makes lending against it unlike any other secured loan.</p>
+  <p class="meta">Art Law and Finance &middot; 2022</p>
+
+  <p class="body lead-cap">A great collection is a great deal of value sitting on a wall, doing nothing for its owner's balance sheet. Borrowing against art lets a collector, dealer, or estate unlock liquidity without selling, which is its appeal, and a growing number of private banks and specialist lenders compete to provide it. But art is among the most difficult assets to lend against, because it has a set of qualities that ordinary collateral does not, and a lender who treats a painting like a piece of equipment will discover the difference at the worst time. Understanding why art is hard collateral is the key to structuring a loan that holds.</p>
+
+  <h2 class="sec-h">Art is unusual collateral</h2>
+  <p class="body">Four qualities set art apart. It is <strong>illiquid</strong>, so realizing value on a default can take months and a sale process, not a phone call. Its value is <strong>volatile and subjective</strong>, dependent on shifting taste and on appraisals that are estimates rather than quotes, which is why lenders advance conservatively, often around half of appraised value, and require professional valuation. It is <strong>mobile</strong>, able to cross a state or national border in the back of a van, which raises questions about where a security interest is perfected and whether it remains so after the work moves. And it is exposed to <strong>title and authenticity risk</strong>, because a work that turns out to be stolen, encumbered, or fake is collateral worth nothing, which means a careful lender runs the same provenance, title, and authenticity diligence on the collateral that a careful buyer runs before a purchase.</p>
+
+  <h2 class="sec-h">The lender's central problem: control and priority</h2>
+  <p class="body">The deepest difficulty is keeping the lien attached to the work. A lender takes a security interest in the art and perfects it by filing under Article 9 of the Uniform Commercial Code, which is straightforward enough. The problem is that two well-established rules can cut the lien off entirely. Under the buyer-in-ordinary-course rule, a buyer who purchases from a dealer in the ordinary course of the dealer's business can take the work free of a security interest the dealer created. And under the entrustment rule, entrusting goods to a merchant who deals in goods of that kind gives the merchant the power to transfer good title to such a buyer. Put together, if the collateral sits with a dealer, the lender's perfected lien can be extinguished by a sale the lender never sees coming.</p>
+  <p class="body">Even where the borrower is a private collector rather than a dealer, the risk is that the collector quietly sells or consigns the work. The lender's nightmare is the same in every version: the collateral walks, a buyer takes it clean, and the lender is left with a filing that points at a painting now hanging in someone else's home.</p>
+
+  <div class="pull">
+    <span class="lbl">Why lenders care so much about the work itself</span>
+    <p>In most secured lending, perfection by filing is enough. In art lending it may not be, because the buyer-in-ordinary-course and entrustment rules can defeat a filed lien. That is why control of the work, and control of the chain through which it could be sold, is often as important to an art lender as the loan terms.</p>
+  </div>
+
+  <h2 class="sec-h">Possession, or the wall</h2>
+  <p class="body">Lenders answer the control problem in one of two ways, and the choice defines the loan.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>&nbsp;</th><th>Possessory loan</th><th>Non-possessory loan</th></tr></thead>
+      <tbody>
+        <tr><td>Where the work is</td><td>With the lender or an independent custodian</td><td>On the borrower's wall</td></tr>
+        <tr><td>Control and sale risk</td><td>Strong; the work cannot be sold out from under the lender</td><td>Weaker; relies on filings, covenants, and trust</td></tr>
+        <tr><td>Cost to the borrower</td><td>Loses the use and display of the work</td><td>Keeps living with the art</td></tr>
+        <tr><td>Typical terms</td><td>Higher advance rates, broader lender comfort</td><td>Lower advance rates, stronger borrowers, more diligence</td></tr>
+      </tbody>
+    </table>
+    <p class="tbl-cap">Illustrative. Many lenders require possession or a controlled custody arrangement; private banks may lend against art a client keeps at home, at lower leverage and to borrowers whose other assets provide comfort.</p>
+  </div>
+
+  <p class="body">A <strong>possessory</strong> structure, in which the lender or a neutral custodian holds the work, gives the lender control and largely defeats the sale and entrustment risk, at the cost of taking the art off the borrower's wall. A <strong>non-possessory</strong> structure lets the collector keep living with the work, which is often the entire point of borrowing rather than selling, but it leaves the lender more exposed and so usually comes with lower leverage, more diligence, and reliance on the borrower's overall creditworthiness.</p>
+
+  <h2 class="sec-h">The rest of the package</h2>
+  <p class="body">Around the core structure sits the work that makes an art loan sound. The lender conducts <strong>title, provenance, and authenticity diligence</strong> on the collateral itself, because a defect in the work is a defect in the security. It requires <strong>insurance</strong>, typically assigned to the lender, and addresses storage, condition, and environmental controls. It plans for the work's <strong>mobility</strong>, since moving the art to another state or country can raise re-perfection and choice-of-law questions that must be managed rather than discovered. And it documents the deal through a loan agreement and a security agreement, the UCC filings, any custody or control arrangement, the appraisal, and the insurance assignment, with attention to whether the loan is recourse or non-recourse to the borrower's other assets.</p>
+  <p class="body">For <strong>dealers</strong> borrowing against inventory, the entrustment and ordinary-course problems are at their most acute, since the dealer's entire business is selling the very collateral the lender is relying on. Inventory financing in the art trade therefore depends on tight controls, sale procedures that route proceeds to the lender, and ongoing verification that the works are where they are supposed to be.</p>
+
+  <div class="close">
+    <h2>How we help</h2>
+    <p>We advise lenders and borrowers in art-secured financing, structuring the loan and the security to address the control, priority, title, and mobility risks that make art distinctive collateral. Our diligence and our documentation are built around the rules that can otherwise defeat a lender's lien. To discuss a loan secured by art, speak with our art law practice.</p>
+    <a class="btn" href="#contact">Speak with our art law team</a>
+    <p class="disclaimer">This article is a general educational resource and does not constitute legal, tax, or financial advice. It is not a substitute for the advice of counsel, and reading it does not create an attorney-client relationship. Secured lending against art involves complex and fact-specific questions; consult qualified advisors before lending or borrowing.</p>
+  </div>
+</article>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This article is provided for general informational purposes only and does not constitute legal advice, and reading it does not create an attorney-client relationship. Prior results do not guarantee a similar outcome. &copy; 2026 Danziger, Danziger &amp; Muro, LLP.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

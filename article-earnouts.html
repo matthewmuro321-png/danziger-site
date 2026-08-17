@@ -1,0 +1,201 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <title>The Price Behind the Price: Earn-Outs and Working Capital Adjustments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,340;9..144,0,420;9..144,0,540;9..144,1,360&family=Newsreader:opsz,ital,wght@6..72,0,380;6..72,0,440;6..72,1,400&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8;
+    --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif;
+    --serif:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+
+  .a-root{background:var(--paper); color:var(--ink); font-family:var(--serif); -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,76px) clamp(16px,5vw,40px); display:flex; justify-content:center}
+  .a-shell{width:100%; max-width:680px}
+
+  .eyebrow{font-family:var(--sans); font-weight:620; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--claret); margin:0 0 26px; display:flex; align-items:center; gap:12px}
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  h1.title{font-family:var(--display); font-weight:340; font-optical-sizing:auto; font-size:clamp(34px,6.4vw,56px);
+    line-height:1.01; letter-spacing:-.016em; margin:0 0 28px}
+  .deck{font-family:var(--display); font-weight:360; font-style:italic; font-size:clamp(19px,2.8vw,23px);
+    line-height:1.4; color:var(--ink-soft); max-width:54ch; margin:0 0 30px}
+  .meta{font-family:var(--sans); font-weight:520; font-size:11.5px; letter-spacing:.06em; color:var(--ink-faint);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:15px 0; margin:0 0 44px}
+
+  .a-root p.body{font-size:18px; line-height:1.66; color:var(--ink-soft); margin:0 0 20px; max-width:62ch}
+  .body strong{color:var(--ink); font-weight:440}
+  em{font-style:italic}
+  .lead-cap::first-letter{font-family:var(--display); font-weight:420; float:left; font-size:3.6em; line-height:.82;
+    padding:6px 10px 0 0; color:var(--claret)}
+
+  h2.sec-h{font-family:var(--display); font-weight:420; font-size:clamp(24px,3.6vw,31px); line-height:1.12;
+    letter-spacing:-.01em; margin:42px 0 16px; max-width:42ch}
+
+  /* ledger bridge (signature) */
+  .ledger{border:1px solid var(--line); background:var(--paper-2); padding:24px 26px; margin:26px 0 8px}
+  .ledger-h{font-family:var(--sans); font-weight:620; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-faint); margin:0 0 16px}
+  .lrow{display:flex; justify-content:space-between; align-items:baseline; gap:18px; padding:9px 0; font-size:15.5px; color:var(--ink-soft)}
+  .lrow .lv{font-family:var(--sans); font-weight:520; font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--ink)}
+  .lrow.minus .lv{color:var(--claret)}
+  .lrow.total{border-top:1px solid var(--ink); margin-top:6px; padding-top:13px; font-family:var(--display); font-size:17px; color:var(--ink)}
+  .lrow.total .lbl{font-weight:420}
+  .lrow.total .lv{font-family:var(--display); font-weight:540; font-size:18px}
+  .lrow.sub{font-size:14px; color:var(--ink-faint)}
+  .lrow.sub .lv{color:var(--ink-faint); font-weight:420}
+  .lrow.grand{border-top:1px solid var(--line); margin-top:4px; padding-top:11px; color:var(--ink); font-weight:440}
+  .lrow.grand .lv{color:var(--ink)}
+  .lrow.contingent{border-top:1px dashed var(--line); margin-top:10px; padding-top:12px; font-style:italic; color:var(--claret-soft)}
+  .lrow.contingent .lv{color:var(--claret-soft); font-style:normal}
+  .ledger-cap{font-family:var(--sans); font-size:11px; color:var(--ink-faint); margin:16px 0 0; line-height:1.5}
+
+  .pull{border-left:2px solid var(--claret); background:var(--paper-2); padding:18px 22px; margin:26px 0; max-width:60ch}
+  .pull .lbl{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase;
+    color:var(--claret); display:block; margin:0 0 8px}
+  .pull p{font-size:16px; line-height:1.58; color:var(--ink-soft); margin:0}
+
+  .close{border-top:1px solid var(--line); margin:54px 0 0; padding:36px 0 0}
+  .close h2{font-family:var(--display); font-weight:420; font-size:clamp(23px,4vw,30px); line-height:1.14; margin:0 0 16px; letter-spacing:-.01em}
+  .close p{font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); padding:14px 28px; font-size:14px; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:44px 0 0; padding:20px 0 0; max-width:64ch}
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="articles.html">&larr; Articles</a>
+</div>
+
+
+<div class="a-root">
+<article class="a-shell">
+
+  <p class="eyebrow">Insights &middot; Private M&amp;A</p>
+  <h1 class="title">The price behind the price</h1>
+  <p class="deck">Earn-outs, working capital adjustments, and the cash-free, debt-free convention decide how much of a headline price a seller actually keeps. They are where deals are quietly won and lost.</p>
+  <p class="meta">Private M&amp;A &middot; 2018</p>
+
+  <p class="body lead-cap">A purchase price is announced as a single, confident number, and almost no one ever receives it. Between the figure on the term sheet and the amount that lands in the seller's account sit three mechanisms that adjust, defer, and condition the price: the cash-free, debt-free convention, the working capital adjustment, and the earn-out. Each is ordinary, each is negotiated in nearly every private company sale, and each can move millions. A seller who treats them as accounting afterthoughts negotiates the wrong things hard and the right things not at all. Understanding them is understanding the real price.</p>
+
+  <h2 class="sec-h">Cash-free, debt-free: from enterprise value to equity value</h2>
+  <p class="body">Most private deals are priced on a <strong>cash-free, debt-free</strong> basis, and the phrase, though it sounds like jargon, expresses a simple idea. The buyer is agreeing to pay for the <em>business</em>, its ability to generate earnings, and not for the seller's cash balances or the seller's debts. So the headline number, the <strong>enterprise value</strong>, assumes the company is delivered with no cash and no debt. The seller keeps the cash on hand at closing and pays off the company's debt, and the price is bridged from enterprise value down to the <strong>equity value</strong>, which is what the seller actually receives.</p>
+  <p class="body">That bridge is the heart of the closing math. From enterprise value you subtract <strong>net debt</strong>, meaning the company's debt less its cash, you adjust for the working capital delivered against an agreed target, and you subtract the seller's transaction expenses. What remains is the equity value, the cash that changes hands. A worked example makes the abstraction concrete.</p>
+
+  <div class="ledger" role="img" aria-label="An illustrative bridge from a fifty million dollar enterprise value to net cash at closing of $38.7 million, with an additional contingent earn-out of up to $5 million.">
+    <p class="ledger-h">From enterprise value to cash at closing &middot; illustrative</p>
+    <div class="lrow"><span class="lbl">Enterprise value (cash-free, debt-free)</span><span class="lv">$50.0m</span></div>
+    <div class="lrow minus"><span class="lbl">Less: net debt (debt $8.0m, less cash $2.0m)</span><span class="lv">(6.0)</span></div>
+    <div class="lrow"><span class="lbl">Plus: working capital delivered above target</span><span class="lv">+0.5</span></div>
+    <div class="lrow minus"><span class="lbl">Less: seller's transaction expenses</span><span class="lv">(1.5)</span></div>
+    <div class="lrow total"><span class="lbl">Equity value</span><span class="lv">$43.0m</span></div>
+    <div class="lrow sub minus"><span class="lbl">Less: amount held in escrow</span><span class="lv">(4.3)</span></div>
+    <div class="lrow grand"><span class="lbl">Net cash to seller at closing</span><span class="lv">$38.7m</span></div>
+    <div class="lrow contingent"><span class="lbl">Plus: earn-out, if targets are met, up to</span><span class="lv">5.0</span></div>
+    <p class="ledger-cap">Figures are illustrative. The point is the shape: a single headline number resolves into a smaller sum at closing, a portion held back, and a further portion deferred and contingent.</p>
+  </div>
+
+  <h2 class="sec-h">The working capital adjustment</h2>
+  <p class="body">A business cannot run on zero working capital. It needs receivables to collect, inventory to sell, and the ordinary cushion that funds operations between paying suppliers and being paid by customers. When a buyer acquires a company, it expects to inherit a <em>normal</em> level of that working capital, enough to keep the lights on from day one, neither stripped out by a departing seller nor artificially inflated. The <strong>working capital adjustment</strong> is the mechanism that enforces that expectation.</p>
+  <p class="body">It works through a target, often called the peg, set at the normalized level of working capital the business typically carries, usually derived from a trailing historical average. At closing, the parties estimate the actual working capital and adjust the price against the target, and after closing they prepare a final closing statement and true the number up. If the company is delivered with working capital above the target, the seller is paid the difference, because the seller handed over more than promised. If it comes in below the target, the price is reduced. A post-closing dispute over the final number is resolved, if the parties cannot agree, by an independent accountant whose decision binds them.</p>
+  <p class="body">The fights here are definitional, and they are where money hides. What counts as working capital, which accounts are in and which are out, and what accounting principles govern the calculation all determine the result, and a target set without a clear, illustrative sample calculation is an invitation to argue later. Seasonality is a particular trap, because a target drawn from the wrong point in a seasonal cycle can hand a windfall to one side. There is an alternative approach, the locked box, common in European deals, that fixes the price at a past balance sheet date and dispenses with the closing true-up altogether, and it is worth considering where certainty is prized over a closing-date measurement.</p>
+
+  <h2 class="sec-h">Net debt and the three buckets</h2>
+  <p class="body">Net debt sounds straightforward, the company's borrowings less its cash, but the negotiation lies in what counts as debt. Beyond ordinary bank borrowings, the parties argue over <strong>debt-like items</strong>, the obligations that behave like debt even if they do not appear under that heading, such as capital leases, unpaid taxes, accrued but unpaid bonuses, deferred revenue in some deals, and unfunded liabilities. Cash has its own subtleties, including amounts that are restricted or trapped and so cannot truly be swept by the seller.</p>
+  <p class="body">The deeper discipline is to see that every dollar of value adjustment lives in one of three buckets, the enterprise value, net debt, or working capital, and a single item must sit in exactly one of them. The classic error, and a frequent source of leakage, is to let an item be counted in two places, reducing the price twice for the same liability, or to let it fall through the cracks and be counted nowhere. A well-drafted purchase agreement defines the buckets precisely and lists the debt-like and cash-like items by name, so that nothing is double-counted and nothing escapes.</p>
+
+  <div class="pull">
+    <span class="lbl">The point most often missed</span>
+    <p>Net debt, working capital, and enterprise value are not independent. Move an item from one bucket to another and the price changes. The negotiation is not three separate negotiations but one, and it should be conducted as such.</p>
+  </div>
+
+  <h2 class="sec-h">Earn-outs: bridging the gap, and seeding the dispute</h2>
+  <p class="body">An <strong>earn-out</strong> defers a portion of the price and makes it contingent on the business hitting agreed targets after closing. Its purpose is to bridge a valuation gap. The seller believes the business will perform; the buyer is not yet convinced; rather than split the difference, they let the future decide, with the seller paid more if the optimism proves out. In theory it is elegant. In practice, the earn-out is the single most litigated term in private M&amp;A, and the reasons are instructive.</p>
+  <p class="body">The first battleground is the <strong>metric</strong>. An earn-out tied to revenue is harder to manipulate but rewards growth that may be unprofitable. One tied to <strong>EBITDA</strong> better captures real performance but invites endless dispute over how post-closing costs are allocated, because the buyer now controls the books and every overhead charge it pushes into the business reduces the seller's earn-out. Milestone-based earn-outs, paid on defined events, avoid the accounting fight but only suit certain businesses. Then come the structural terms, the measurement period, the targets, whether payment is all-or-nothing at a cliff or scales along a sliding scale, and whether the earn-out is capped.</p>
+  <p class="body">The most consequential terms, and the most neglected, are the <strong>operating covenants</strong> that govern how the buyer must run the business during the earn-out period. After closing the buyer controls the very business whose performance determines the seller's payment, and absent clear commitments, the buyer has every incentive and every ability to depress the measured result, by cutting the investment that drives the metric, diverting opportunities, or reallocating costs. A seller protects the earn-out by negotiating how the business will be operated, by addressing what happens to the earn-out if the buyer sells the business again before the period ends, and by limiting the buyer's ability to set the earn-out off against indemnity claims. These provisions, not the targets, are usually what the litigation is about.</p>
+
+  <div class="pull">
+    <span class="lbl">Practice note</span>
+    <p>If you use an earn-out, choose a metric that resists manipulation, write down exactly how the business must be run while it is measured, and define the calculation with a worked example. An earn-out left vague is not a bridge over the valuation gap; it is a deferred lawsuit.</p>
+  </div>
+
+  <h2 class="sec-h">Getting it right</h2>
+  <p class="body">These three mechanisms reward the same discipline. Define the working capital target with an illustrative sample calculation and a target drawn from a representative period, so the true-up confirms a shared understanding rather than starting a fight. Define the net debt and working capital buckets precisely, name the debt-like and cash-like items, and make certain no item is counted twice or lost. And approach the earn-out with clear eyes, asking first whether it is needed at all, and if it is, drafting the metric, the operating covenants, and the calculation with the care the most contested term in the deal deserves.</p>
+  <p class="body">Above all, negotiate these terms as the price terms they are. A seller who wins on the headline number and loses on the working capital target, the debt-like items, and the earn-out covenants has not won the deal. The amount that reaches the account is the only price that was ever real, and it is set in exactly these provisions.</p>
+
+  <div class="close">
+    <h2>How we help</h2>
+    <p>We negotiate and draft the purchase-price mechanics that determine what a sale actually delivers, on both the buy side and the sell side. From the cash-free, debt-free bridge through the working capital target, the net debt definitions, and the architecture of an earn-out, our aim is a price that is clear, defensible, and free of the ambiguities that become disputes. To discuss a transaction, speak with our private M&amp;A practice.</p>
+    <a class="btn" href="#contact">Speak with our M&amp;A team</a>
+
+    <p class="disclaimer">
+      This article is a general educational resource and does not constitute legal, tax, or financial
+      advice. It is not a substitute for the advice of counsel, and reading it does not create an
+      attorney-client relationship. Every transaction is different; consult qualified advisors before
+      acting on anything described here.
+    </p>
+  </div>
+
+</article>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This article is provided for general informational purposes only and does not constitute legal advice, and reading it does not create an attorney-client relationship. Prior results do not guarantee a similar outcome. &copy; 2026 Danziger, Danziger &amp; Muro, LLP.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

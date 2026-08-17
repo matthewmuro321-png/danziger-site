@@ -1,0 +1,284 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <title>Preparing Your Company for Sale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,420;9..144,540&family=Newsreader:opsz,ital,wght@6..72,0,380;6..72,0,440;6..72,1,400&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8;
+    --claret:#6B2230; --claret-soft:#8C3B48; --claret-pale:#C49AA0;
+    --display:"Fraunces",Georgia,serif;
+    --serif:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+
+  .g-root{
+    background:var(--paper); color:var(--ink); font-family:var(--serif);
+    -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,72px) clamp(16px,5vw,40px);
+    display:flex; justify-content:center;
+  }
+  .g-shell{width:100%; max-width:720px}
+
+  .eyebrow{
+    font-family:var(--sans); font-weight:620; font-size:11.5px;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--claret);
+    margin:0 0 24px; display:flex; align-items:center; gap:12px;
+  }
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  h1.title{
+    font-family:var(--display); font-weight:340; font-optical-sizing:auto;
+    font-size:clamp(35px,6.6vw,58px); line-height:1.0; letter-spacing:-.015em; margin:0 0 26px;
+  }
+  .standfirst{font-size:clamp(17px,2.4vw,20px); line-height:1.55; color:var(--ink-soft); max-width:56ch; margin:0 0 30px}
+  .meta{
+    font-family:var(--sans); font-weight:520; font-size:11.5px; letter-spacing:.06em;
+    color:var(--ink-faint); border-top:1px solid var(--line); padding-top:16px; margin:0 0 44px;
+  }
+
+  .contents{background:var(--paper-2); border:1px solid var(--line); padding:26px 28px; margin:0 0 52px}
+  .contents h2{
+    font-family:var(--sans); font-weight:620; font-size:11px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--ink-faint); margin:0 0 16px;
+  }
+  .contents ol{margin:0; padding:0; list-style:none; counter-reset:c}
+  .contents li{counter-increment:c; border-top:1px solid var(--line-soft)}
+  .contents li:first-child{border-top:none}
+  .contents a{
+    display:flex; gap:16px; align-items:baseline; text-decoration:none; color:var(--ink);
+    padding:11px 0; font-size:16.5px; transition:color .18s;
+  }
+  .contents a:hover{color:var(--claret)}
+  .contents a:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+  .contents a::before{
+    content:counter(c,decimal-leading-zero); font-family:var(--sans); font-weight:620;
+    font-size:12px; color:var(--claret); letter-spacing:.04em; min-width:22px;
+  }
+
+  section{margin:0 0 52px; scroll-margin-top:24px}
+  .sec-num{font-family:var(--sans); font-weight:620; font-size:12px; letter-spacing:.16em; color:var(--claret); display:block; margin:0 0 10px}
+  h2.sec-h{font-family:var(--display); font-weight:420; font-size:clamp(25px,4vw,34px); line-height:1.1; letter-spacing:-.01em; margin:0 0 18px}
+  .g-root p.body{font-size:17.5px; line-height:1.62; color:var(--ink-soft); margin:0 0 16px; max-width:60ch}
+  .body strong{color:var(--ink); font-weight:440}
+
+  .note{border-left:2px solid var(--claret); background:var(--paper-2); padding:18px 22px; margin:22px 0; max-width:60ch}
+  .note .lbl{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--claret); display:block; margin:0 0 8px}
+  .note p{font-size:16px; line-height:1.58; color:var(--ink-soft); margin:0}
+
+  /* value bar (signature) */
+  .vbar-wrap{margin:24px 0 8px; border:1px solid var(--line); background:var(--paper-2); padding:26px 24px 20px}
+  .vbar-cap-top{font-family:var(--sans); font-weight:520; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 14px}
+  .vbar{display:flex; height:46px; border:1px solid var(--ink); overflow:hidden}
+  .vseg{display:flex; align-items:center; justify-content:center; font-family:var(--sans); font-weight:620; font-size:11px; color:var(--paper); letter-spacing:.02em; min-width:0}
+  .vseg.cash{background:var(--ink); flex:0 0 55%}
+  .vseg.esc{background:var(--claret); flex:0 0 18%}
+  .vseg.earn{background:var(--claret-soft); flex:0 0 17%}
+  .vseg.adj{background:var(--claret-pale); color:var(--ink); flex:0 0 10%}
+  .vbar-legend{display:flex; flex-wrap:wrap; gap:18px 26px; margin:18px 0 0}
+  .leg{font-family:var(--sans); font-size:12.5px; color:var(--ink-soft); display:flex; align-items:center; gap:8px; line-height:1.4}
+  .leg .sw{width:11px; height:11px; flex:0 0 auto; display:inline-block}
+  .sw.cash{background:var(--ink)} .sw.esc{background:var(--claret)} .sw.earn{background:var(--claret-soft)} .sw.adj{background:var(--claret-pale)}
+  .vbar-cap{font-family:var(--sans); font-size:11px; color:var(--ink-faint); margin:16px 0 0; line-height:1.5; max-width:62ch}
+
+  .close{border-top:1px solid var(--line); margin:56px 0 0; padding:36px 0 0}
+  .close h2{font-family:var(--display); font-weight:420; font-size:clamp(24px,4vw,32px); line-height:1.12; margin:0 0 16px; letter-spacing:-.01em}
+  .close p{font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; border:1px solid var(--ink); background:var(--ink); color:var(--paper); padding:14px 28px; font-size:14px; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint); border-top:1px solid var(--line-soft); margin:44px 0 0; padding:20px 0 0; max-width:64ch}
+
+  @media (max-width:540px){
+    .vbar{height:auto; flex-direction:column}
+    .vseg{height:38px; flex-basis:auto !important}
+  }
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="practice-ma.html">&larr; Private M&A</a>
+</div>
+
+
+<div class="g-root">
+<article class="g-shell">
+
+  <p class="eyebrow">Private M&amp;A &middot; Guide</p>
+  <h1 class="title">Preparing your company for sale</h1>
+  <p class="standfirst">Most of the value in a sale is won or lost before a buyer ever appears. By the time a letter of intent is signed, a seller's leverage is at its peak, and it erodes with every issue diligence uncovers. Preparation is what protects both the price and the certainty of closing.</p>
+  <p class="meta">A roadmap for owners considering a sale &middot; Approx. 12 minute read</p>
+
+  <nav class="contents" aria-label="Contents">
+    <h2>What this guide covers</h2>
+    <ol>
+      <li><a href="#s1">Start early, and align the owners</a></li>
+      <li><a href="#s2">Corporate housekeeping</a></li>
+      <li><a href="#s3">Financial readiness</a></li>
+      <li><a href="#s4">Contracts and consents</a></li>
+      <li><a href="#s5">Intellectual property and data</a></li>
+      <li><a href="#s6">Employees and benefits</a></li>
+      <li><a href="#s7">Litigation, liabilities, and compliance</a></li>
+      <li><a href="#s8">The data room and diligence</a></li>
+      <li><a href="#s9">The terms that decide what you keep</a></li>
+      <li><a href="#s10">The process and timeline</a></li>
+    </ol>
+  </nav>
+
+  <section id="s1">
+    <span class="sec-num">01</span>
+    <h2 class="sec-h">Start early, and align the owners</h2>
+    <p class="body">The best time to prepare a company for sale is roughly a year before going to market, and the reason is structural. A buyer's diligence is a mirror of how well the company has been kept, and anything left unresolved becomes a price reduction, an indemnity, or a reason to walk away. The work done in advance is what keeps those gaps from appearing at the worst possible moment, when leverage has already shifted to the buyer.</p>
+    <p class="body">Preparation begins with people. Assemble the advisory team early, typically M&amp;A counsel, an accountant, and often an investment banker or sale advisor, so that the company goes to market with a coordinated plan rather than reacting to a buyer's timetable. Just as important, the owners should align on what they want before any buyer is in the room, including the price that would be acceptable, the timing, the role each owner wants after a sale, and the structure they prefer. Internal disagreements are far cheaper to resolve before a deal is live than in the middle of one.</p>
+  </section>
+
+  <section id="s2">
+    <span class="sec-num">02</span>
+    <h2 class="sec-h">Corporate housekeeping</h2>
+    <p class="body">Buyers pay for clean ownership, and they discount for ambiguity about who owns what. Before going to market, reconstruct and verify the capitalization table, confirming that every share issuance, option grant, warrant, convertible instrument, and transfer was properly authorized and documented. Gather the organizational documents, the board and shareholder consents, and the minute book, and confirm that the entity is in good standing and qualified where it does business. Any promised-but-undocumented equity, any option pool questions, and any founder or owner agreements should be resolved so that the ownership the buyer is acquiring is exactly what the records show.</p>
+    <div class="note">
+      <span class="lbl">Practice note</span>
+      <p>A messy cap table or a missing consent is among the most common causes of delay and price erosion in a sale. Clean it before diligence begins, not while a buyer is watching.</p>
+    </div>
+  </section>
+
+  <section id="s3">
+    <span class="sec-num">03</span>
+    <h2 class="sec-h">Financial readiness</h2>
+    <p class="body">Clean, reliable financial statements are the foundation of value, because a buyer can only pay with confidence for numbers it trusts. Move toward consistently prepared, accrual-based statements, and consider whether audited or reviewed financials are warranted given the likely buyer. Normalize earnings by identifying non-recurring items and legitimate owner add-backs that build to an adjusted measure of profitability, since that figure often drives the price. Many sellers commission their own quality of earnings analysis before going to market, which surfaces and resolves issues on the seller's terms rather than the buyer's.</p>
+    <p class="body">Working capital deserves particular attention, because the working capital target is itself a negotiated term that moves real money at closing. Tightening collections, inventory, and payables practices in advance improves both the business and the seller's position in that negotiation.</p>
+  </section>
+
+  <section id="s4">
+    <span class="sec-num">04</span>
+    <h2 class="sec-h">Contracts and consents</h2>
+    <p class="body">A buyer is acquiring the company's contracts as much as its assets, and the terms buried in those contracts can complicate or even block a sale. Inventory the material customer, vendor, lease, lender, and license agreements, and identify the change-of-control and anti-assignment provisions that require a third party's consent before the deal can close. Flag exclusivity, most-favored-nation, termination-for-convenience, and unusual liability terms that a buyer will price. Knowing in advance where consents are required, and planning how to obtain them, prevents the late surprises that stall closings and hand buyers leverage.</p>
+  </section>
+
+  <section id="s5">
+    <span class="sec-num">05</span>
+    <h2 class="sec-h">Intellectual property and data</h2>
+    <p class="body">For many companies the intellectual property is the asset being bought, and buyers scrutinize whether the company actually owns it. Confirm that every employee and contractor assigned their work to the company, that key trademarks and any patents are registered, and that licenses in and out are documented. Address open-source usage and data and privacy compliance, both of which have become standard diligence topics. Gaps in IP ownership are a classic source of representations, indemnities, and price reductions, and they are far easier to fix before a buyer finds them.</p>
+  </section>
+
+  <section id="s6">
+    <span class="sec-num">06</span>
+    <h2 class="sec-h">Employees and benefits</h2>
+    <p class="body">People questions move deals, and they cut both ways. Confirm that workers are properly classified, that wage and hour practices are sound, and that the employees who matter are subject to enforceable confidentiality and invention-assignment agreements. Identify retention risk and plan the retention or incentive arrangements that will keep the people the buyer is counting on. Review the benefit plans and any change-of-control payments or accelerated equity that a sale will trigger, since those obligations affect both the economics and the willingness of key people to stay.</p>
+  </section>
+
+  <section id="s7">
+    <span class="sec-num">07</span>
+    <h2 class="sec-h">Litigation, liabilities, and compliance</h2>
+    <p class="body">Surprises discovered by a buyer cost far more than issues a seller raises and frames first. Inventory pending and threatened litigation, regulatory matters, tax exposures, and contingent liabilities, resolve what can be resolved, and prepare to explain the rest. A seller who presents a known issue with context and a remedy controls the narrative, while a buyer who uncovers the same issue unprompted will assume the worst and price accordingly.</p>
+  </section>
+
+  <section id="s8">
+    <span class="sec-num">08</span>
+    <h2 class="sec-h">The data room and diligence</h2>
+    <p class="body">Organize a virtual data room before going to market, structured to mirror the diligence checklist a buyer will run. A complete and well-ordered data room does more than save time; it signals a well-run company, accelerates the process while momentum is high, and reduces the openings a buyer has to reopen terms. Control the flow of information carefully, and protect confidentiality with appropriate nondisclosure agreements, since a sale process exposes the company's most sensitive information to parties who may include competitors.</p>
+  </section>
+
+  <section id="s9">
+    <span class="sec-num">09</span>
+    <h2 class="sec-h">The terms that decide what you keep</h2>
+    <p class="body">The headline price is not what the seller takes home, and understanding why is essential to negotiating well. The structure of the deal, whether a sale of stock or of assets, carries very different tax and liability consequences. The representations and warranties and the indemnification package that backs them, including its caps, baskets, and survival periods, determine how much of the price remains at risk after closing. A portion of the price is typically held in escrow or as a holdback, the working capital adjustment moves the number at closing, and an earnout may place a further share of the price on the company's future performance. Increasingly, representation and warranty insurance is used to shift indemnity risk to an insurer, changing the calculus for both sides.</p>
+
+    <div class="vbar-wrap" role="img" aria-label="Illustration showing a headline purchase price divided into cash at closing, an escrow or holdback portion, an earnout placed at risk, and amounts absorbed by adjustments and costs.">
+      <div class="vbar-cap-top">A headline price, and what actually reaches the seller</div>
+      <div class="vbar">
+        <div class="vseg cash">Cash at closing</div>
+        <div class="vseg esc">Escrow</div>
+        <div class="vseg earn">Earnout at risk</div>
+        <div class="vseg adj">Adj.</div>
+      </div>
+      <div class="vbar-legend">
+        <span class="leg"><span class="sw cash"></span>Cash at closing, the only certain portion</span>
+        <span class="leg"><span class="sw esc"></span>Escrow or holdback against indemnities</span>
+        <span class="leg"><span class="sw earn"></span>Earnout, contingent on future performance</span>
+        <span class="leg"><span class="sw adj"></span>Working capital and other adjustments</span>
+      </div>
+      <p class="vbar-cap">Illustrative proportions only. The split varies widely by deal, but the lesson holds: much of a headline price is deferred, conditional, or at risk, and the terms that govern those portions deserve as much attention as the price itself.</p>
+    </div>
+
+    <div class="note">
+      <span class="lbl">Practice note</span>
+      <p>Negotiate the indemnification architecture and the working capital target with the same care as the price. They determine how much of the number on the term sheet is real.</p>
+    </div>
+  </section>
+
+  <section id="s10">
+    <span class="sec-num">10</span>
+    <h2 class="sec-h">The process and timeline</h2>
+    <p class="body">A private sale follows a recognizable path: preparation, outreach to buyers, indications of interest, management meetings, a letter of intent that usually grants the buyer a period of exclusivity, confirmatory diligence, the negotiation of the definitive agreement, signing, and closing, with purchase price adjustments and indemnity periods continuing after the deal is done. From going to market to closing, a typical process runs several months, and longer once preparation is counted.</p>
+    <p class="body">One discipline matters throughout. The business must keep performing while the sale proceeds, because a dip in results during the process is an open invitation to a buyer to reprice the deal. The owners who close on their original terms are usually the ones who never let the company's performance slip while their attention was on the transaction.</p>
+  </section>
+
+  <div class="close">
+    <h2>How we help</h2>
+    <p>We guide owners through every stage of a sale, from the preparation that protects value through the negotiation of the terms that determine what you keep. Our aim is a clean exit on the terms you intended, with the risks understood and allocated. To discuss a sale, whether near or simply on the horizon, speak with our private M&amp;A practice.</p>
+    <a class="btn" href="#contact">Speak with our M&amp;A team</a>
+
+    <p class="disclaimer">
+      This guide is a general educational resource and does not constitute legal, tax, or financial
+      advice. It is not a substitute for the advice of counsel, and reading it does not create an
+      attorney-client relationship. Every transaction is different; consult qualified advisors before
+      acting on anything described here.
+    </p>
+  </div>
+
+</article>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This material is provided as a general educational resource and does not constitute legal advice, and using it does not create an attorney-client relationship. &copy; 2026 Danziger, Danziger &amp; Muro, LLP &middot; 445 Park Avenue, New York.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

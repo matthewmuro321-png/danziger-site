@@ -1,0 +1,265 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <title>The New York Liquor License: A Primer for Operators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,420;9..144,540&family=Newsreader:opsz,ital,wght@6..72,0,380;6..72,0,440;6..72,1,400&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8;
+    --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif;
+    --serif:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+
+  .g-root{background:var(--paper); color:var(--ink); font-family:var(--serif); -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,72px) clamp(16px,5vw,40px); display:flex; justify-content:center}
+  .g-shell{width:100%; max-width:720px}
+
+  .eyebrow{font-family:var(--sans); font-weight:620; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--claret); margin:0 0 24px; display:flex; align-items:center; gap:12px}
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  h1.title{font-family:var(--display); font-weight:340; font-optical-sizing:auto; font-size:clamp(34px,6.4vw,56px);
+    line-height:1.0; letter-spacing:-.015em; margin:0 0 26px}
+  .standfirst{font-size:clamp(17px,2.4vw,20px); line-height:1.55; color:var(--ink-soft); max-width:58ch; margin:0 0 30px}
+  .meta{font-family:var(--sans); font-weight:520; font-size:11.5px; letter-spacing:.06em; color:var(--ink-faint);
+    border-top:1px solid var(--line); padding-top:16px; margin:0 0 44px}
+
+  .contents{background:var(--paper-2); border:1px solid var(--line); padding:26px 28px; margin:0 0 52px}
+  .contents h2{font-family:var(--sans); font-weight:620; font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ink-faint); margin:0 0 16px}
+  .contents ol{margin:0; padding:0; list-style:none; counter-reset:c}
+  .contents li{counter-increment:c; border-top:1px solid var(--line-soft)}
+  .contents li:first-child{border-top:none}
+  .contents a{display:flex; gap:16px; align-items:baseline; text-decoration:none; color:var(--ink); padding:11px 0; font-size:16.5px; transition:color .18s}
+  .contents a:hover{color:var(--claret)}
+  .contents a:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+  .contents a::before{content:counter(c,decimal-leading-zero); font-family:var(--sans); font-weight:620; font-size:12px; color:var(--claret); letter-spacing:.04em; min-width:22px}
+
+  section{margin:0 0 52px; scroll-margin-top:24px}
+  .sec-num{font-family:var(--sans); font-weight:620; font-size:12px; letter-spacing:.16em; color:var(--claret); display:block; margin:0 0 10px}
+  h2.sec-h{font-family:var(--display); font-weight:420; font-size:clamp(25px,4vw,34px); line-height:1.1; letter-spacing:-.01em; margin:0 0 18px}
+  .g-root p.body{font-size:17.5px; line-height:1.62; color:var(--ink-soft); margin:0 0 16px; max-width:60ch}
+  .body strong{color:var(--ink); font-weight:440}
+  em{font-style:italic}
+
+  .note{border-left:2px solid var(--claret); background:var(--paper-2); padding:18px 22px; margin:22px 0; max-width:60ch}
+  .note .lbl{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--claret); display:block; margin:0 0 8px}
+  .note p{font-size:16px; line-height:1.58; color:var(--ink-soft); margin:0}
+
+  /* comparison table */
+  .tbl-wrap{margin:24px 0 8px; overflow-x:auto; border:1px solid var(--line)}
+  table{border-collapse:collapse; width:100%; min-width:560px; background:var(--paper-2)}
+  thead th{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-faint); text-align:left; padding:13px 16px; border-bottom:1px solid var(--line); vertical-align:bottom}
+  tbody td{font-family:var(--serif); font-size:15px; line-height:1.45; color:var(--ink-soft); padding:14px 16px; border-bottom:1px solid var(--line-soft); vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody td:first-child{font-family:var(--display); font-weight:420; font-size:16px; color:var(--ink); white-space:nowrap}
+  .tbl-cap{font-family:var(--sans); font-size:11px; color:var(--ink-faint); margin:12px 2px 0; line-height:1.5; max-width:62ch}
+
+  .close{border-top:1px solid var(--line); margin:56px 0 0; padding:36px 0 0}
+  .close h2{font-family:var(--display); font-weight:420; font-size:clamp(24px,4vw,32px); line-height:1.12; margin:0 0 16px; letter-spacing:-.01em}
+  .close p{font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); padding:14px 28px; font-size:14px; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:44px 0 0; padding:20px 0 0; max-width:64ch}
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="practice-hospitality.html">&larr; Hospitality</a>
+</div>
+
+
+<div class="g-root">
+<article class="g-shell">
+
+  <p class="eyebrow">Hospitality &middot; Primer</p>
+  <h1 class="title">The New York liquor license</h1>
+  <p class="standfirst">For any venue that serves alcohol, the license to do so is usually the single longest and most consequential step in opening, and the one operators most often underestimate. This primer explains how the State Liquor Authority process actually works, from choosing the right license through the rules that can quietly kill a location.</p>
+  <p class="meta">A working guide for restaurateurs and operators &middot; Approx. 14 minute read</p>
+
+  <nav class="contents" aria-label="Contents">
+    <h2>What this primer covers</h2>
+    <ol>
+      <li><a href="#s1">Choosing the right license</a></li>
+      <li><a href="#s2">The two rules that can end a deal</a></li>
+      <li><a href="#s3">What the Authority actually wants to see</a></li>
+      <li><a href="#s4">The community board</a></li>
+      <li><a href="#s5">Posting, timeline, and the temporary permit</a></li>
+      <li><a href="#s6">Life under the license</a></li>
+      <li><a href="#s7">Changes after you are licensed</a></li>
+      <li><a href="#s8">The mistakes that cost the most</a></li>
+    </ol>
+  </nav>
+
+  <section id="s1">
+    <span class="sec-num">01</span>
+    <h2 class="sec-h">Choosing the right license</h2>
+    <p class="body">Every on-premises license in New York shares one threshold requirement: the establishment must serve food. Beyond that, the right license depends on what you intend to pour, the kind of food operation you run, and the type of venue. Choosing the wrong class wastes months, because a mismatch is discovered late and starts the clock over.</p>
+    <p class="body">The four classes below cover most restaurants and bars. A full liquor license, the <strong>On Premises</strong> license, is the one that permits spirits, and it carries the most scrutiny and the location rules described in the next section. The wine and beer licenses permit a narrower range but face fewer obstacles, which is why the choice of license and the choice of location are connected decisions rather than separate ones.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>License</th><th>Permits</th><th>Venue and food requirement</th><th>Typical use</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>On Premises</td><td>Beer, wine, cider, and liquor</td><td>A restaurant with a full kitchen and menu, or a tavern with a food preparation area meeting the minimum food requirement</td><td>A full-service restaurant or a bar that will serve spirits</td></tr>
+          <tr><td>Restaurant Wine</td><td>Beer, wine, and cider</td><td>A restaurant with a kitchen and full menu, where alcohol is not the primary source of revenue</td><td>A restaurant that does not need to serve spirits</td></tr>
+          <tr><td>Tavern Wine</td><td>Beer, wine, and cider</td><td>A tavern with a food preparation area meeting the minimum food requirement</td><td>A wine bar or tavern serving lighter fare, no spirits</td></tr>
+          <tr><td>Eating Place Beer</td><td>Beer and cider</td><td>A restaurant or tavern serving food</td><td>A cafe, bakery, or casual spot serving beer only</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-cap">Specialized classes exist for hotels, catering establishments, nightclubs (cabaret), and brew-pubs, each with its own requirements. The food, venue, and revenue conditions summarized here are the practical ones operators meet most often.</p>
+
+    <div class="note">
+      <span class="lbl">Practice note</span>
+      <p>The license choice is not only about what you pour. A full liquor license triggers the location rules below, while a beer and wine license generally does not, so a location that cannot support a liquor license may still work for a restaurant wine license.</p>
+    </div>
+  </section>
+
+  <section id="s2">
+    <span class="sec-num">02</span>
+    <h2 class="sec-h">The two rules that can end a deal</h2>
+    <p class="body">Two provisions of the Alcoholic Beverage Control Law can make a location unworkable for a full liquor license before anything else is decided, and both should be checked before a lease is signed. They apply to the on-premises liquor license, the one that permits spirits, and generally not to the beer and wine licenses, which is a distinction worth keeping in mind when a promising space sits in a difficult spot.</p>
+    <p class="body">The <strong>200-foot rule</strong> prohibits a liquor license where the premises is on the same street and within 200 feet of a building used exclusively as a school or as a place of worship. It is close to absolute. If the measurement falls inside 200 feet, a full liquor license is generally not available at that address, full stop, which is why this is the first thing to confirm about any space you are considering for a bar or a spirits-serving restaurant.</p>
+    <p class="body">The <strong>500-foot rule</strong> is more nuanced and, in dense neighborhoods, more common. Where three or more establishments already hold on-premises liquor licenses within 500 feet of the proposed location, the Authority may not issue a new liquor license without first holding a <em>500-foot hearing</em> and affirmatively finding that granting the license serves the public interest. In much of Manhattan and Brooklyn, nearly every block triggers this rule, so a public-interest hearing is closer to standard procedure than to an exception. At the hearing, the Authority gathers input from the community board and the public, the applicant submits a statement explaining why the license would serve the public convenience and advantage, and contested matters may go to the Members of the Authority for decision. Opposition does not automatically defeat an application, but the burden is on the applicant to make the public-interest case.</p>
+    <div class="note">
+      <span class="lbl">Practice note</span>
+      <p>Screen the exact address for 200-foot and 500-foot exposure before you sign a lease or commit capital. Discovering one of these after committing to a space is among the most expensive mistakes an operator can make.</p>
+    </div>
+  </section>
+
+  <section id="s3">
+    <span class="sec-num">03</span>
+    <h2 class="sec-h">What the Authority actually wants to see</h2>
+    <p class="body">A liquor license is a privilege, not a right, and the application reflects that. The Authority is deciding whether to trust the applicant with the sale of alcohol, so the application is built to answer four questions about the people, the money, the place, and the plan.</p>
+    <p class="body">First, <strong>who you are</strong>. The Authority requires disclosure of every principal and owner, along with proof of citizenship or lawful residency, background and fingerprinting, and a showing of good character. Hidden ownership is a serious problem, so the people behind the business must be fully and accurately identified. Second, <strong>where the money came from</strong>. The application calls for a complete source-of-funds disclosure, documenting every dollar invested in the venture, precisely so the Authority can confirm that no undisclosed or illegitimate interest sits behind the license. Incomplete or unsupported funding disclosures are a leading cause of delay.</p>
+    <p class="body">Third, <strong>the premises</strong>. You must show control of the space through a lease or deed, and provide a diagram of the area to be licensed along with photographs and a description. Fourth, <strong>the method of operation</strong>. The application describes how the business will run, including its hours, its food service, and whether it will feature music, dancing, disc jockeys, promoters, or security. This matters well beyond the application, because the stated method of operation becomes part of the license, and operating outside it is itself a violation.</p>
+    <div class="note">
+      <span class="lbl">Practice note</span>
+      <p>Accuracy and completeness are not formalities here. A misstatement or omission not only delays the application but can later support discipline against the license, so the application deserves the same care as any sworn submission.</p>
+    </div>
+  </section>
+
+  <section id="s4">
+    <span class="sec-num">04</span>
+    <h2 class="sec-h">The community board</h2>
+    <p class="body">In New York City, an applicant for an on-premises license must notify the local community board at least thirty days before filing the application with the Authority. This <strong>30-day notice</strong> gives the neighborhood a formal opportunity to weigh in, and it is the point at which local politics enters the process.</p>
+    <p class="body">Most community boards have a licensing committee that reviews applications and frequently invites the applicant to present. Boards commonly negotiate <em>stipulations</em>, which are agreed limits on matters such as hours of operation, music and entertainment, outdoor use, and noise. When an applicant agrees to stipulations, the Authority will generally attach them to the license as conditions, which means they bind the business going forward. The board's recommendation is advisory rather than binding, but the Authority gives it real weight, and in saturated neighborhoods some boards scrutinize applications closely.</p>
+    <div class="note">
+      <span class="lbl">Practice note</span>
+      <p>Engage the community board early and constructively. A reasonable negotiated stipulation is almost always a better outcome than a contested hearing, and a board that feels heard is far less likely to oppose the application.</p>
+    </div>
+  </section>
+
+  <section id="s5">
+    <span class="sec-num">05</span>
+    <h2 class="sec-h">Posting, timeline, and the temporary permit</h2>
+    <p class="body">Once the application is filed, the applicant must post a conspicuous notice at the premises for thirty consecutive days, so that the public can see that an application is pending and can comment. Meanwhile the Authority conducts its review of the principals, the financing, the premises, and the proposed operation.</p>
+    <p class="body">That review takes time. For a full on-premises application, the process commonly runs on the order of five to six months, varying with the Authority's current application volume and, importantly, with the completeness of the application itself. Because few operators can afford to hold a finished space empty for that long, the Authority offers a <strong>temporary retail permit</strong> that in many cases allows the business to begin serving while the full application is pending. The temporary permit is a genuine convenience, but it is not a guarantee of the license. If the full application is ultimately denied, service must stop, so opening on a temporary permit is a calculated risk rather than a sure thing.</p>
+    <div class="note">
+      <span class="lbl">Practice note</span>
+      <p>The fastest path through review is an application with nothing for the Authority to send back. File early and file complete, because each deficiency that bounces the application restarts a portion of the clock.</p>
+    </div>
+  </section>
+
+  <section id="s6">
+    <span class="sec-num">06</span>
+    <h2 class="sec-h">Life under the license</h2>
+    <p class="body">Holding a license brings ongoing responsibility, and the licensee is accountable for what happens under it, including the conduct of both employees and patrons. Serving a visibly intoxicated person or anyone underage is a disciplinary matter before the Authority and a source of civil liability, and under New York's dram shop law a licensee can be held liable to third parties injured by a patron who was unlawfully served. These are not abstract risks; they are the most common sources of trouble for an otherwise well-run business.</p>
+    <p class="body">The licensee must also operate within its stated method of operation, comply with any stipulations attached to the license, maintain the required books and records, and keep the premises as licensed. Violations can lead to fines, suspension, cancellation, or a refusal to renew. The single most effective protection is disciplined staff training on checking identification and refusing service, because most discipline traces back to service violations rather than anything more exotic.</p>
+  </section>
+
+  <section id="s7">
+    <span class="sec-num">07</span>
+    <h2 class="sec-h">Changes after you are licensed</h2>
+    <p class="body">A license is tied to a specific premises, a specific owner, and a specific method of operation, and changing any of the three usually requires the Authority's involvement. Physical alterations to the licensed premises generally require approval before the work is done. Changes in the ownership or stockholders of the licensee must be reported and may require approval, because the Authority tracks who genuinely owns the license at all times. And changes to the method of operation, such as adding dancing, a disc jockey, or later hours where permitted, may require approval or a fresh notice to the community board.</p>
+    <div class="note">
+      <span class="lbl">Practice note</span>
+      <p>Before you alter the space, change the ownership, or expand how the business operates, confirm whether the Authority's approval is required first. Acting without it can put the license itself at risk.</p>
+    </div>
+  </section>
+
+  <section id="s8">
+    <span class="sec-num">08</span>
+    <h2 class="sec-h">The mistakes that cost the most</h2>
+    <p class="body">A handful of errors account for most of the pain operators experience with licensing, and all of them are avoidable. Signing a lease before checking the 200-foot and 500-foot rules and the zoning is the most expensive, because it can leave you committed to a space that cannot hold the license you need. Committing to a hard opening date without accounting for the review timeline is a close second. An incomplete or undocumented source-of-funds disclosure stalls applications routinely, as does treating the community board as an afterthought rather than a constituency to be engaged.</p>
+    <p class="body">After opening, the recurring mistakes are operating outside the method of operation or the stipulations, and failing to keep the Authority informed of changes in ownership. None of these requires special expertise to avoid. They require planning the licensing process deliberately, from the choice of location forward, rather than treating it as paperwork to be handled at the end.</p>
+  </section>
+
+  <div class="close">
+    <h2>How we help</h2>
+    <p>We guide operators through the entire licensing process, from screening a location for the rules that can defeat it, through the application and the community board, to the obligations that follow. Our aim is a license obtained as quickly as the process allows, on terms you can operate under. To discuss a location, a license, or a disciplinary matter, speak with our hospitality practice.</p>
+    <a class="btn" href="#contact">Speak with our hospitality team</a>
+
+    <p class="disclaimer">
+      This primer is a general educational resource and does not constitute legal advice. It is not a
+      substitute for the advice of counsel, and reading it does not create an attorney-client
+      relationship. License classes, fees, timelines, and procedures change, and the information here is
+      current as of June 2026; confirm the requirements that apply to your situation with a qualified
+      attorney before acting.
+    </p>
+  </div>
+
+</article>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This material is provided as a general educational resource and does not constitute legal advice, and using it does not create an attorney-client relationship. &copy; 2026 Danziger, Danziger &amp; Muro, LLP &middot; 445 Park Avenue, New York.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

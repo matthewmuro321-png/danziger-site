@@ -1,0 +1,295 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<title>Private M&A Due Diligence Checklist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,340;9..144,0,420;9..144,0,540&family=Newsreader:opsz,wght@6..72,380;6..72,440&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8; --claret:#6B2230; --claret-soft:#8C3B48;
+    --green:#3D5A40;
+    --display:"Fraunces",Georgia,serif; --serif:"Newsreader",Georgia,serif; --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  .root{background:var(--paper); color:var(--ink); font-family:var(--serif); -webkit-font-smoothing:antialiased;
+    padding:clamp(20px,4vw,52px) clamp(14px,4vw,36px); display:flex; justify-content:center}
+  .shell{width:100%; max-width:760px}
+  .eyebrow{font-family:var(--sans); font-weight:620; font-size:11px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--claret); margin:0 0 18px; display:flex; align-items:center; gap:12px}
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+  h1{font-family:var(--display); font-weight:340; font-size:clamp(30px,5vw,46px); line-height:1.04; letter-spacing:-.015em; margin:0 0 16px}
+  .lede{font-family:var(--serif); font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:60ch; margin:0 0 26px}
+
+  .toggle{display:flex; gap:0; border:1px solid var(--ink); width:max-content; margin:0 0 8px; background:var(--paper-2)}
+  .toggle button{font-family:var(--sans); font-weight:520; font-size:13px; padding:10px 22px; border:none; background:transparent; color:var(--ink-soft); cursor:pointer; transition:background .18s,color .18s}
+  .toggle button.on{background:var(--ink); color:var(--paper)}
+  .toggle button:focus-visible{outline:2px solid var(--claret); outline-offset:2px}
+  .frame{font-family:var(--sans); font-size:13px; line-height:1.55; color:var(--ink-soft); background:var(--paper-2); border-left:2px solid var(--claret); padding:12px 16px; margin:0 0 24px; max-width:62ch}
+  .frame b{color:var(--claret); font-weight:620}
+
+  .meter-wrap{position:sticky; top:0; background:var(--paper); padding:14px 0 12px; margin:0 0 8px; border-bottom:1px solid var(--line); z-index:5}
+  .meter-top{display:flex; justify-content:space-between; align-items:baseline; margin:0 0 8px}
+  .meter-label{font-family:var(--sans); font-weight:620; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint)}
+  .meter-count{font-family:var(--sans); font-weight:620; font-size:13px; color:var(--ink)}
+  .meter-count b{color:var(--claret)}
+  .bar{height:6px; background:var(--paper-3); border:1px solid var(--line); overflow:hidden}
+  .bar-fill{height:100%; width:0; background:var(--claret); transition:width .35s ease}
+  .reset{font-family:var(--sans); font-weight:520; font-size:12px; color:var(--ink-faint); background:none; border:none; cursor:pointer; text-decoration:underline; padding:4px 0; margin-top:6px}
+  .reset:hover{color:var(--claret)}
+
+  .cat{margin:30px 0 0}
+  .cat-h{display:flex; align-items:baseline; gap:12px; border-bottom:1px solid var(--line); padding:0 0 8px; margin:0 0 4px}
+  .cat-num{font-family:var(--sans); font-weight:620; font-size:11px; color:var(--claret); letter-spacing:.06em}
+  .cat-name{font-family:var(--display); font-weight:420; font-size:21px; letter-spacing:-.01em; color:var(--ink); flex:1}
+  .cat-prog{font-family:var(--sans); font-weight:520; font-size:11.5px; color:var(--ink-faint)}
+
+  .item{display:flex; gap:13px; align-items:flex-start; padding:13px 4px; border-bottom:1px solid var(--line-soft); cursor:pointer}
+  .item:last-child{border-bottom:none}
+  .box{flex-shrink:0; width:19px; height:19px; border:1.5px solid var(--ink-faint); background:var(--paper); margin-top:2px; position:relative; transition:border-color .15s,background .15s}
+  .item.done .box{background:var(--claret); border-color:var(--claret)}
+  .item.done .box::after{content:""; position:absolute; left:5.5px; top:2px; width:5px; height:9px; border:solid var(--paper); border-width:0 2px 2px 0; transform:rotate(45deg)}
+  .item-txt{font-size:15.5px; line-height:1.5; color:var(--ink-soft); transition:color .15s}
+  .item.done .item-txt{color:var(--ink-faint); text-decoration:line-through; text-decoration-color:var(--line)}
+  .item-txt b{color:var(--ink); font-weight:440}
+
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint); border-top:1px solid var(--line); margin:38px 0 0; padding:18px 0 0; max-width:64ch}
+  .cta{font-family:var(--serif); font-size:15.5px; line-height:1.6; color:var(--ink-soft); margin:26px 0 0; padding:20px 22px; background:var(--paper-2); border:1px solid var(--line)}
+  .cta a{color:var(--claret); font-weight:440}
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="practice-ma.html">&larr; Private M&A</a>
+</div>
+
+
+<div class="root">
+<div class="shell">
+  <p class="eyebrow">Working Resource &middot; Private M&amp;A</p>
+  <h1>Due diligence checklist</h1>
+  <p class="lede">A practical framework for the diligence that precedes a private company sale, organized by category. Switch perspective to reframe each line for the side you are on, and track what you have covered. This is a starting structure, not an exhaustive list; every deal adds its own items.</p>
+
+  <div class="toggle" role="tablist" aria-label="Perspective">
+    <button id="buyBtn" class="on" role="tab" aria-selected="true" onclick="setSide('buy')">Buy-side</button>
+    <button id="sellBtn" role="tab" aria-selected="false" onclick="setSide('sell')">Sell-side</button>
+  </div>
+  <p class="frame" id="frame"></p>
+
+  <div class="meter-wrap">
+    <div class="meter-top">
+      <span class="meter-label">Items reviewed</span>
+      <span class="meter-count"><b id="doneN">0</b> of <span id="totN">0</span></span>
+    </div>
+    <div class="bar"><div class="bar-fill" id="fill"></div></div>
+    <button class="reset" onclick="resetAll()">Reset checklist</button>
+  </div>
+
+  <div id="list"></div>
+
+  <div class="cta" id="cta"></div>
+
+  <p class="disclaimer">This checklist is a general educational resource and does not constitute legal, tax, or financial advice. It is not a substitute for the advice of counsel, and using it does not create an attorney-client relationship. Diligence scope is fact-specific and varies by industry, size, and deal structure; consult qualified advisors to build the diligence plan for your transaction. Your entries are not saved and will clear when you leave the page.</p>
+</div>
+</div>
+
+<script>
+  var CATS = [
+    { name:"Corporate and organizational", items:[
+      "Charter, bylaws or operating agreement, and good-standing certificates",
+      "Capitalization table, including options, warrants, and convertibles",
+      "Organizational chart and all subsidiaries and joint ventures",
+      "Stockholder, voting, and equity-holder agreements",
+      "Board and equity-holder minutes, consents, and resolutions",
+      "Prior financings, securities issuances, and any compliance issues"
+    ]},
+    { name:"Financial", items:[
+      "Audited and unaudited financial statements for recent years",
+      "Quality-of-earnings analysis and normalized EBITDA",
+      "Accounts receivable and payable aging and concentration",
+      "Outstanding debt, credit facilities, guarantees, and liens",
+      "Working-capital trends and the proposed peg",
+      "Management projections and the assumptions behind them"
+    ]},
+    { name:"Tax", items:[
+      "Federal, state, and local returns for open years",
+      "Audit history, disputes, and outstanding liabilities",
+      "State nexus, sales and use, and payroll tax exposure",
+      "Net operating losses and other carryforwards",
+      "Entity classification and any prior restructurings"
+    ]},
+    { name:"Material contracts", items:[
+      "Top customer and supplier agreements and concentration",
+      "Change-of-control, assignment, and consent provisions",
+      "Exclusivity, most-favored-nation, and non-compete terms",
+      "Termination rights and any out-of-market commitments",
+      "Government contracts and related compliance obligations"
+    ]},
+    { name:"Employment and benefits", items:[
+      "Employee census, offer letters, and key employment agreements",
+      "Worker classification, contractors, and wage-and-hour exposure",
+      "Equity, bonus, severance, and change-of-control arrangements",
+      "Benefit and retirement plans and ERISA compliance",
+      "Handbook, policies, and any union or labor matters"
+    ]},
+    { name:"Intellectual property and IT", items:[
+      "Schedule of owned IP and registrations",
+      "Assignments confirming the company owns what it uses",
+      "Inbound and outbound licenses and open-source usage",
+      "Infringement claims, threats, or freedom-to-operate concerns",
+      "IT systems, key vendors, and technology dependencies"
+    ]},
+    { name:"Data privacy and security", items:[
+      "Privacy policies and a data inventory",
+      "Breach and incident history",
+      "Applicable privacy-law compliance and vendor data terms"
+    ]},
+    { name:"Real estate", items:[
+      "Owned and leased property schedule",
+      "Leases, including assignment and change-of-control consents",
+      "Estoppels, subordination agreements, and environmental matters"
+    ]},
+    { name:"Litigation and regulatory", items:[
+      "Pending and threatened litigation and demand letters",
+      "Judgments, settlements, and ongoing obligations",
+      "Licenses and permits required to operate",
+      "Regulatory inquiries and compliance program, including anti-corruption and sanctions"
+    ]},
+    { name:"Insurance and the transaction", items:[
+      "Insurance policies, coverage, and claims history",
+      "Representations-and-warranties insurance feasibility",
+      "Third-party consents required to close: landlords, lenders, customers, licensors",
+      "Other approvals, financing conditions, and retention or integration items"
+    ]}
+  ];
+
+  var FRAMES = {
+    buy: "<b>Buy-side.</b> Request, receive, and verify each item, and flag what is missing, inconsistent, or a basis to adjust price or add a closing condition.",
+    sell: "<b>Sell-side.</b> Assemble, organize, and clean up each item before going to market, so diligence reveals strength rather than surprises that invite a retrade."
+  };
+  var CTAS = {
+    buy: "Running buy-side diligence on an acquisition? We build and execute the diligence plan and turn findings into protection in the deal. <a href='#contact'>Speak with our M&amp;A team</a>.",
+    sell: "Preparing your company for sale? We help sellers get diligence-ready so the process reveals value, not problems. <a href='#contact'>Speak with our M&amp;A team</a>."
+  };
+
+  var checked = new Set();
+  var side = "buy";
+  var TOTAL = 0;
+
+  function render(){
+    var list = document.getElementById("list");
+    list.innerHTML = "";
+    var idx = 0;
+    CATS.forEach(function(cat, ci){
+      var sec = document.createElement("div");
+      sec.className = "cat";
+      var head = document.createElement("div");
+      head.className = "cat-h";
+      head.innerHTML = '<span class="cat-num">'+String(ci+1).padStart(2,"0")+'</span>'+
+        '<span class="cat-name">'+cat.name+'</span>'+
+        '<span class="cat-prog" id="cp'+ci+'"></span>';
+      sec.appendChild(head);
+      cat.items.forEach(function(txt){
+        var id = "i"+idx;
+        var row = document.createElement("div");
+        row.className = "item" + (checked.has(id) ? " done" : "");
+        row.setAttribute("data-id", id);
+        row.setAttribute("role","button");
+        row.setAttribute("tabindex","0");
+        row.innerHTML = '<span class="box"></span><span class="item-txt">'+txt+'</span>';
+        row.onclick = function(){ toggle(id); };
+        row.onkeydown = function(e){ if(e.key===" "||e.key==="Enter"){ e.preventDefault(); toggle(id); } };
+        sec.appendChild(row);
+        idx++;
+      });
+      list.appendChild(sec);
+    });
+    TOTAL = idx;
+    document.getElementById("totN").textContent = TOTAL;
+    update();
+  }
+
+  function toggle(id){
+    if(checked.has(id)) checked.delete(id); else checked.add(id);
+    var row = document.querySelector('[data-id="'+id+'"]');
+    if(row) row.classList.toggle("done", checked.has(id));
+    update();
+  }
+
+  function update(){
+    document.getElementById("doneN").textContent = checked.size;
+    var pct = TOTAL ? Math.round(checked.size/TOTAL*100) : 0;
+    document.getElementById("fill").style.width = pct + "%";
+    var base = 0;
+    CATS.forEach(function(cat, ci){
+      var n = 0;
+      for(var k=0;k<cat.items.length;k++){ if(checked.has("i"+(base+k))) n++; }
+      var el = document.getElementById("cp"+ci);
+      if(el) el.textContent = n + "/" + cat.items.length;
+      base += cat.items.length;
+    });
+  }
+
+  function setSide(s){
+    side = s;
+    document.getElementById("buyBtn").classList.toggle("on", s==="buy");
+    document.getElementById("sellBtn").classList.toggle("on", s==="sell");
+    document.getElementById("buyBtn").setAttribute("aria-selected", s==="buy");
+    document.getElementById("sellBtn").setAttribute("aria-selected", s==="sell");
+    document.getElementById("frame").innerHTML = FRAMES[s];
+    document.getElementById("cta").innerHTML = CTAS[s];
+  }
+
+  function resetAll(){ checked.clear(); render(); }
+
+  setSide("buy");
+  render();
+</script>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This material is provided for general informational purposes only and does not constitute legal advice, and using it does not create an attorney-client relationship. &copy; 2026 Danziger, Danziger &amp; Muro, LLP.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

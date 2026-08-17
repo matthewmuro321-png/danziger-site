@@ -1,0 +1,155 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<title>Leaving New York: How Domicile Actually Changes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,340;9..144,0,420;9..144,0,540;9..144,1,360&family=Newsreader:opsz,wght@6..72,380;6..72,440&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8; --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif; --serif:"Newsreader",Georgia,serif; --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  .a-root{background:var(--paper); color:var(--ink); font-family:var(--serif); -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,76px) clamp(16px,5vw,40px); display:flex; justify-content:center}
+  .a-shell{width:100%; max-width:680px}
+  .eyebrow{font-family:var(--sans); font-weight:620; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--claret); margin:0 0 26px; display:flex; align-items:center; gap:12px}
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+  h1.title{font-family:var(--display); font-weight:340; font-optical-sizing:auto; font-size:clamp(33px,6vw,54px);
+    line-height:1.02; letter-spacing:-.016em; margin:0 0 28px}
+  .deck{font-family:var(--display); font-weight:360; font-style:italic; font-size:clamp(19px,2.8vw,23px);
+    line-height:1.4; color:var(--ink-soft); max-width:55ch; margin:0 0 30px}
+  .meta{font-family:var(--sans); font-weight:520; font-size:11.5px; letter-spacing:.06em; color:var(--ink-faint);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:15px 0; margin:0 0 44px}
+  .a-root p.body{font-size:18px; line-height:1.66; color:var(--ink-soft); margin:0 0 20px; max-width:62ch}
+  .body strong{color:var(--ink); font-weight:440}
+  em{font-style:italic}
+  .lead-cap::first-letter{font-family:var(--display); font-weight:420; float:left; font-size:3.6em; line-height:.82; padding:6px 10px 0 0; color:var(--claret)}
+  h2.sec-h{font-family:var(--display); font-weight:420; font-size:clamp(24px,3.6vw,31px); line-height:1.12; letter-spacing:-.01em; margin:42px 0 16px; max-width:46ch}
+  .pull{border-left:2px solid var(--claret); background:var(--paper-2); padding:18px 22px; margin:26px 0; max-width:60ch}
+  .pull .lbl{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--claret); display:block; margin:0 0 8px}
+  .pull p{font-size:16px; line-height:1.58; color:var(--ink-soft); margin:0}
+  .ref{border:1px solid var(--line); background:var(--paper-2); padding:8px 26px; margin:30px 0}
+  .ref-h{font-family:var(--sans); font-weight:620; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); padding:18px 0 0}
+  .ref-item{padding:15px 0; border-bottom:1px solid var(--line-soft); display:flex; gap:15px; align-items:flex-start}
+  .ref-item:last-child{border-bottom:none}
+  .ref-item .n{font-family:var(--sans); font-weight:620; font-size:11px; color:var(--claret); min-width:20px; margin-top:3px}
+  .ref-item p{margin:0; font-size:15.5px; line-height:1.5; color:var(--ink-soft)}
+  .ref-item b{color:var(--ink); font-weight:440}
+  .close{border-top:1px solid var(--line); margin:54px 0 0; padding:36px 0 0}
+  .close h2{font-family:var(--display); font-weight:420; font-size:clamp(23px,4vw,30px); line-height:1.14; margin:0 0 16px; letter-spacing:-.01em}
+  .close p{font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); padding:14px 28px; font-size:14px; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:44px 0 0; padding:20px 0 0; max-width:64ch}
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="articles.html">&larr; Articles</a>
+</div>
+
+
+<div class="a-root">
+<article class="a-shell">
+  <p class="eyebrow">Insights &middot; Family Office and Private Wealth</p>
+  <h1 class="title">Leaving New York</h1>
+  <p class="deck">New York's income and estate taxes give wealthy residents a powerful reason to leave. New York's residency auditors give them an equally powerful reason to do it properly.</p>
+  <p class="meta">Family Office and Private Wealth &middot; 2021</p>
+
+  <p class="body lead-cap">New York taxes its residents heavily, on income at some of the highest rates in the country and, separately, on their estates at death, with a low exemption and a notorious cliff. For a family with substantial wealth, moving to a state with no income tax and no estate tax, such as Florida, can save a staggering sum across a lifetime and at death. But New York does not let its taxpayers go on the strength of a declaration. It runs one of the most aggressive residency audit programs anywhere, and a move that is announced but not truly made, one that leaves the family's real life anchored in New York, will fail, and the family will be taxed as New York residents after all. Changing domicile is an evidentiary exercise, not a form to file.</p>
+
+  <h2 class="sec-h">Two ways New York taxes you as a resident</h2>
+  <p class="body">To escape New York residency, you have to clear two separate hurdles, and people who clear only one get caught. The first is <strong>domicile</strong>: your permanent home, the place you intend to return to and treat as your true center of life. If New York is your domicile, you are a New York resident, full stop. The second is <strong>statutory residency</strong>: even if your domicile is genuinely elsewhere, New York will still tax you as a resident if you maintain a permanent place of abode in New York and spend more than <strong>183 days</strong> in the state during the year. The classic mistake is to establish a real new domicile in Florida while keeping a New York apartment and spending more than half the year in the city, which trips the statutory-residency wire and undoes the whole plan.</p>
+
+  <h2 class="sec-h">Proving a change of domicile</h2>
+  <p class="body">Domicile does not change because you say so. It changes only when you genuinely abandon the old home and establish a new one with the intent to remain, and New York's auditors test that intent against objective facts rather than declarations. They weigh a familiar cluster of factors: the <strong>home</strong>, meaning where your largest and most-used residence is; your <strong>active business</strong> involvement and where it is centered; the <strong>time</strong> you spend in each place; the items <strong>near and dear</strong> to you, the art, the heirlooms, the family photographs, the things a person keeps where they truly live; and your <strong>family</strong> connections. It is the totality that matters. A Florida domicile declared on paper while the principal home, the business, and the family's daily life all remain in New York will not survive scrutiny.</p>
+
+  <div class="pull">
+    <span class="lbl">The 183-day trap</span>
+    <p>Even a flawless change of domicile fails to stop New York income tax if you keep a New York residence and spend more than 183 days in the state. A day generally counts if you are present in New York for any part of it. The cleanest protection is to give up the New York abode; the next best is to count days rigorously and keep the records to prove it.</p>
+  </div>
+
+  <h2 class="sec-h">The day count, the abode, and the remote-work rule</h2>
+  <p class="body">Because statutory residency turns on days and on maintaining a place of abode, both deserve care. Courts have refined what counts as a <strong>permanent place of abode</strong>, and a property that is genuinely unsuitable as the taxpayer's residence or barely used may not qualify, but this is contested ground and not a reason to be casual. On days, the safest posture is to keep a contemporaneous record, because in an audit the burden falls on the taxpayer to prove where each day was spent. And for those who keep working for a New York employer from their new state, New York's <strong>convenience of the employer</strong> rule can treat days worked remotely as New York-source income unless the work is performed outside New York out of the employer's necessity rather than the employee's preference, which can quietly undercut the income-tax savings of leaving.</p>
+
+  <h2 class="sec-h">The estate-tax payoff</h2>
+  <p class="body">The income-tax savings draw most of the attention, but for a large estate the bigger number is often the estate tax. A New York domiciliary's estate is exposed to New York's estate tax, with its low exemption, its cliff that can tax the entire estate once it crosses the threshold, and a top rate of 16 percent. Successfully shifting domicile out of New York removes the estate from that tax entirely. For a substantial estate, escaping the New York estate tax can dwarf the annual income-tax savings, which is why domicile planning belongs in the estate plan and not only in the income-tax analysis.</p>
+
+  <h2 class="sec-h">How to actually change domicile</h2>
+  <p class="body">A real change of domicile is built from a consistent pattern of facts, assembled deliberately and documented as you go.</p>
+
+  <div class="ref">
+    <p class="ref-h">Building the change</p>
+    <div class="ref-item"><span class="n">01</span><p><b>Make the new state your principal home.</b> Acquire a residence there, treat it as your primary one, and spend more time there than in New York.</p></div>
+    <div class="ref-item"><span class="n">02</span><p><b>Move the formal markers.</b> Driver's license, voter registration, vehicle registration, and a declaration of domicile in the new state.</p></div>
+    <div class="ref-item"><span class="n">03</span><p><b>Move your legal and financial life.</b> Re-execute your estate-planning documents under the new state's law, and move advisors, banking, and your mailing address.</p></div>
+    <div class="ref-item"><span class="n">04</span><p><b>Move what is near and dear.</b> Relocate the treasured possessions, and shift club, religious, and community affiliations to the new state.</p></div>
+    <div class="ref-item"><span class="n">05</span><p><b>Reduce the New York footprint.</b> Sell or downsize the New York home, or if one is kept, keep New York days well under the threshold.</p></div>
+    <div class="ref-item"><span class="n">06</span><p><b>Keep contemporaneous records.</b> A day-by-day diary, travel records, and documentation, because the burden of proof will be on you.</p></div>
+  </div>
+
+  <h2 class="sec-h">Expect to be audited</h2>
+  <p class="body">A high earner who changes residency away from New York should assume an audit will follow, and that it will be granular. Auditors examine credit-card statements, mobile-phone location data, toll records, calendars, and travel itineraries to reconstruct where days were actually spent and where the taxpayer's life is actually centered. The families who prevail are the ones who treated the move as real and kept the evidence to prove it. A change of domicile is entirely achievable, and the savings can be life-changing, but it rewards rigor and punishes the half-measure.</p>
+
+  <div class="close">
+    <h2>How we help</h2>
+    <p>We advise families on whether and how to change domicile away from New York, structuring the move to satisfy both the domicile and statutory-residency tests, coordinating it with the estate plan, and preparing for the residency audit that often follows. To discuss a change of residency, speak with our family office and private wealth practice.</p>
+    <a class="btn" href="#contact">Speak with our private wealth team</a>
+    <p class="disclaimer">This article is a general educational resource and does not constitute legal or tax advice. It is not a substitute for the advice of counsel, and reading it does not create an attorney-client relationship. Residency and domicile rules, thresholds, and the case law interpreting them evolve, and outcomes are highly fact-specific; the information here is current as of March 2021. Consult qualified advisors before changing domicile.</p>
+  </div>
+</article>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This article is provided for general informational purposes only and does not constitute legal advice, and reading it does not create an attorney-client relationship. Prior results do not guarantee a similar outcome. &copy; 2026 Danziger, Danziger &amp; Muro, LLP.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

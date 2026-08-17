@@ -1,0 +1,176 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<title>Executive Compensation, Coming and Going</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,340;9..144,0,420;9..144,0,540;9..144,1,360&family=Newsreader:opsz,wght@6..72,380;6..72,440&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8; --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif; --serif:"Newsreader",Georgia,serif; --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  .a-root{background:var(--paper); color:var(--ink); font-family:var(--serif); -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,76px) clamp(16px,5vw,40px); display:flex; justify-content:center}
+  .a-shell{width:100%; max-width:700px}
+  .eyebrow{font-family:var(--sans); font-weight:620; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--claret); margin:0 0 26px; display:flex; align-items:center; gap:12px}
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+  h1.title{font-family:var(--display); font-weight:340; font-optical-sizing:auto; font-size:clamp(32px,5.6vw,52px);
+    line-height:1.03; letter-spacing:-.016em; margin:0 0 28px}
+  .deck{font-family:var(--display); font-weight:360; font-style:italic; font-size:clamp(19px,2.8vw,23px);
+    line-height:1.4; color:var(--ink-soft); max-width:55ch; margin:0 0 30px}
+  .meta{font-family:var(--sans); font-weight:520; font-size:11.5px; letter-spacing:.06em; color:var(--ink-faint);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:15px 0; margin:0 0 44px}
+  .a-root p.body{font-size:18px; line-height:1.66; color:var(--ink-soft); margin:0 0 20px; max-width:62ch}
+  .body strong{color:var(--ink); font-weight:440}
+  em{font-style:italic}
+  .lead-cap::first-letter{font-family:var(--display); font-weight:420; float:left; font-size:3.6em; line-height:.82; padding:6px 10px 0 0; color:var(--claret)}
+  h2.sec-h{font-family:var(--display); font-weight:420; font-size:clamp(24px,3.6vw,31px); line-height:1.12; letter-spacing:-.01em; margin:44px 0 14px; max-width:46ch}
+  .kicker{font-family:var(--sans); font-weight:620; font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:var(--claret); margin:0 0 6px}
+  .tbl-wrap{margin:26px 0 8px; overflow-x:auto; border:1px solid var(--line)}
+  table{border-collapse:collapse; width:100%; min-width:600px; background:var(--paper-2)}
+  thead th{font-family:var(--sans); font-weight:620; font-size:10px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-faint); text-align:left; padding:13px 14px; border-bottom:1px solid var(--line); vertical-align:bottom}
+  thead th:first-child{color:var(--claret)}
+  tbody td{font-family:var(--serif); font-size:13.5px; line-height:1.42; color:var(--ink-soft); padding:13px 14px; border-bottom:1px solid var(--line-soft); vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody td:first-child{font-family:var(--sans); font-weight:520; font-size:11.5px; color:var(--ink)}
+  .tbl-cap{font-family:var(--sans); font-size:11px; color:var(--ink-faint); margin:12px 2px 0; line-height:1.5; max-width:62ch}
+  .pull{border-left:2px solid var(--claret); background:var(--paper-2); padding:18px 22px; margin:26px 0; max-width:60ch}
+  .pull .lbl{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--claret); display:block; margin:0 0 8px}
+  .pull p{font-size:16px; line-height:1.58; color:var(--ink-soft); margin:0}
+  .ref{border:1px solid var(--line); background:var(--paper-2); padding:8px 26px; margin:30px 0}
+  .ref-h{font-family:var(--sans); font-weight:620; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); padding:18px 0 0}
+  .ref-item{padding:15px 0; border-bottom:1px solid var(--line-soft); display:flex; gap:15px; align-items:flex-start}
+  .ref-item:last-child{border-bottom:none}
+  .ref-item .n{font-family:var(--sans); font-weight:620; font-size:11px; color:var(--claret); min-width:20px; margin-top:3px}
+  .ref-item p{margin:0; font-size:15.5px; line-height:1.5; color:var(--ink-soft)}
+  .ref-item b{color:var(--ink); font-weight:440}
+  .close{border-top:1px solid var(--line); margin:54px 0 0; padding:36px 0 0}
+  .close h2{font-family:var(--display); font-weight:420; font-size:clamp(23px,4vw,30px); line-height:1.14; margin:0 0 16px; letter-spacing:-.01em}
+  .close p{font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); padding:14px 28px; font-size:14px; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:44px 0 0; padding:20px 0 0; max-width:64ch}
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="articles.html">&larr; Articles</a>
+</div>
+
+
+<div class="a-root">
+<article class="a-shell">
+  <p class="eyebrow">Insights &middot; Executive Compensation and Employment</p>
+  <h1 class="title">Executive compensation, coming and going</h1>
+  <p class="deck">An executive relationship is bracketed by two documents: the equity package that brings someone in, and the separation agreement that lets them out. Each is where the real money, and the real risk, concentrates.</p>
+  <p class="meta">Executive Compensation and Employment &middot; 2020</p>
+
+  <p class="body lead-cap">Salary is the easy part of an executive's pay. The hard parts, and the parts that decide how much wealth changes hands and how cleanly the relationship ends, sit at the two ends of the engagement. At the start there is equity, the instrument through which an executive shares in what the company becomes. At the end there is the separation agreement, the instrument through which the company buys finality. Both are heavily negotiated, both are full of tax and legal traps, and both are routinely papered with too little attention to the terms that matter most. This is a guide to what each is really doing.</p>
+
+  <h2 class="sec-h"><span class="kicker">The way in</span>Equity compensation</h2>
+  <p class="body">Companies grant equity to align an executive's interests with the company's, to conserve cash, and to share the upside with the people building it. But equity is not one thing; it is a family of instruments that look similar on an offer letter and behave very differently in practice and at tax time. The number of shares is the figure executives fixate on, and it is the least important variable. What matters is the type of equity, the price attached to it, how and when it vests, when it is taxed, and what happens to it on a sale or a departure.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Instrument</th><th>What it is</th><th>Taxed when</th><th>Key feature</th></tr></thead>
+      <tbody>
+        <tr><td>Incentive stock option</td><td>A right to buy stock at a fixed strike price</td><td>Generally at sale, if holding periods are met</td><td>Favorable tax, but an AMT item; employees only, with limits</td></tr>
+        <tr><td>Non-qualified option</td><td>A right to buy stock at a fixed strike price</td><td>Ordinary income on the spread at exercise</td><td>Flexible; available to anyone</td></tr>
+        <tr><td>Restricted stock</td><td>Actual shares subject to vesting</td><td>As it vests, unless an election is made</td><td>An 83(b) election within 30 days shifts tax to grant</td></tr>
+        <tr><td>Restricted stock unit</td><td>A promise to deliver shares on vesting</td><td>Ordinary income at vesting or settlement</td><td>Common at later-stage and public companies</td></tr>
+        <tr><td>Profits interest</td><td>An LLC interest in future profit and appreciation</td><td>Capital treatment if structured correctly</td><td>Partnership and LLC structures only</td></tr>
+        <tr><td>SAR or phantom</td><td>A contractual right to value or appreciation</td><td>Ordinary income when paid</td><td>No actual equity is issued</td></tr>
+      </tbody>
+    </table>
+    <p class="tbl-cap">Simplified. The tax treatment of each form is detailed and fact-specific, and the right instrument depends on the company's structure and stage.</p>
+  </div>
+
+  <p class="body">Two mechanics sit underneath all of these. <strong>Vesting</strong> determines when the equity is earned, typically over time, often four years with a one-year cliff, or on performance milestones, and an executive who leaves before vesting generally forfeits what has not vested. And for private companies, <strong>Section 409A</strong> requires that options be granted with a strike price at fair market value, supported by a valuation, because an underpriced option can trigger punishing deferred-compensation tax. These are not footnotes. A grant that ignores 409A or misreads the vesting can convert a benefit into a liability.</p>
+  <p class="body">For senior people, the most negotiated equity term is what happens on a change of control. <strong>Single-trigger</strong> acceleration vests the equity when the company is sold; <strong>double-trigger</strong> acceleration vests it only if the executive is also terminated in connection with the sale. Buyers and boards generally prefer double-trigger, executives prefer single, and the resolution can be worth a great deal at exactly the moment a company is acquired. Equally important and often overlooked is the post-termination exercise window for options, frequently as short as 90 days, which can force a departing executive to pay to exercise quickly or lose the options altogether.</p>
+
+  <div class="pull">
+    <span class="lbl">The 83(b) trap, in one line</span>
+    <p>An executive receiving restricted stock who wants to be taxed at the low grant value rather than as the shares appreciate and vest must file an 83(b) election within 30 days. Miss the window and the choice is gone, with no extensions. It is among the most consequential 30 days in equity compensation.</p>
+  </div>
+
+  <h2 class="sec-h"><span class="kicker">The way out</span>Severance and separation</h2>
+  <p class="body">When the relationship ends, the central document is the separation agreement, and its logic is a single exchange: the company pays severance and provides benefits, and in return the departing executive signs a <strong>release of claims</strong>, giving up the right to sue. The company is buying finality. Everything else in the agreement is about defining what the company gets for its money and making sure the release actually holds.</p>
+  <p class="body">The release carries its own formalities, and they are not optional. To validly release age-discrimination claims, an executive who is 40 or older must be given a defined period to consider the agreement, generally 21 days, or 45 days when the separation is part of a group reduction, plus a 7-day period after signing during which the executive may revoke. An agreement that omits these periods does not effectively release the age claims it was meant to resolve, which means the company may pay the severance and not buy the peace it intended. Getting the mechanics of the release right is as important as the dollars.</p>
+  <p class="body">The economic terms are then negotiated against that release. <strong>Severance</strong> may be a formula tied to tenure or a negotiated figure, paid as a lump sum or as salary continuation, with the timing structured to comply with 409A. <strong>Benefits</strong> continuation, often a contribution toward COBRA, is common. And the treatment of <strong>equity</strong> on departure is frequently the largest number in the deal, turning on whether the executive is treated as a good leaver or a bad leaver, whether any unvested equity accelerates, and whether the option exercise window is extended. An executive focused only on the cash severance can leave far more value than that on the table in the equity terms.</p>
+  <p class="body">The separation agreement is also where the company secures the promises it cares about going forward, and where the law has grown unsettled. <strong>Restrictive covenants</strong>, non-competition, non-solicitation, confidentiality, and non-disparagement, are standard, but their enforceability is in genuine flux. There is currently no federal ban on non-competes; the Federal Trade Commission's attempted rule was struck down and removed, and the agency has shifted to challenging non-competes case by case. In New York, non-competes remain governed by common-law reasonableness, but the Legislature has repeatedly advanced bills to restrict or ban them, and proposals remain live, so what is enforceable today may not be tomorrow. Separately, federal labor law and a growing set of state laws, including in New York, limit how broadly confidentiality and non-disparagement provisions can sweep, particularly for non-management employees and in matters touching discrimination or harassment. A separation agreement that over-reaches on these terms risks being unenforceable on the very points the company most wanted.</p>
+
+  <div class="ref">
+    <p class="ref-h">What a separation agreement actually negotiates</p>
+    <div class="ref-item"><span class="n">01</span><p><b>The release.</b> A general release of claims, with the age-discrimination consideration and revocation periods observed for those 40 and older.</p></div>
+    <div class="ref-item"><span class="n">02</span><p><b>Severance.</b> Amount and form, lump sum or continuation, structured for 409A.</p></div>
+    <div class="ref-item"><span class="n">03</span><p><b>Benefits.</b> Continuation of coverage, commonly a COBRA contribution.</p></div>
+    <div class="ref-item"><span class="n">04</span><p><b>Equity treatment.</b> Good-leaver or bad-leaver status, any acceleration, and the exercise window.</p></div>
+    <div class="ref-item"><span class="n">05</span><p><b>Restrictive covenants.</b> Non-compete, non-solicit, confidentiality, and non-disparagement, drafted to what is enforceable.</p></div>
+    <div class="ref-item"><span class="n">06</span><p><b>Operational terms.</b> Return of property, cooperation, references, and no-rehire.</p></div>
+  </div>
+
+  <h2 class="sec-h">Two ends of one relationship</h2>
+  <p class="body">The equity grant and the separation agreement are usually drafted years apart, by different people, with little thought to each other, yet they are two ends of the same relationship and they speak to each other constantly. The vesting and acceleration written into the equity at the start determine how much is at stake in the separation at the end. The good-leaver and bad-leaver definitions decide whether a departure forfeits or preserves a fortune. An executive and a company that treat both documents with the seriousness they deserve, at the moments they are negotiated, avoid the far more expensive arguments that arise when the equity and the exit collide and no one planned for it.</p>
+
+  <div class="close">
+    <h2>How we help</h2>
+    <p>We advise companies and executives on both ends of the relationship, structuring equity grants and plans that work under 409A and the tax rules, and negotiating separation agreements whose releases hold and whose covenants are enforceable. Our aim is compensation and exits that deliver what the parties intended, without the surprises that surface when the documents meet. To discuss an equity program or a separation, speak with our executive compensation and employment practice.</p>
+    <a class="btn" href="#contact">Speak with our team</a>
+    <p class="disclaimer">This article is a general educational resource and does not constitute legal or tax advice. It is not a substitute for the advice of counsel, and reading it does not create an attorney-client relationship. Equity tax rules are intricate, and the enforceability of restrictive covenants is changing rapidly at both the federal and New York levels; the information here is current as of September 2020. Confirm the rules that apply to your situation with qualified advisors before granting equity or signing a separation agreement.</p>
+  </div>
+</article>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This article is provided for general informational purposes only and does not constitute legal advice, and reading it does not create an attorney-client relationship. &copy; 2026 Danziger, Danziger &amp; Muro, LLP.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

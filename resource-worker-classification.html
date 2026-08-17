@@ -1,0 +1,412 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <title>Worker Classification Risk Checker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,420;9..144,540&family=Newsreader:opsz,wght@6..72,380;6..72,440&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8;
+    --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif;
+    --serif:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+
+  .c-root{
+    background:var(--paper); color:var(--ink); font-family:var(--serif);
+    -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,64px) clamp(16px,5vw,40px);
+    display:flex; justify-content:center;
+  }
+  .c-shell{width:100%; max-width:680px}
+
+  .eyebrow{
+    font-family:var(--sans); font-weight:620; font-size:11.5px;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--claret);
+    margin:0 0 22px; display:flex; align-items:center; gap:12px;
+  }
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  h1.title{
+    font-family:var(--display); font-weight:340; font-optical-sizing:auto;
+    font-size:clamp(31px,5.6vw,50px); line-height:1.03; letter-spacing:-.014em; margin:0 0 22px;
+  }
+  .standfirst{font-size:clamp(16px,2.3vw,18.5px); line-height:1.55; color:var(--ink-soft); max-width:56ch; margin:0 0 30px}
+
+  /* tabs */
+  .tabs{display:flex; border:1px solid var(--ink); margin:0 0 32px}
+  .tabs button{
+    flex:1; font-family:var(--sans); font-weight:520; font-size:13px;
+    background:var(--paper); color:var(--ink); border:none; cursor:pointer;
+    padding:13px 10px; transition:background .2s,color .2s; line-height:1.2;
+  }
+  .tabs button + button{border-left:1px solid var(--ink)}
+  .tabs button[aria-selected="true"]{background:var(--ink); color:var(--paper)}
+  .tabs button:focus-visible{outline:2px solid var(--claret); outline-offset:2px}
+
+  /* lean indicator (signature) */
+  .lean{margin:0 0 30px}
+  .lean-poles{display:flex; justify-content:space-between; font-family:var(--sans); font-weight:620;
+    font-size:11px; letter-spacing:.06em; color:var(--ink-faint); margin:0 0 9px; text-transform:uppercase}
+  .lean-poles .active{color:var(--claret)}
+  .lean-track{position:relative; height:8px; background:var(--paper-2); border:1px solid var(--line)}
+  .lean-track .mid{position:absolute; left:50%; top:-4px; bottom:-4px; width:1px; background:var(--line)}
+  .lean-mark{position:absolute; top:-6px; bottom:-6px; left:50%; width:2px; background:var(--ink);
+    transform:translateX(-50%); transition:left .45s cubic-bezier(.22,.61,.36,1)}
+  .lean-note{font-family:var(--sans); font-size:11px; color:var(--ink-faint); margin:9px 0 0; text-align:center; letter-spacing:.04em}
+
+  /* questions */
+  .q{padding:18px 0; border-bottom:1px solid var(--line-soft)}
+  .q-text{font-size:17px; line-height:1.4; color:var(--ink); margin:0 0 13px; max-width:58ch}
+  .opts{display:flex; gap:9px}
+  .opt{
+    font-family:var(--sans); font-weight:520; font-size:13.5px; cursor:pointer;
+    background:var(--paper); border:1px solid var(--line); color:var(--ink);
+    padding:9px 20px; transition:border-color .15s,background .15s,color .15s;
+  }
+  .opt:hover{border-color:var(--claret)}
+  .opt[aria-pressed="true"]{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+  .opt:focus-visible{outline:2px solid var(--claret); outline-offset:2px}
+
+  /* result */
+  .result{margin:30px 0 0; border-left:2px solid var(--claret); background:var(--paper-2); padding:22px 24px; display:none}
+  .result.show{display:block}
+  .result .rlbl{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--claret); margin:0 0 9px}
+  .result h3{font-family:var(--display); font-weight:420; font-size:22px; line-height:1.18; margin:0 0 12px; letter-spacing:-.005em}
+  .result p{font-size:15.5px; line-height:1.58; color:var(--ink-soft); margin:0 0 12px; max-width:58ch}
+  .result p:last-child{margin-bottom:0}
+
+  /* onboarding reference */
+  .ref{display:none}
+  .ref.show{display:block}
+  .ref-intro{font-size:16.5px; line-height:1.55; color:var(--ink-soft); margin:0 0 24px; max-width:58ch}
+  .ref-item{padding:15px 0; border-bottom:1px solid var(--line-soft); display:flex; gap:14px; align-items:flex-start}
+  .ref-item .n{font-family:var(--sans); font-weight:620; font-size:11px; color:var(--claret); min-width:20px; margin-top:3px}
+  .ref-item p{margin:0; font-size:16px; line-height:1.5; color:var(--ink-soft); max-width:58ch}
+  .ref-item b{color:var(--ink); font-weight:440}
+
+  .foot{display:flex; gap:22px; align-items:center; margin:32px 0 0; flex-wrap:wrap}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; cursor:pointer;
+    border:1px solid var(--ink); background:var(--ink); color:var(--paper); padding:13px 26px; font-size:14px;
+    transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+  .ghost{font-family:var(--sans); font-weight:520; font-size:13px; background:none; border:none; color:var(--ink-faint);
+    cursor:pointer; padding:8px 2px; border-bottom:1px solid transparent; transition:color .2s,border-color .2s}
+  .ghost:hover{color:var(--claret); border-color:var(--claret)}
+  .ghost:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:40px 0 0; padding:20px 0 0; max-width:64ch}
+
+  @media (prefers-reduced-motion:reduce){ .lean-mark{transition:none} }
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="practice-employment.html">&larr; Executive Comp. & Employment</a>
+</div>
+
+
+<div class="c-root">
+<div class="c-shell">
+
+  <p class="eyebrow">Executive Comp &amp; Employment &middot; Risk Checker</p>
+  <h1 class="title">Is this worker classified correctly?</h1>
+  <p class="standfirst">Misclassification is the most common and most expensive employment mistake, and it turns on a balance of factors, not a single test. Answer a few questions and the indicator will show which way the relationship leans. This is a risk read, not a legal determination.</p>
+
+  <div class="tabs" role="tablist">
+    <button id="tabIC" role="tab" aria-selected="true">Contractor or employee?</button>
+    <button id="tabEX" role="tab" aria-selected="false">Exempt or non-exempt?</button>
+    <button id="tabON" role="tab" aria-selected="false">New-hire essentials</button>
+  </div>
+
+  <div id="diagnostic">
+    <div class="lean">
+      <div class="lean-poles"><span id="poleL">Employee</span><span id="poleR">Independent contractor</span></div>
+      <div class="lean-track"><span class="mid"></span><span class="lean-mark" id="leanMark"></span></div>
+      <div class="lean-note" id="leanNote">Answer the questions to see the lean</div>
+    </div>
+    <div id="qlist"></div>
+    <div class="result" id="result">
+      <p class="rlbl">What this suggests</p>
+      <h3 id="rHead"></h3>
+      <div id="rBody"></div>
+    </div>
+    <div class="foot">
+      <a class="btn" href="#contact">Have us review a classification</a>
+      <button class="ghost" id="reset">Reset answers</button>
+    </div>
+  </div>
+
+  <div class="ref" id="refPanel">
+    <p class="ref-intro">For every new hire in New York, an employer should have the following in place. Use it alongside the classification check above, since getting classification right is the first item on the list.</p>
+    <div id="reflist"></div>
+    <div class="foot">
+      <a class="btn" href="#contact">Build our onboarding framework</a>
+    </div>
+  </div>
+
+  <p class="disclaimer">
+    This tool is a general educational resource and does not constitute legal advice, nor a legal
+    determination of any worker's status. Classification depends on the specific facts and on tests
+    applied by multiple agencies, and salary thresholds and rules change over time. Using this tool does
+    not create an attorney-client relationship. Consult a qualified employment attorney before classifying
+    a worker or relying on anything here.
+  </p>
+
+</div>
+</div>
+
+<script>
+(function(){
+  // ---- diagnostics data ----
+  var IC = {
+    poleL:"Employee", poleR:"Independent contractor",
+    // pole: which side a "Yes" points to ('L'=employee, 'R'=contractor)
+    qs:[
+      {t:"Does your business control how, when, and where the work is done?", pole:"L"},
+      {t:"Is the work part of your core, day-to-day business rather than a one-off specialty?", pole:"L"},
+      {t:"Do you provide the tools, equipment, or workspace the worker uses?", pole:"L"},
+      {t:"Is the relationship ongoing and open-ended, rather than tied to a defined project?", pole:"L"},
+      {t:"Do you pay a regular wage or salary, rather than per project or by invoice?", pole:"L"},
+      {t:"Does the worker offer the same services to other clients and run their own business?", pole:"R"},
+      {t:"Can the worker realize a profit or loss based on how they manage the work?", pole:"R"},
+      {t:"Does the worker set their own schedule and decide their own methods?", pole:"R"}
+    ],
+    result:function(L,R,answered){
+      if(answered < this.qs.length) return null;
+      if(L > R) return {
+        head:"This relationship looks like employment.",
+        body:["Most of your answers point to the kind of control and integration that characterize an employee under New York and federal tests. ",
+              "If you are currently treating this worker as an independent contractor, that is a misclassification risk, and the consequences include back wages, overtime, unpaid taxes, and penalties. New York resolves genuine doubt in favor of employee status, so a close call usually argues for caution.",
+              "This is the kind of question worth confirming with counsel before the next payroll."]
+      };
+      if(R > L) return {
+        head:"This relationship has the hallmarks of an independent contractor.",
+        body:["Your answers point toward an independent business relationship rather than employment. ",
+              "Even so, agencies weigh many factors and look past labels and written agreements to how the relationship actually works. A contractor arrangement is strongest when the worker truly controls the work, serves other clients, and bears real business risk. Document it, and revisit it if the relationship deepens over time."]
+      };
+      return {
+        head:"This one is genuinely close.",
+        body:["Your answers are balanced, which is exactly the situation in which misclassification claims arise. ",
+              "When the factors are mixed, the safer course is usually to treat the worker as an employee or to restructure the relationship so the contractor factors clearly predominate. This is worth a conversation before you decide."]
+      };
+    }
+  };
+
+  var EX = {
+    poleL:"Non-exempt", poleR:"Exempt",
+    qs:[
+      {t:"Is the employee paid a fixed salary, not by the hour?", pole:"R", gate:true},
+      {t:"Does the salary meet or exceed the applicable New York threshold, which is higher than the federal minimum and varies by region?", pole:"R", gate:true},
+      {t:"Is the primary duty managing the business or a department, while directing two or more full-time employees?", pole:"R"},
+      {t:"Is the primary duty office or non-manual work directly related to management or general business operations?", pole:"R"},
+      {t:"Does the employee regularly exercise discretion and independent judgment on matters of significance?", pole:"R"},
+      {t:"Does the role require advanced knowledge in a field of science or learning, gained through prolonged specialized study?", pole:"R"},
+      {t:"Is the work primarily routine, manual, clerical, or closely supervised?", pole:"L"},
+      {t:"Are you relying mainly on the job title to treat this employee as exempt?", pole:"L"}
+    ],
+    result:function(L,R,answered,raw){
+      if(answered < this.qs.length) return null;
+      // gate: salary basis + threshold. raw holds per-question answers ('Y'/'N'/'U')
+      var salaryBasis = raw[0], threshold = raw[1];
+      if(salaryBasis === 'N' || threshold === 'N') return {
+        head:"This employee is likely non-exempt.",
+        body:["Exempt status requires both a salary test and a duties test, and the salary test alone can decide it. ",
+              "If the employee is not paid a sufficient salary on a salary basis, the duties almost never matter; the employee is non-exempt and owed overtime. New York's salary thresholds for the executive and administrative exemptions are higher than the federal minimum and differ by region, so confirm the current figure for your location.",
+              "Treating a non-exempt employee as exempt, and so denying overtime, is among the most common sources of wage claims."]
+      };
+      if(R > L) return {
+        head:"This employee may qualify as exempt.",
+        body:["The salary appears to be met and the duties point toward a recognized exemption. ",
+              "Exemptions are construed narrowly and turn on what the employee actually does, not the title or the salary alone, so the duties should be documented and revisited if the role changes. Confirm the analysis against the specific exemption you are relying on.",
+              "When in doubt, classifying as non-exempt and paying overtime is the conservative course."]
+      };
+      return {
+        head:"This employee is likely non-exempt.",
+        body:["The duties do not clearly fit a recognized exemption, and exemptions are read narrowly with doubt resolved in the employee's favor. ",
+              "Unless the role squarely meets one of the duties tests and the salary requirement, the safer classification is non-exempt, with overtime paid for hours over forty."]
+      };
+    }
+  };
+
+  // ---- state + rendering ----
+  var current = IC;
+  var answers = {}; // index -> 'Y'/'N'/'U'
+
+  var qlist = document.getElementById('qlist');
+  var leanMark = document.getElementById('leanMark');
+  var leanNote = document.getElementById('leanNote');
+  var poleLEl = document.getElementById('poleL');
+  var poleREl = document.getElementById('poleR');
+  var resultEl = document.getElementById('result');
+  var rHead = document.getElementById('rHead');
+  var rBody = document.getElementById('rBody');
+
+  function renderQuestions(){
+    qlist.innerHTML='';
+    current.qs.forEach(function(q, i){
+      var wrap = document.createElement('div'); wrap.className='q';
+      var t = document.createElement('p'); t.className='q-text'; t.textContent=(i+1)+'. '+q.t;
+      var opts = document.createElement('div'); opts.className='opts';
+      ['Yes','No','Unsure'].forEach(function(label){
+        var val = label[0]==='U'?'U':label[0];
+        var b = document.createElement('button'); b.className='opt'; b.textContent=label;
+        b.setAttribute('aria-pressed', answers[i]===val ? 'true':'false');
+        b.addEventListener('click', function(){
+          answers[i]=val;
+          Array.prototype.forEach.call(opts.children, function(c){ c.setAttribute('aria-pressed','false'); });
+          b.setAttribute('aria-pressed','true');
+          update();
+        });
+        opts.appendChild(b);
+      });
+      wrap.appendChild(t); wrap.appendChild(opts); qlist.appendChild(wrap);
+    });
+  }
+
+  function tally(){
+    var L=0,R=0,answered=0,raw=[];
+    current.qs.forEach(function(q,i){
+      var a=answers[i]; raw[i]=a||null;
+      if(!a){ return; }
+      answered++;
+      if(a==='U') return;
+      var pointsTo = a==='Y' ? q.pole : (q.pole==='L'?'R':'L');
+      if(pointsTo==='L') L++; else R++;
+    });
+    return {L:L,R:R,answered:answered,raw:raw};
+  }
+
+  function update(){
+    var s = tally();
+    var span = s.L + s.R;
+    var pos = 50;
+    if(span>0){ pos = 50 + ((s.R - s.L)/span)*46; }
+    leanMark.style.left = pos+'%';
+    poleLEl.classList.toggle('active', s.L>s.R);
+    poleREl.classList.toggle('active', s.R>s.L);
+    if(s.answered===0){ leanNote.textContent='Answer the questions to see the lean'; }
+    else if(s.L>s.R){ leanNote.textContent='Leaning toward '+current.poleL.toLowerCase(); }
+    else if(s.R>s.L){ leanNote.textContent='Leaning toward '+current.poleR.toLowerCase(); }
+    else { leanNote.textContent='Evenly balanced'; }
+
+    var res = current.result(s.L, s.R, s.answered, s.raw);
+    if(res){
+      rHead.textContent = res.head;
+      rBody.innerHTML='';
+      res.body.forEach(function(p){ var el=document.createElement('p'); el.textContent=p; rBody.appendChild(el); });
+      resultEl.classList.add('show');
+    } else {
+      resultEl.classList.remove('show');
+    }
+  }
+
+  function switchTest(test){
+    current = test; answers = {};
+    poleLEl.textContent = test.poleL; poleREl.textContent = test.poleR;
+    leanMark.style.left='50%'; resultEl.classList.remove('show');
+    poleLEl.classList.remove('active'); poleREl.classList.remove('active');
+    renderQuestions(); update();
+  }
+
+  // ---- onboarding reference ----
+  var REF = [
+    "<b>Confirm classification</b> as employee or independent contractor, and exempt or non-exempt, before the first paycheck.",
+    "<b>A signed offer letter or employment agreement</b>, including confidentiality and invention-assignment terms.",
+    "<b>Form I-9</b> employment eligibility verification, completed within three business days of the start date.",
+    "<b>Withholding forms</b>: federal Form W-4 and New York Form IT-2104.",
+    "<b>A Wage Theft Prevention Act wage notice</b> at hire, stating the pay rate, overtime rate, payday, and employer information, signed and retained.",
+    "<b>Compliant wage statements</b> furnished with every payment of wages.",
+    "<b>New hire reporting</b> to New York State within twenty days of the start date.",
+    "<b>Workers' compensation, disability, and paid family leave coverage</b> in force.",
+    "<b>Required labor law postings</b> displayed, federal and New York.",
+    "<b>A written sexual harassment prevention policy</b> provided, with annual interactive training."
+  ];
+  var reflist = document.getElementById('reflist');
+  REF.forEach(function(r,i){
+    var d=document.createElement('div'); d.className='ref-item';
+    var n=document.createElement('span'); n.className='n'; n.textContent=String(i+1).padStart(2,'0');
+    var p=document.createElement('p'); p.innerHTML=r;
+    d.appendChild(n); d.appendChild(p); reflist.appendChild(d);
+  });
+
+  // ---- tabs ----
+  var tIC=document.getElementById('tabIC'), tEX=document.getElementById('tabEX'), tON=document.getElementById('tabON');
+  var diag=document.getElementById('diagnostic'), refPanel=document.getElementById('refPanel');
+  function selectTab(which){
+    tIC.setAttribute('aria-selected', which==='ic');
+    tEX.setAttribute('aria-selected', which==='ex');
+    tON.setAttribute('aria-selected', which==='on');
+    if(which==='on'){ diag.style.display='none'; refPanel.classList.add('show'); }
+    else {
+      diag.style.display=''; refPanel.classList.remove('show');
+      switchTest(which==='ic'?IC:EX);
+    }
+  }
+  tIC.addEventListener('click', function(){ selectTab('ic'); });
+  tEX.addEventListener('click', function(){ selectTab('ex'); });
+  tON.addEventListener('click', function(){ selectTab('on'); });
+  document.getElementById('reset').addEventListener('click', function(){
+    answers={}; renderQuestions(); leanMark.style.left='50%'; resultEl.classList.remove('show');
+    poleLEl.classList.remove('active'); poleREl.classList.remove('active');
+    leanNote.textContent='Answer the questions to see the lean';
+  });
+
+  renderQuestions(); update();
+})();
+</script>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This material is provided as a general educational resource and does not constitute legal advice, and using it does not create an attorney-client relationship. &copy; 2026 Danziger, Danziger &amp; Muro, LLP &middot; 445 Park Avenue, New York.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>

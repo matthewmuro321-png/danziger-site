@@ -1,0 +1,188 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <title>The Buyer's Side: Diligence and the Deal Documents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,340;9..144,0,420;9..144,0,540;9..144,1,360&family=Newsreader:opsz,ital,wght@6..72,0,380;6..72,0,440;6..72,1,400&family=Hanken+Grotesk:wght@420;520;620&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#16181D; --ink-soft:#3C3F47; --ink-faint:#787b83;
+    --paper:#FBFAF6; --paper-2:#F2EEE6; --paper-3:#ECE7DC;
+    --line:#DBD5C9; --line-soft:#E7E2D8;
+    --claret:#6B2230; --claret-soft:#8C3B48;
+    --display:"Fraunces",Georgia,serif;
+    --serif:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+
+  .a-root{background:var(--paper); color:var(--ink); font-family:var(--serif); -webkit-font-smoothing:antialiased;
+    padding:clamp(22px,5vw,76px) clamp(16px,5vw,40px); display:flex; justify-content:center}
+  .a-shell{width:100%; max-width:680px}
+
+  .eyebrow{font-family:var(--sans); font-weight:620; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--claret); margin:0 0 26px; display:flex; align-items:center; gap:12px}
+  .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  h1.title{font-family:var(--display); font-weight:340; font-optical-sizing:auto; font-size:clamp(34px,6.4vw,56px);
+    line-height:1.01; letter-spacing:-.016em; margin:0 0 28px}
+  .deck{font-family:var(--display); font-weight:360; font-style:italic; font-size:clamp(19px,2.8vw,23px);
+    line-height:1.4; color:var(--ink-soft); max-width:55ch; margin:0 0 30px}
+  .meta{font-family:var(--sans); font-weight:520; font-size:11.5px; letter-spacing:.06em; color:var(--ink-faint);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:15px 0; margin:0 0 44px}
+
+  .a-root p.body{font-size:18px; line-height:1.66; color:var(--ink-soft); margin:0 0 20px; max-width:62ch}
+  .body strong{color:var(--ink); font-weight:440}
+  em{font-style:italic}
+  .lead-cap::first-letter{font-family:var(--display); font-weight:420; float:left; font-size:3.6em; line-height:.82;
+    padding:6px 10px 0 0; color:var(--claret)}
+
+  h2.sec-h{font-family:var(--display); font-weight:420; font-size:clamp(24px,3.6vw,31px); line-height:1.12;
+    letter-spacing:-.01em; margin:42px 0 16px; max-width:44ch}
+
+  /* deal arc strip (signature) */
+  .arc{border:1px solid var(--line); background:var(--paper-2); padding:24px 22px 18px; margin:26px 0 8px}
+  .arc-h{font-family:var(--sans); font-weight:620; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 18px}
+  .arc-row{display:flex; align-items:stretch; gap:0; flex-wrap:wrap}
+  .arc-step{flex:1 1 0; min-width:96px; position:relative; padding:0 10px}
+  .arc-step + .arc-step{border-left:1px solid var(--line)}
+  .arc-num{font-family:var(--sans); font-weight:620; font-size:10px; letter-spacing:.08em; color:var(--claret); display:block; margin:0 0 6px}
+  .arc-name{font-family:var(--display); font-weight:420; font-size:15px; color:var(--ink); line-height:1.15; margin:0 0 5px}
+  .arc-desc{font-family:var(--sans); font-size:11px; line-height:1.4; color:var(--ink-faint)}
+  .arc-cap{font-family:var(--sans); font-size:11px; color:var(--ink-faint); margin:18px 0 0; line-height:1.5; max-width:62ch}
+
+  .pull{border-left:2px solid var(--claret); background:var(--paper-2); padding:18px 22px; margin:26px 0; max-width:60ch}
+  .pull .lbl{font-family:var(--sans); font-weight:620; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--claret); display:block; margin:0 0 8px}
+  .pull p{font-size:16px; line-height:1.58; color:var(--ink-soft); margin:0}
+
+  .close{border-top:1px solid var(--line); margin:54px 0 0; padding:36px 0 0}
+  .close h2{font-family:var(--display); font-weight:420; font-size:clamp(23px,4vw,30px); line-height:1.14; margin:0 0 16px; letter-spacing:-.01em}
+  .close p{font-size:17px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin:0 0 24px}
+  .btn{display:inline-block; font-family:var(--sans); font-weight:520; text-decoration:none; border:1px solid var(--ink);
+    background:var(--ink); color:var(--paper); padding:14px 28px; font-size:14px; transition:background .2s,border-color .2s}
+  .btn:hover{background:var(--claret); border-color:var(--claret)}
+  .btn:focus-visible{outline:2px solid var(--claret); outline-offset:3px}
+
+  .disclaimer{font-family:var(--sans); font-weight:420; font-size:11.5px; line-height:1.6; color:var(--ink-faint);
+    border-top:1px solid var(--line-soft); margin:44px 0 0; padding:20px 0 0; max-width:64ch}
+
+  @media (max-width:560px){
+    .arc-step{flex-basis:48%; padding:10px 12px; border-left:none !important; border-top:1px solid var(--line)}
+    .arc-step:nth-child(-n+2){border-top:none}
+  }
+
+  /* firm branding bar + footer */
+  .fb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px clamp(16px,5vw,40px);border-bottom:1px solid var(--line);background:var(--paper);}
+  .fb-bar a{text-decoration:none}
+  .fb-name{font-family:var(--display);font-weight:540;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+  .fb-back{font-family:var(--sans);font-weight:520;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--claret)}
+  .fb-back:hover{text-decoration:underline}
+  .fb-foot{background:var(--paper);border-top:1px solid var(--line);
+    padding:30px clamp(16px,5vw,40px);font-family:var(--sans);font-size:11.5px;line-height:1.6;
+    color:var(--ink-faint);text-align:center}
+  .fb-foot .fb-name{display:block;margin:0 auto 10px;color:var(--ink);font-size:16px}
+</style>
+
+<div class="fb-bar">
+  <a class="fb-name" href="index.html">Danziger, Danziger &amp; Muro, LLP</a>
+  <a class="fb-back" href="articles.html">&larr; Articles</a>
+</div>
+
+
+<div class="a-root">
+<article class="a-shell">
+
+  <p class="eyebrow">Insights &middot; Private M&amp;A</p>
+  <h1 class="title">The buyer's side</h1>
+  <p class="deck">An acquisition is a process of learning what you are buying, then locking in what you learned. Diligence is the learning; the documents are the locking-in. They are one process, not two.</p>
+  <p class="meta">Private M&amp;A &middot; 2021</p>
+
+  <p class="body lead-cap">A buyer comes to a deal knowing less about the target than the seller does, and the entire transaction is built to close that gap and then to allocate what remains of it. Diligence is how the buyer learns what it is actually acquiring. The deal documents are how the buyer fixes that knowledge into binding protection and price. The buyers who get this right treat the two as a single exercise, because every problem diligence uncovers should land somewhere in the agreement, as a lower price, a specific indemnity, a closing condition, or a reason to walk. The buyers who treat diligence as a box-checking prelude to a standard contract are the ones who overpay or discover, too late, that the protection they assumed was never written down.</p>
+
+  <h2 class="sec-h">Diligence is not a formality</h2>
+  <p class="body">Due diligence is the buyer's investigation of the target, and its purpose is practical: to understand the business well enough to price it correctly, to identify the risks that must be managed, and to shape the terms of the deal accordingly. It runs across several workstreams that the buyer scales to the size and nature of the target.</p>
+  <p class="body">The <strong>financial</strong> review tests whether the numbers are real, normalizing earnings, validating revenue recognition and working capital, and probing customer and supplier concentration, often through a quality-of-earnings analysis. The <strong>legal and corporate</strong> review examines the entity and its ownership, the capitalization table, the material contracts and their change-of-control provisions, the ownership and protection of intellectual property, pending and threatened litigation, regulatory standing and licenses, employment and benefits, real estate and leases, environmental exposure, data and privacy compliance, and tax. The <strong>commercial</strong> review tests the market, the customer relationships, and the pipeline, and the <strong>operational</strong> review looks at how the business actually runs. Specialists handle the corners that require them, in tax, employment, intellectual property, and environmental matters.</p>
+  <p class="body">What unites these workstreams is that their findings are not filed away; they drive the deal. A discovered liability becomes a price reduction or a dedicated indemnity. A required third-party consent becomes a closing condition. An unowned piece of intellectual property becomes a representation and an escrow. Diligence and drafting are the same process viewed from two ends.</p>
+
+  <h2 class="sec-h">The arc of the paper</h2>
+  <p class="body">A private acquisition moves through a recognizable sequence of documents, each doing a specific job, and understanding the sequence helps a buyer know where its leverage is.</p>
+
+  <div class="arc" role="img" aria-label="The sequence of a private acquisition: confidentiality agreement, letter of intent, due diligence, the purchase agreement with disclosure schedules, signing, and closing.">
+    <p class="arc-h">The sequence of a private deal</p>
+    <div class="arc-row">
+      <div class="arc-step"><span class="arc-num">01</span><p class="arc-name">NDA</p><p class="arc-desc">Confidentiality to exchange information</p></div>
+      <div class="arc-step"><span class="arc-num">02</span><p class="arc-name">Letter of intent</p><p class="arc-desc">Framework, plus binding exclusivity</p></div>
+      <div class="arc-step"><span class="arc-num">03</span><p class="arc-name">Diligence</p><p class="arc-desc">The investigation that shapes the terms</p></div>
+      <div class="arc-step"><span class="arc-num">04</span><p class="arc-name">Purchase agreement</p><p class="arc-desc">The definitive contract and schedules</p></div>
+      <div class="arc-step"><span class="arc-num">05</span><p class="arc-name">Signing &amp; closing</p><p class="arc-desc">Simultaneous, or with a gap to close</p></div>
+    </div>
+    <p class="arc-cap">Leverage shifts to the seller the moment a buyer grants exclusivity in the letter of intent, which is why a buyer should not lock itself in before it has done enough work to be confident.</p>
+  </div>
+
+  <p class="body">It begins with a <strong>confidentiality agreement</strong>, which lets the seller share sensitive information and may include non-solicitation or standstill terms. Next comes the <strong>letter of intent</strong> or term sheet, which sets out the price and structure on a non-binding basis but carries binding provisions, most importantly an exclusivity or no-shop covenant that takes the target off the market for a period. That covenant is the hinge of the deal, because once a buyer has exclusivity the seller can no longer shop the deal, but the buyer has also committed time and cost and lost some of its own leverage. Then comes diligence, and then the definitive <strong>purchase agreement</strong>, whether structured as a stock purchase, an asset purchase, or a merger.</p>
+
+  <h2 class="sec-h">Inside the purchase agreement</h2>
+  <p class="body">The purchase agreement is where everything is fixed, and its architecture is worth knowing. The <strong>price and its mechanics</strong> come first, typically on a cash-free, debt-free basis with a working capital adjustment and, in some deals, an earn-out, each of which determines how much of the headline number the parties actually exchange. The <strong>representations and warranties</strong> are the seller's statements of fact about the business, covering everything from financial statements to contracts, intellectual property, litigation, taxes, and employees. They do two things at once: they flush out information, because a seller must qualify any representation it cannot make cleanly, and they allocate risk, because a breach gives the buyer a remedy.</p>
+  <p class="body">The <strong>covenants</strong> govern conduct, requiring the seller to run the business in the ordinary course between signing and closing where there is a gap, and binding the parties to post-closing obligations such as non-competition and transition support. The <strong>closing conditions</strong> set what must be true for the deal to close, including that the representations remain accurate, that required consents have been obtained, and that no material adverse change has occurred. The <strong>indemnification</strong> provisions are the buyer's recourse if the representations prove untrue, and they are heavily negotiated through caps, baskets or deductibles, survival periods, the escrow or holdback that funds claims, and, increasingly, representation and warranty insurance that shifts the risk to an insurer. Finally, the <strong>termination</strong> provisions define when either side may walk away.</p>
+
+  <h2 class="sec-h">Where diligence meets the documents</h2>
+  <p class="body">The connection between the investigation and the contract is most visible in two places. The <strong>disclosure schedules</strong> are the seller's listed exceptions to its representations, and they are where the real facts of the business are disclosed. A representation that the company has no litigation means little until you read the schedule that lists the three lawsuits it is actually facing. Reviewing the schedules with the same rigor as the representations is itself a core diligence task, because the exceptions are where the problems live. And the <strong>ancillary documents</strong>, the bills of sale and assignments, the employment and non-competition agreements, the escrow agreement, any transition services agreement, the officer certificates, and any legal opinions, carry out at closing what the purchase agreement promised.</p>
+  <p class="body">Throughout, the buyer's leverage to obtain protection is highest before the definitive agreement is signed. Representations, indemnities, and conditions are the buyer's protection precisely for the risks that diligence could not fully resolve, and they should be negotiated in proportion to what the investigation surfaced. A risk that diligence could not put to rest is a risk the contract must cover.</p>
+
+  <div class="pull">
+    <span class="lbl">What a buyer should hold onto</span>
+    <p>Do not grant broad exclusivity before you have done enough diligence to be confident. Read the disclosure schedules as carefully as the representations. Size the indemnity and escrow to the risks diligence actually found, consider insurance to bridge the gap, and plan early for the consents and approvals that condition closing.</p>
+  </div>
+
+  <div class="close">
+    <h2>How we help</h2>
+    <p>We represent buyers across the arc of an acquisition, leading the legal diligence that surfaces what matters and negotiating the agreement that protects the investment it reveals. Our aim is a deal in which the price reflects what was found and the contract covers what could not be fully known. To discuss an acquisition, speak with our private M&amp;A practice.</p>
+    <a class="btn" href="#contact">Speak with our M&amp;A team</a>
+
+    <p class="disclaimer">
+      This article is a general educational resource and does not constitute legal, tax, or financial
+      advice. It is not a substitute for the advice of counsel, and reading it does not create an
+      attorney-client relationship. Every transaction is different; consult qualified advisors before
+      acting on anything described here.
+    </p>
+  </div>
+
+</article>
+</div>
+
+<div class="fb-foot">
+  <span class="fb-name">Danziger, Danziger &amp; Muro, LLP</span>
+  Attorney Advertising. This article is provided for general informational purposes only and does not constitute legal advice, and reading it does not create an attorney-client relationship. Prior results do not guarantee a similar outcome. &copy; 2026 Danziger, Danziger &amp; Muro, LLP.
+</div>
+
+  <!-- ddm-motion: header load-in (reading pages stay otherwise still) -->
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html.js-motion .eyebrow, html.js-motion h1.title,
+      html.js-motion .deck, html.js-motion .standfirst, html.js-motion .meta {
+        opacity: 0;
+        animation: ddmRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      html.js-motion h1.title { animation-delay: 0.08s; }
+      html.js-motion .deck, html.js-motion .standfirst { animation-delay: 0.16s; }
+      html.js-motion .meta { animation-delay: 0.24s; }
+      @keyframes ddmRise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-motion');
+    }
+  </script>
+</body>
+</html>
